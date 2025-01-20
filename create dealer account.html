@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+     <!-- Header -->
+    <header class="header restpages">
+        <div class="logo">
+          <img src="icons/Logo-black.svg" alt="Logo">
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#services">Cars</a></li>
+            <li><a href="#about">Dealers</a></li>
+            <li><a href="#contact">Compare</a></li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+            <div class="lang-switch">
+                
+                <button class="lang-btn">
+                    <img src="icons/iconoir_language 12.svg" alt="Dropdown Icon" class="dropdown-icon">
+                  En
+                  
+                </button>
+                <ul class="lang-dropdown">
+                  <li data-lang="en">English</li>
+                  <li data-lang="ar">Arabic</li>
+                </ul>
+              </div>
+              <a href="login.html"  class="login-btn">
+                <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
+                Login
+              </a>
+          <button class="sell-car">Sell My Car</button>
+        </div>
+      </header>
+
+      <div class="main-container dealers">
+       
+       
+    
+      
+        <section class="plans-section dealer-account">
+            <div class="plans-header-dealer">
+                <h2>Select a Plan</h2>
+                <div class="switch-container">
+                  <div class="switch">
+                    <span class="switch-option active" data-type="monthly">Monthly</span>
+                    <span class="switch-option" data-type="yearly">Annual</span>
+                  </div>
+                </div>
+            </div>
+          
+          
+          
+          <div class="plans-cards monthly-plans">
+            <!-- Basic Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Basic</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/flash 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">99</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                      <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+                      Max Ads: 10
+                  </li>
+                  <li>
+                      <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                      Max Featured Ads: 1
+                  </li>
+                  <li>
+                      <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+                      Analytics Level: Basic
+                  </li>
+                  <li>
+                      <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+                      Max Refreshes: 2
+                  </li>
+                  <li>
+                      <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+                      Max Users: 1
+                  </li>
+                  <li>
+                      <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+                      Ad Duration: 30 Days
+                  </li>
+              </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+          
+            <!-- Enterprise Plan -->
+            <div class="plan-card highlight">
+                <div class="plan-header">
+                    <h3 class="plan-name">Enterprise</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/business 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">1999</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                      <img src="icons/advertising_svgrepo.com_1.svg" alt="Max Ads Icon" class="feature-icon" />
+                      Max Ads: 10
+                  </li>
+                  <li>
+                      <img src="icons/analytics_svgrepo.com_1.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                      Max Featured Ads: 1
+                  </li>
+                  <li>
+                      <img src="icons/star_svgrepo.com_1.png" alt="Analytics Icon" class="feature-icon" />
+                      Analytics Level: Basic
+                  </li>
+                  <li>
+                      <img src="icons/refresh-cw_svgrepo.com_1.svg" alt="Refresh Icon" class="feature-icon" />
+                      Max Refreshes: 2
+                  </li>
+                  <li>
+                      <img src="icons/users_svgrepo.com_1.svg" alt="Users Icon" class="feature-icon" />
+                      Max Users: 1
+                  </li>
+                  <li>
+                      <img src="icons/ri_time-fill_1.svg" alt="Duration Icon" class="feature-icon" />
+                      Ad Duration: 30 Days
+                  </li>
+              </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+            <!-- Pro Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/crown 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">199</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ month</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                    <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+                    Max Ads: 10
+                </li>
+                <li>
+                    <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                    Max Featured Ads: 1
+                </li>
+                <li>
+                    <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+                    Analytics Level: Basic
+                </li>
+                <li>
+                    <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+                    Max Refreshes: 2
+                </li>
+                <li>
+                    <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+                    Max Users: 1
+                </li>
+                <li>
+                    <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+                    Ad Duration: 30 Days
+                </li>
+                </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+          </div>
+          
+          <!--Yearly Plans-->
+          <div class="plans-cards yearly-plans hidden">
+            <!-- Basic Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Basic</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/flash 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">99</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ year</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                      <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+                      Max Ads: 10
+                  </li>
+                  <li>
+                      <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                      Max Featured Ads: 1
+                  </li>
+                  <li>
+                      <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+                      Analytics Level: Basic
+                  </li>
+                  <li>
+                      <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+                      Max Refreshes: 2
+                  </li>
+                  <li>
+                      <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+                      Max Users: 1
+                  </li>
+                  <li>
+                      <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+                      Ad Duration: 30 Days
+                  </li>
+              </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+          
+            <!-- Enterprise Plan -->
+            <div class="plan-card highlight">
+                <div class="plan-header">
+                    <h3 class="plan-name">Enterprise</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/business 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">1999</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ year</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                      <img src="icons/advertising_svgrepo.com_1.svg" alt="Max Ads Icon" class="feature-icon" />
+                      Max Ads: 10
+                  </li>
+                  <li>
+                      <img src="icons/analytics_svgrepo.com_1.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                      Max Featured Ads: 1
+                  </li>
+                  <li>
+                      <img src="icons/star_svgrepo.com_1.png" alt="Analytics Icon" class="feature-icon" />
+                      Analytics Level: Basic
+                  </li>
+                  <li>
+                      <img src="icons/refresh-cw_svgrepo.com_1.svg" alt="Refresh Icon" class="feature-icon" />
+                      Max Refreshes: 2
+                  </li>
+                  <li>
+                      <img src="icons/users_svgrepo.com_1.svg" alt="Users Icon" class="feature-icon" />
+                      Max Users: 1
+                  </li>
+                  <li>
+                      <img src="icons/ri_time-fill_1.svg" alt="Duration Icon" class="feature-icon" />
+                      Ad Duration: 30 Days
+                  </li>
+              </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+            <!-- Pro Plan -->
+            <div class="plan-card">
+                <div class="plan-header">
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-icon-wrapper">
+                      <div class="outer-circle">
+                          <div class="inner-circle">
+                              <img src="icons/crown 1.svg" alt="Plan Icon" />
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="plan-price">
+                    <span class="price">199</span>
+                    <div class="price-details">
+                        <span class="currency">AED</span>
+                        <span class="per-month">/ year</span>
+                    </div>
+                </div>
+                <ul class="plan-features">
+                  <li>
+                    <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+                    Max Ads: 10
+                </li>
+                <li>
+                    <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+                    Max Featured Ads: 1
+                </li>
+                <li>
+                    <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+                    Analytics Level: Basic
+                </li>
+                <li>
+                    <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+                    Max Refreshes: 2
+                </li>
+                <li>
+                    <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+                    Max Users: 1
+                </li>
+                <li>
+                    <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+                    Ad Duration: 30 Days
+                </li>
+                </ul>
+                <button class="get-plan-btn">Get This Plan</button>
+            </div>
+          </div>
+          <div class="plans-header-info">
+            <h2>Enter Your Information shop</h2>
+            
+        </div>
+        <form>
+            <!-- Row 1: Shop Name and Shop Email -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="shop-name">Shop Name <span>*</span></label>
+                <div class="input-with-icon">
+                  <input type="text" id="shop-name" placeholder="Enter Shop Name">
+                  <img src="icons/star_svgrepo.com.svg" alt="Shop Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="shop-email">Shop Email <span>*</span></label>
+                <div class="input-with-icon">
+                  <input type="email" id="shop-email" placeholder="Enter Shop Email">
+                  <img src="star_svgrepo.com.svg" alt="Email Icon" class="icon">
+                </div>
+              </div>
+            </div>
+      
+            <!-- Row 2: Country and City -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="country">Country</label>
+                <div class="input-with-icon">
+                    <img src="flags/uae.png" alt="UAE Flag" class="flag">
+                    <input type="text" id="country" placeholder="United Arab Emirates">
+                  <img src="icons/star_svgrepo.com.svg" alt="Country Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="city">City <span>*</span></label>
+                <div class="custom-select-wrapper">
+                 <select id="city" class="custom-select">
+                   <option value="" disabled selected>Select City</option>
+                   <option value="dubai">Dubai</option>
+                   <option value="abu-dhabi">Abu Dhabi</option>
+                   <option value="sharjah">Sharjah</option>
+                </select>
+                  </div>
+              
+                  <!-- <img src="icons/star_svgrepo.com.svg" alt="City Icon" class="icon"> -->
+                </div>
+              </div>
+            
+      
+            <!-- Row 3: Phone Number and WhatsApp Phone Number -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="phone-number">Phone Number <span>*</span></label>
+                <div class="input-with-icon">
+                    <img src="flags/uae.png" alt="UAE Flag" class="flag">
+                    <input type="text" id="phone-number" placeholder="+971">
+                  <img src="icons/star_svgrepo.com.svg" alt="Phone Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="whatsapp-number">WhatsApp Phone Number <span>*</span></label>
+                <div class="input-with-icon">
+                    <img src="flags/uae.png" alt="UAE Flag" class="flag">
+                    <input type="text" id="whatsapp-number" placeholder="+971">
+                    <img src="icons/whatsapp.png" alt="WhatsApp Icon" class="icon">
+                  </div>
+              </div>
+            </div>
+      
+            <!-- Row 4: Address and Website -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="address">Address <span>*</span></label>
+                <div class="input-with-icon">
+                  <input type="text" id="address" placeholder="Enter Address">
+                  <img src="icons/star_svgrepo.com.svg" alt="Address Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="website">Website</label>
+                <div class="input-with-icon">
+                  <input type="url" id="website" placeholder="Enter Website URL">
+                  <img src="icons/star_svgrepo.com.svg" alt="Website Icon" class="icon">
+                </div>
+              </div>
+            </div>
+      
+            <!-- Row 5: Bio -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info" style="flex: 1;">
+                <label for="bio">Bio</label>
+                <textarea id="bio" rows="4" placeholder="Enter Shop Bio" style="width: 98%;"></textarea>
+              </div>
+            </div>
+      
+            <!-- Row 6: Logo -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info" style="flex: 1;">
+                <label for="logo">Logo <span>*</span></label>
+                <div class="logo-upload">
+                  <label for="logo-upload">
+                    <div class="upload-area">
+                      <img src="icons/star_svgrepo.com.svg" alt="Upload Icon" class="upload-icon">
+                      <span>Select Logo</span>
+                      <p>Recommended size: 512 x 512 pixels</p>
+                    </div>
+                  </label>
+                  <input type="file" id="logo-upload" style="display: none;">
+                </div>
+              </div>
+            </div>
+      
+            <!-- Submit Button -->
+            <div class="form-row shop-info">
+              <button type="submit" class="submit-btn">Create Account</button>
+            </div>
+          </form>
+      
+          
+            
+          </section>
+      
+            
+   
+      
+      
+      
+      </div>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <!-- القسم الأول: شعار + نص -->
+          <div class="footer-section logo-section">
+            <img src="icons/Logo-white.svg" alt="Logo" class="footer-logo">
+            <p class="footer-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            </p>
+          </div>
+      
+          <!-- القسم الثاني: قائمة كلمات -->
+          <div class="footer-section links-section">
+            <h4>About Us</h4>
+            <ul class="footer-links">
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Terms Of Use</a></li>
+            </ul>
+          </div>
+      
+          <!-- القسم الثالث: قائمة كلمات -->
+          <div class="footer-section links-section">
+            <h4>Services</h4>
+            <ul class="footer-links">
+              <li><a href="#">Sell Your Car</a></li>
+              <li><a href="#">Buy a car</a></li>
+              <li><a href="#">Find a Dealer</a></li>
+            </ul>
+          </div>
+      
+          <!-- القسم الرابع: عنوان + زرين -->
+          <div class="footer-section buttons-section">
+            <h4>Get Our Mopile App</h4>
+            <div class="store-buttons-footer">
+              <button class="store-btn-footer">
+                <img src="icons/app-store 2.svg" alt="Apple Icon" class="store-icon">
+                <div class="store-text-footer">
+                  <span class="small-text">Download on</span>
+                  <span class="large-text">App Store</span>
+                </div>
+              </button>
+              
+              <button class="store-btn-footer">
+                <img src="icons/google-play (1) 1.svg" alt="Google Play Icon" class="store-icon">
+                <div class="store-text-footer">
+                  <span class="small-text">Download on</span>
+                  <span class="large-text">Google Play</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-line"></div>
+          <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
+        </div>
+      </footer>
+      <script src="js/script.js"></script>
+
+    </body>
+    </html>

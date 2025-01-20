@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+     <!-- Header -->
+    <header class="header restpages">
+        <div class="logo">
+          <img src="icons/Logo-black.svg" alt="Logo">
+        </div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#services">Cars</a></li>
+            <li><a href="#about">Dealers</a></li>
+            <li><a href="#contact">Compare</a></li>
+          </ul>
+        </nav>
+        <div class="header-buttons">
+            <div class="lang-switch">
+                
+                <button class="lang-btn">
+                    <img src="icons/iconoir_language 12.svg" alt="Dropdown Icon" class="dropdown-icon">
+                  En
+                  
+                </button>
+                <ul class="lang-dropdown">
+                  <li data-lang="en">English</li>
+                  <li data-lang="ar">Arabic</li>
+                </ul>
+              </div>
+              <a href="login.html"  class="login-btn">
+                <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
+                Login
+              </a>
+          <button class="sell-car">Sell My Car</button>
+        </div>
+      </header>
+      <div class="main-container cars">
+     <div class="breadcrumb">
+    <a class="active"   href="#">Home</a> &gt; <a href="#">Ads</a>
+    </div>
+    <div class="filter-container">
+       
+        <div class="custom-field">
+            <label for="city">City</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="toggleDropdown(this)">Emarate</div>
+              <ul class="dropdown-options">
+                <li onclick="selectOption(this)">Q7</li>
+                <li onclick="selectOption(this)">Q8</li>
+                <li onclick="selectOption(this)">X5</li>
+              </ul>
+            </div>
+          </div>
+        
+        
+          <div class="custom-field">
+            <label for="make">Make</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="toggleDropdown(this)">Select Make</div>
+              <ul class="dropdown-options">
+                <li onclick="selectOption(this)">2021</li>
+                <li onclick="selectOption(this)">2022</li>
+                <li onclick="selectOption(this)">2023</li>
+              </ul>
+            </div>
+          </div>
+    
+          <div class="custom-field">
+            <label for="model">Model</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="toggleDropdown(this)">Select Model</div>
+              <ul class="dropdown-options">
+                <li onclick="selectOption(this)">$500 to $1,000</li>
+                <li onclick="selectOption(this)">$1,000 to $2,000</li>
+                <li onclick="selectOption(this)">$2,000 to $5,000</li>
+              </ul>
+            </div>
+          </div>
+        
+         
+          <div class="custom-field">
+            <label for="price">Price</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="toggleDropdown(this)">Select Color</div>
+              <ul class="dropdown-options">
+                <li onclick="selectOption(this)">$500 to $1,000</li>
+                <li onclick="selectOption(this)">$1,000 to $2,000</li>
+                <li onclick="selectOption(this)">$2,000 to $5,000</li>
+              </ul>
+            </div>
+          </div>
+          <div class="custom-field">
+            <label for="year">Year</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="toggleDropdown(this)">Select year</div>
+              <ul class="dropdown-options">
+                <li onclick="selectOption(this)">$500 to $1,000</li>
+                <li onclick="selectOption(this)">$1,000 to $2,000</li>
+                <li onclick="selectOption(this)">$2,000 to $5,000</li>
+              </ul>
+            </div>
+          </div>
+          <div class="custom-field">
+            <label for="price">Filter</label>
+            <div class="custom-dropdown">
+              <div class="dropdown-header cars" onclick="openPopup()">More Filters..</div>
+            </div>
+          </div>
+          <div id="filter-popup" class="popup-overlay">
+          <div class="popup-content">
+              <label for="vin-number">VIN Number</label>
+              <input type="text" id="vin-number" placeholder="Enter VIN Number">
+
+              <label for="min-kilometers">Kilometers</label>
+              <div class="kilometers-filter">
+              <input type="number" id="min-kilometers" placeholder="Min Kilometers" class="kilometer-input">
+              <input type="number" id="max-kilometers" placeholder="Max Kilometers" class="kilometer-input">
+          </div>
+          <label for="regional-specs">Regional Specs</label>
+          <div class="regional-specs">
+           <button type="button" class="spec-btn" data-spec="GCC">GCC</button>
+           <button type="button" class="spec-btn" data-spec="American">American</button>
+           <button type="button" class="spec-btn" data-spec="Canadian">Canadian</button>
+           <button type="button" class="spec-btn" data-spec="European">European</button>
+           <button type="button" class="spec-btn" data-spec="Japanese">Japanese</button>
+           <button type="button" class="spec-btn" data-spec="Other">Other</button>
+          </div>
+          <label for="seller-type">Seller Type</label>
+          <div class="seller-type">
+           <button type="button" class="spec-btn" data-spec="Owner">Owner</button>
+           <button type="button" class="spec-btn" data-spec="Dealer">Dealer</button>
+          </div>
+          <label for="body-type">Body Type</label>
+          <div class="body-type">
+           <button type="button" class="spec-btn" data-spec="Sedan">Sedan</button>
+           <button type="button" class="spec-btn" data-spec="Coupe">Coupe</button>
+           <button type="button" class="spec-btn" data-spec="SUV">SUV</button>
+          </div>
+          <label for="seats">Seats</label>
+          <div class="seats">
+           <button type="button" class="spec-btn" data-spec="2">2</button>
+           <button type="button" class="spec-btn" data-spec="4">4</button>
+           <button type="button" class="spec-btn" data-spec="5">5</button>
+           <button type="button" class="spec-btn" data-spec="6">6</button>
+           <button type="button" class="spec-btn" data-spec="7">7</button>
+           <button type="button" class="spec-btn" data-spec="8">8</button>
+           <button type="button" class="spec-btn" data-spec="8+">8+</button>
+          </div>
+          <label for="transmission">Transmission</label>
+          <div class="transmission">
+           <button type="button" class="spec-btn" data-spec="Manual">Manual</button>
+           <button type="button" class="spec-btn" data-spec="Authomatic">Authomatic</button>
+          </div>
+             <!-- Fuel -->
+          <label for="fuel">Fuel</label>
+          <div class="fuel">
+          <button type="button" class="spec-btn" data-spec="Petrol">Petrol</button>
+          <button type="button" class="spec-btn" data-spec="Diesel">Diesel</button>
+          <button type="button" class="spec-btn" data-spec="Hybrid">Hybrid</button>
+          <button type="button" class="spec-btn" data-spec="Electric">Electric</button>
+          </div>
+          <!-- Exterior Color -->
+<label for="exterior-color">Exterior Color</label>
+<div class="exterior-color">
+  <button type="button" class="spec-btn" data-spec="Black">Black</button>
+  <button type="button" class="spec-btn" data-spec="Gray">Gray</button>
+  <button type="button" class="spec-btn" data-spec="Beige">Beige</button>
+  <button type="button" class="spec-btn" data-spec="Brown">Brown</button>
+  <button type="button" class="spec-btn" data-spec="White">White</button>
+  <button type="button" class="spec-btn" data-spec="Tan">Tan</button>
+  <button type="button" class="spec-btn" data-spec="Red">Red</button>
+  <button type="button" class="spec-btn" data-spec="Blue">Blue</button>
+  <button type="button" class="spec-btn" data-spec="Green">Green</button>
+  <button type="button" class="spec-btn" data-spec="Cream">Cream</button>
+  <button type="button" class="spec-btn" data-spec="Charcoal">Charcoal</button>
+  <button type="button" class="spec-btn" data-spec="Ivory">Ivory</button>
+  <button type="button" class="spec-btn" data-spec="Silver">Silver</button>
+  <button type="button" class="spec-btn" data-spec="Navy">Navy</button>
+  <button type="button" class="spec-btn" data-spec="Burgundy">Burgundy</button>
+  <button type="button" class="spec-btn" data-spec="Saddle">Saddle</button>
+  <button type="button" class="spec-btn" data-spec="Almond">Almond</button>
+  <button type="button" class="spec-btn" data-spec="Cocoa">Cocoa</button>
+  <button type="button" class="spec-btn" data-spec="Ebony">Ebony</button>
+  <button type="button" class="spec-btn" data-spec="Parchment">Parchment</button>
+  <button type="button" class="spec-btn" data-spec="Taupe">Taupe</button>
+  <button type="button" class="spec-btn" data-spec="Stone">Stone</button>
+  <button type="button" class="spec-btn" data-spec="Chestnut">Chestnut</button>
+  <button type="button" class="spec-btn" data-spec="Graphite">Graphite</button>
+  <button type="button" class="spec-btn" data-spec="Jet Black">Jet Black</button>
+  <button type="button" class="spec-btn" data-spec="Light Gray">Light Gray</button>
+  <button type="button" class="spec-btn" data-spec="Dark Gray">Dark Gray</button>
+  <button type="button" class="spec-btn" data-spec="Mocha">Mocha</button>
+  <button type="button" class="spec-btn" data-spec="Slate">Slate</button>
+  <button type="button" class="spec-btn" data-spec="Sand">Sand</button>
+  <button type="button" class="spec-btn" data-spec="Ash">Ash</button>
+  <button type="button" class="spec-btn" data-spec="Brick">Brick</button>
+  <button type="button" class="spec-btn" data-spec="Caramel">Caramel</button>
+  <button type="button" class="spec-btn" data-spec="Clay">Clay</button>
+  <button type="button" class="spec-btn" data-spec="Coffee">Coffee</button>
+  <button type="button" class="spec-btn" data-spec="Maroon">Maroon</button>
+  <button type="button" class="spec-btn" data-spec="Oak">Oak</button>
+  <button type="button" class="spec-btn" data-spec="Pearl">Pearl</button>
+  <button type="button" class="spec-btn" data-spec="Platinum">Platinum</button>
+  <button type="button" class="spec-btn" data-spec="Smokey">Smokey</button>
+  <button type="button" class="spec-btn" data-spec="Tobacco">Tobacco</button>
+  <button type="button" class="spec-btn" data-spec="Truffle">Truffle</button>
+  <button type="button" class="spec-btn" data-spec="Wheat">Wheat</button>
+</div>
+
+<!-- Interior Color -->
+<label for="interior-color">Interior Color</label>
+<div class="interior-color">
+  <button type="button" class="spec-btn" data-spec="Black">Black</button>
+  <button type="button" class="spec-btn" data-spec="Gray">Gray</button>
+  <button type="button" class="spec-btn" data-spec="Beige">Beige</button>
+  <button type="button" class="spec-btn" data-spec="Brown">Brown</button>
+  <button type="button" class="spec-btn" data-spec="White">White</button>
+  <button type="button" class="spec-btn" data-spec="Tan">Tan</button>
+  <button type="button" class="spec-btn" data-spec="Red">Red</button>
+  <button type="button" class="spec-btn" data-spec="Blue">Blue</button>
+  <button type="button" class="spec-btn" data-spec="Green">Green</button>
+  <button type="button" class="spec-btn" data-spec="Cream">Cream</button>
+  <button type="button" class="spec-btn" data-spec="Charcoal">Charcoal</button>
+  <button type="button" class="spec-btn" data-spec="Ivory">Ivory</button>
+  <button type="button" class="spec-btn" data-spec="Silver">Silver</button>
+  <button type="button" class="spec-btn" data-spec="Navy">Navy</button>
+  <button type="button" class="spec-btn" data-spec="Burgundy">Burgundy</button>
+  <button type="button" class="spec-btn" data-spec="Saddle">Saddle</button>
+  <button type="button" class="spec-btn" data-spec="Almond">Almond</button>
+  <button type="button" class="spec-btn" data-spec="Cocoa">Cocoa</button>
+  <button type="button" class="spec-btn" data-spec="Ebony">Ebony</button>
+  <button type="button" class="spec-btn" data-spec="Parchment">Parchment</button>
+  <button type="button" class="spec-btn" data-spec="Taupe">Taupe</button>
+  <button type="button" class="spec-btn" data-spec="Stone">Stone</button>
+  <button type="button" class="spec-btn" data-spec="Chestnut">Chestnut</button>
+  <button type="button" class="spec-btn" data-spec="Graphite">Graphite</button>
+  <button type="button" class="spec-btn" data-spec="Jet Black">Jet Black</button>
+  <button type="button" class="spec-btn" data-spec="Light Gray">Light Gray</button>
+  <button type="button" class="spec-btn" data-spec="Dark Gray">Dark Gray</button>
+  <button type="button" class="spec-btn" data-spec="Mocha">Mocha</button>
+  <button type="button" class="spec-btn" data-spec="Slate">Slate</button>
+  <button type="button" class="spec-btn" data-spec="Sand">Sand</button>
+  <button type="button" class="spec-btn" data-spec="Ash">Ash</button>
+  <button type="button" class="spec-btn" data-spec="Brick">Brick</button>
+  <button type="button" class="spec-btn" data-spec="Caramel">Caramel</button>
+  <button type="button" class="spec-btn" data-spec="Clay">Clay</button>
+  <button type="button" class="spec-btn" data-spec="Coffee">Coffee</button>
+  <button type="button" class="spec-btn" data-spec="Maroon">Maroon</button>
+  <button type="button" class="spec-btn" data-spec="Oak">Oak</button>
+  <button type="button" class="spec-btn" data-spec="Pearl">Pearl</button>
+  <button type="button" class="spec-btn" data-spec="Platinum">Platinum</button>
+  <button type="button" class="spec-btn" data-spec="Smokey">Smokey</button>
+  <button type="button" class="spec-btn" data-spec="Tobacco">Tobacco</button>
+  <button type="button" class="spec-btn" data-spec="Truffle">Truffle</button>
+  <button type="button" class="spec-btn" data-spec="Wheat">Wheat</button>
+</div>
+<label for="horsepower">Horsepower</label>
+<div class="horsepower">
+  <button type="button" class="spec-btn" data-spec="0-100">0-100</button>
+  <button type="button" class="spec-btn" data-spec="100-200">100-200</button>
+  <button type="button" class="spec-btn" data-spec="200-300">200-300</button>
+  <button type="button" class="spec-btn" data-spec="300-400">300-400</button>
+  <button type="button" class="spec-btn" data-spec="400-500">400-500</button>
+  <button type="button" class="spec-btn" data-spec="500-600">500-600</button>
+  <button type="button" class="spec-btn" data-spec="600-700">600-700</button>
+  <button type="button" class="spec-btn" data-spec="700-800">700-800</button>
+  <button type="button" class="spec-btn" data-spec="800-900">800-900</button>
+  <button type="button" class="spec-btn" data-spec="900+">900+</button>
+  <button type="button" class="spec-btn" data-spec="Unknown">Unknown</button>
+</div>
+<label for="engine-capacity">Engine Capacity</label>
+<div class="engine-capacity">
+  <button type="button" class="spec-btn" data-spec="0-500">0-500</button>
+  <button type="button" class="spec-btn" data-spec="500-1000">500-1000</button>
+  <button type="button" class="spec-btn" data-spec="1000-1500">1000-1500</button>
+  <button type="button" class="spec-btn" data-spec="1500-2000">1500-2000</button>
+  <button type="button" class="spec-btn" data-spec="2000-2500">2000-2500</button>
+  <button type="button" class="spec-btn" data-spec="2500-3000">2500-3000</button>
+  <button type="button" class="spec-btn" data-spec="3000-3500">3000-3500</button>
+  <button type="button" class="spec-btn" data-spec="3500-4000">3500-4000</button>
+  <button type="button" class="spec-btn" data-spec="4000+">4000+</button>
+  <button type="button" class="spec-btn" data-spec="Unknown">Unknown</button>
+</div>
+
+<!-- Doors -->
+<label for="doors">Doors</label>
+<div class="doors">
+  <button type="button" class="spec-btn" data-spec="2">2</button>
+  <button type="button" class="spec-btn" data-spec="3">3</button>
+  <button type="button" class="spec-btn" data-spec="4">4</button>
+  <button type="button" class="spec-btn" data-spec="5+">5+</button>
+</div>
+
+<!-- Warranty -->
+<label for="warranty">Warranty</label>
+<div class="warranty">
+  <button type="button" class="spec-btn" data-spec="Yes">Yes</button>
+  <button type="button" class="spec-btn" data-spec="No">No</button>
+  <button type="button" class="spec-btn" data-spec="Does Not Apply">Does Not Apply</button>
+</div>
+
+<!-- Cylinders -->
+<label for="cylinders">Cylinders</label>
+<div class="cylinders">
+  <button type="button" class="spec-btn" data-spec="3">3</button>
+  <button type="button" class="spec-btn" data-spec="4">4</button>
+  <button type="button" class="spec-btn" data-spec="5">5</button>
+  <button type="button" class="spec-btn" data-spec="6">6</button>
+  <button type="button" class="spec-btn" data-spec="8">8</button>
+  <button type="button" class="spec-btn" data-spec="10">10</button>
+  <button type="button" class="spec-btn" data-spec="12">12</button>
+  <button type="button" class="spec-btn" data-spec="Unknown">Unknown</button>
+</div>
+
+<!-- Steering Side -->
+<label for="steering-side">Steering Side</label>
+<div class="steering-side">
+  <button type="button" class="spec-btn" data-spec="Right">Right</button>
+  <button type="button" class="spec-btn" data-spec="Left">Left</button>
+</div>
+
+<label for="date-posted">Date Posted</label>
+    <div class="date-posted">
+      <button type="button" class="spec-btn" data-spec="Today">Today</button>
+      <button type="button" class="spec-btn" data-spec="Last 7 Days">Last 7 Days</button>
+      <button type="button" class="spec-btn" data-spec="Last 30 Days">Last 30 Days</button>
+      <button type="button" class="spec-btn" data-spec="Last 60 Days">Last 60 Days</button>
+    </div>
+
+
+    <label for="extras">Extras</label>
+    <div class="extras">
+      <button type="button" class="spec-btn" data-spec="Air Conditioning">Air Conditioning</button>
+      <button type="button" class="spec-btn" data-spec="Alarm Anti-Theft System">Alarm Anti-Theft System</button>
+      <button type="button" class="spec-btn" data-spec="AM/FM Radio">AM/FM Radio</button>
+      <button type="button" class="spec-btn" data-spec="AUX Audio In">AUX Audio In</button>
+      <button type="button" class="spec-btn" data-spec="Bluetooth System">Bluetooth System</button>
+      <button type="button" class="spec-btn" data-spec="Body Kit">Body Kit</button>
+      <button type="button" class="spec-btn" data-spec="Brush Guard">Brush Guard</button>
+      <button type="button" class="spec-btn" data-spec="Cassette Player">Cassette Player</button>
+      <button type="button" class="spec-btn" data-spec="CD Player">CD Player</button>
+      <button type="button" class="spec-btn" data-spec="Climate Control">Climate Control</button>
+      <button type="button" class="spec-btn" data-spec="Cooled Seats">Cooled Seats</button>
+      <button type="button" class="spec-btn" data-spec="DVD Player">DVD Player</button>
+      <button type="button" class="spec-btn" data-spec="Fog Lights">Fog Lights</button>
+      <button type="button" class="spec-btn" data-spec="Heat">Heat</button>
+      <button type="button" class="spec-btn" data-spec="Heated Seats">Heated Seats</button>
+      <button type="button" class="spec-btn" data-spec="Keyless Entry">Keyless Entry</button>
+      <button type="button" class="spec-btn" data-spec="Keyless Start">Keyless Start</button>
+      <button type="button" class="spec-btn" data-spec="Leather Seats">Leather Seats</button>
+      <button type="button" class="spec-btn" data-spec="Moon Roof">Moon Roof</button>
+      <button type="button" class="spec-btn" data-spec="Navigation System">Navigation System</button>
+      <button type="button" class="spec-btn" data-spec="Off-Road Kit">Off-Road Kit</button>
+      <button type="button" class="spec-btn" data-spec="Off-Road Tyres">Off-Road Tyres</button>
+      <button type="button" class="spec-btn" data-spec="Parking Sensors">Parking Sensors</button>
+      <button type="button" class="spec-btn" data-spec="Performance Tyres">Performance Tyres</button>
+      <button type="button" class="spec-btn" data-spec="Power Locks">Power Locks</button>
+      <button type="button" class="spec-btn" data-spec="Power Mirrors">Power Mirrors</button>
+      <button type="button" class="spec-btn" data-spec="Power Seats">Power Seats</button>
+      <button type="button" class="spec-btn" data-spec="Power Sunroof">Power Sunroof</button>
+      <button type="button" class="spec-btn" data-spec="Power Windows">Power Windows</button>
+      <button type="button" class="spec-btn" data-spec="Premium Lights">Premium Lights</button>
+      <button type="button" class="spec-btn" data-spec="Premium Paint">Premium Paint</button>
+      <button type="button" class="spec-btn" data-spec="Premium Sound System">Premium Sound System</button>
+      <button type="button" class="spec-btn" data-spec="Premium Wheels/Rims">Premium Wheels/Rims</button>
+      <button type="button" class="spec-btn" data-spec="Racing Seats">Racing Seats</button>
+      <button type="button" class="spec-btn" data-spec="Rear View Camera">Rear View Camera</button>
+      <button type="button" class="spec-btn" data-spec="Roof Rack">Roof Rack</button>
+      <button type="button" class="spec-btn" data-spec="Satellite Radio">Satellite Radio</button>
+      <button type="button" class="spec-btn" data-spec="Spoiler">Spoiler</button>
+      <button type="button" class="spec-btn" data-spec="Sunroof">Sunroof</button>
+      <button type="button" class="spec-btn" data-spec="VHS Player">VHS Player</button>
+      <button type="button" class="spec-btn" data-spec="Winch">Winch</button>
+    </div>
+
+    <label for="technical-features">Technical Features</label>
+    <div class="technical-features">
+      <button type="button" class="spec-btn" data-spec="4 Wheel Drive">4 Wheel Drive</button>
+      <button type="button" class="spec-btn" data-spec="All Wheel Drive">All Wheel Drive</button>
+      <button type="button" class="spec-btn" data-spec="All Wheel Steering">All Wheel Steering</button>
+      <button type="button" class="spec-btn" data-spec="Anti-Lock Brakes/ABS">Anti-Lock Brakes/ABS</button>
+      <button type="button" class="spec-btn" data-spec="Cruise Control">Cruise Control</button>
+      <button type="button" class="spec-btn" data-spec="Dual Exhaust">Dual Exhaust</button>
+      <button type="button" class="spec-btn" data-spec="Front Airbags">Front Airbags</button>
+      <button type="button" class="spec-btn" data-spec="Front Wheel Drive">Front Wheel Drive</button>
+      <button type="button" class="spec-btn" data-spec="N2O System">N2O System</button>
+      <button type="button" class="spec-btn" data-spec="Power Steering">Power Steering</button>
+      <button type="button" class="spec-btn" data-spec="Rear Wheel Drive">Rear Wheel Drive</button>
+      <button type="button" class="spec-btn" data-spec="Side Airbags">Side Airbags</button>
+      <button type="button" class="spec-btn" data-spec="Tiptronic Gears">Tiptronic Gears</button>
+    </div>
+
+
+              
+              <!-- Add more filters here -->
+              <div class="popup-actions">
+                <div class="popup-actions">
+                  <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+                  <button class="clear-btn" onclick="clearFilters()">Clear Filters</button>
+                  <button class="apply-btn" onclick="applyFilters()">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+
+     
+      <div class="Latest-Ads-section">
+        <div class="section-header">
+            <h2>Latest Ads . <span style="font-size: 16px; font-weight: 500;"> 24 Ads</span></h2>
+            <div class="button-container">
+              <button class="clear-filters-btn">Clear Filters</button>
+            <div class="custom-dropdown">
+              <div class="dropdown-header" onclick="toggleDropdown(this)" style="min-width: 120px; border: solid 1px #a1a1a1; ">Sort By</div>
+              <ul class="dropdown-options" style="z-index: 1000;">
+                <li onclick="selectOption(this)">$500 to $1,000</li>
+                <li onclick="selectOption(this)">$1,000 to $2,000</li>
+                <li onclick="selectOption(this)">$2,000 to $5,000</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="Ad-cards">
+          <!-- كارد 1 -->
+          <div class="Ad-card">
+        
+              <div class="image-container">
+            
+                <div class="arrow-icon arrow-left">
+                    <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+                </div>
+                <div class="arrow-icon arrow-right">
+                    <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+                </div>
+    
+                <div class="image-buttons">
+                  <a href="page1.html" class="circle-button Compare">
+                      <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+                  </a>
+                  <a href="page2.html" class="circle-button Share">
+                      <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+                  </a>
+              </div>
+                <img src="images/car.png"  class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+    
+                <div class="image-dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+              </div>
+            </div>
+              <div class="car-name-price">
+                <p class="car-name">Car Model 2</p>
+                <p class="car-price">AED 200,150,00</p>
+              </div>
+              <div class="car-info">
+                <div class="car-info-left">
+                  <p>
+                      <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+                  </p>
+                  <p>
+                      <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+                  </p>
+              </div>
+              <!-- القسم الأيمن -->
+              <div class="car-info-right">
+                  2 days ago
+              </div>
+            </div>
+            <div class="car-meta">
+              
+                <p>
+                  <img src="icons/mynaui_location.svg" alt="Location">Beirut
+                  </p>
+             
+           
+                <p>
+                  <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+                  </p>
+            
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+        </div>
+          </div>
+          <!-- كارد 2 -->
+          <div class="Ad-card">
+            <div class="image-container">
+            
+              <div class="arrow-icon arrow-left">
+                  <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+              </div>
+              <div class="arrow-icon arrow-right">
+                  <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+              </div>
+    
+              <div class="image-buttons">
+                <a href="page1.html" class="circle-button Compare">
+                    <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+                </a>
+                <a href="page2.html" class="circle-button Share">
+                    <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+                </a>
+            </div>
+              <img src="images/car.png"  class="car-image active" alt="Car 1">
+              <img src="images/car2.png" class="car-image" alt="Car 2">
+              <img src="images/car3.png" class="car-image" alt="Car 3">
+    
+              <div class="image-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+          </div>
+            <div class="car-name-price">
+              <p class="car-name">Car Model 2</p>
+              <p class="car-price">AED 200,150,00</p>
+            </div>
+            <div class="car-info">
+              <div class="car-info-left">
+                <p>
+                    <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+                </p>
+                <p>
+                    <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+                </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+                2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+            
+              <p>
+                <img src="icons/mynaui_location.svg" alt="Location">Beirut
+                </p>
+           
+         
+              <p>
+                <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+                </p>
+          
+        </div>
+        <div class="car-actions">
+          <span>Manuual</span>
+          <span>Electric</span>
+          <span>GCC</span>
+      </div>
+        </div>
+          <!-- كارد 3 -->
+          <div class="Ad-card">
+            <div class="image-container">
+            
+              <div class="arrow-icon arrow-left">
+                  <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+              </div>
+              <div class="arrow-icon arrow-right">
+                  <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+              </div>
+    
+              <div class="image-buttons">
+                <a href="page1.html" class="circle-button Compare">
+                    <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+                </a>
+                <a href="page2.html" class="circle-button Share">
+                    <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+                </a>
+            </div>
+              <img src="images/car.png"  class="car-image active" alt="Car 1">
+              <img src="images/car2.png" class="car-image" alt="Car 2">
+              <img src="images/car3.png" class="car-image" alt="Car 3">
+    
+              <div class="image-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+          </div>
+            <div class="car-name-price">
+              <p class="car-name">Car Model 2</p>
+              <p class="car-price">AED 200,150,00</p>
+            </div>
+            <div class="car-info">
+              <div class="car-info-left">
+                <p>
+                    <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+                </p>
+                <p>
+                    <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+                </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+                2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+            
+              <p>
+                <img src="icons/mynaui_location.svg" alt="Location">Beirut
+                </p>
+           
+         
+              <p>
+                <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+                </p>
+          
+        </div>
+        <div class="car-actions">
+          <span>Manuual</span>
+          <span>Electric</span>
+          <span>GCC</span>
+      </div>
+        </div>
+        </div>
+      </div>
+ 
+      
+
+      
+ </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- القسم الأول: شعار + نص -->
+      <div class="footer-section logo-section">
+        <img src="icons/Logo-white.svg" alt="Logo" class="footer-logo">
+        <p class="footer-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        </p>
+      </div>
+  
+      <!-- القسم الثاني: قائمة كلمات -->
+      <div class="footer-section links-section">
+        <h4>About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+        </ul>
+      </div>
+  
+      <!-- القسم الثالث: قائمة كلمات -->
+      <div class="footer-section links-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#">Sell Your Car</a></li>
+          <li><a href="#">Buy a car</a></li>
+          <li><a href="#">Find a Dealer</a></li>
+        </ul>
+      </div>
+  
+      <!-- القسم الرابع: عنوان + زرين -->
+      <div class="footer-section buttons-section">
+        <h4>Get Our Mopile App</h4>
+        <div class="store-buttons-footer">
+          <button class="store-btn-footer">
+            <img src="icons/app-store 2.svg" alt="Apple Icon" class="store-icon">
+            <div class="store-text-footer">
+              <span class="small-text">Download on</span>
+              <span class="large-text">App Store</span>
+            </div>
+          </button>
+          
+          <button class="store-btn-footer">
+            <img src="icons/google-play (1) 1.svg" alt="Google Play Icon" class="store-icon">
+            <div class="store-text-footer">
+              <span class="small-text">Download on</span>
+              <span class="large-text">Google Play</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
+    </div>
+  </footer>
+  
+
+  <script>
+    // document.querySelectorAll('.spec-btn').forEach(button => {
+    //   button.addEventListener('click', function() {
+    //     this.classList.toggle('active');
+        
+    //     let selectedOptions = [];
+    //     document.querySelectorAll('.spec-btn.active').forEach(activeButton => {
+    //       selectedOptions.push(activeButton.getAttribute('data-spec'));
+    //     });
+        
+    //     console.log('Selected options:', selectedOptions);
+    //   });
+    // });
+    // لتفعيل الزر عند الضغط عليه
+const specButtons = document.querySelectorAll('.spec-btn');
+let selectedSpecs = [];
+
+specButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const spec = button.getAttribute('data-spec');
+
+    // تحقق إذا كان الزر نشطًا بالفعل
+    if (selectedSpecs.includes(spec)) {
+      selectedSpecs = selectedSpecs.filter((item) => item !== spec); // إزالة الزر من القائمة
+      button.classList.remove('active'); // إزالة التنسيق النشط
+    } else {
+      selectedSpecs.push(spec); // إضافة الزر إلى القائمة
+      button.classList.add('active'); // تطبيق التنسيق النشط
+    }
+  });
+});
+
+// زر "Clear Filters"
+function clearFilters() {
+  // مسح جميع الحقول
+  document.getElementById('vin-number').value = '';
+  document.getElementById('min-kilometers').value = '';
+  document.getElementById('max-kilometers').value = '';
+
+  // إزالة التحديد من الأزرار
+  document.querySelectorAll('.spec-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+}
+
+
+// زر "Apply"
+function applyFilters() {
+  // جمع البيانات من المدخلات
+  const vin = document.getElementById('vin-number').value;
+  const minKilometers = document.getElementById('min-kilometers').value;
+  const maxKilometers = document.getElementById('max-kilometers').value;
+
+  let selectedOptions = [];
+  document.querySelectorAll('.spec-btn.active').forEach(activeButton => {
+    selectedOptions.push(activeButton.getAttribute('data-spec'));
+  });
+
+  // يمكنك إرسال البيانات إلى السيرفر أو التعامل معها هنا
+  console.log('VIN:', vin);
+  console.log('Min Kilometers:', minKilometers);
+  console.log('Max Kilometers:', maxKilometers);
+  console.log('Selected Regional Specs:', selectedOptions);
+
+  // إغلاق الـ popup بعد تطبيق الفلاتر
+  closePopup();
+}
+
+// زر "Cancel"
+function closePopup() {
+  document.getElementById('filter-popup').style.display = 'none';
+}
+
+// لفتح الـ popup
+function openPopup() {
+  document.getElementById('filter-popup').style.display = 'flex';
+}
+
+
+  
+
+
+ 
+  </script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+     <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="icons/Logo.svg" alt="Logo">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#services">Cars</a></li>
+        <li><a href="#about">Dealers</a></li>
+        <li><a href="#contact">Compare</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+        <div class="lang-switch">
+            
+            <button class="lang-btn">
+                <img src="icons/iconoir_language.svg" alt="Dropdown Icon" class="dropdown-icon">
+              En
+              
+            </button>
+            <ul class="lang-dropdown">
+              <li data-lang="en">English</li>
+              <li data-lang="ar">Arabic</li>
+            </ul>
+          </div>
+          <div class="profile-dropdown">
+            <button class="profile-btn">
+              <div class="profile-icon">T</div>
+              <span class="profile-name">Text </span>
+            </button>
+            <div class="dropdown-menu">
+                <a href="profile.html">
+                  <img src="icons/mdi_heart.svg" alt="Profile Icon" class="menu-icon"> Become a Dealer
+                </a>
+                <a href="settings.html">
+                  <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> My Ads
+                </a>
+                <a href="logout.html">
+                  <img src="icons/mdi_heart.svg" alt="Logout Icon" class="menu-icon"> Favorite Ads
+                </a>
+                <a href="profile.html">
+                    <img src="icons/mdi_heart.svg" alt="Profile Icon" class="menu-icon"> Profile
+                  </a>
+                  <a href="settings.html">
+                    <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Get Verified
+                  </a>
+                  <a href="logout.html">
+                    <img src="icons/mdi_heart.svg" alt="Logout Icon" class="menu-icon"> Billing History
+                  </a>
+                  <a href="settings.html">
+                    <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Change Password
+                  </a>
+                  <a href="logout.html">
+                    <img src="icons/mdi_heart.svg" alt="Logout Icon" class="menu-icon"> Logout
+                  </a>
+                
+            </div>
+          </div>
+      <button class="sell-car">Sell My Car</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Used Cars in the UAE: Prices, Offers, And More</h1>
+      <p class="hero-text">Lorem ipsum dolor sit amet consectetur. Vitae est vel suspendisse nec .</p>
+      <button class="hero-btn">Get Started</button>
+    </div>
+   
+ 
+    <div class="search-bar">
+      <!-- الحقل الأول: فلتر -->
+      <div class="custom-field">
+        <label for="keywords">VIN Number</label>
+        <input type="text" id="keywords" class="search-input" placeholder="Search by VIN" />
+      </div>
+    
+      <!-- الحقل الثاني: فلتر -->
+      <div class="custom-field">
+        <label for="model">Make</label>
+        <div class="custom-dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Make</div>
+          <ul class="dropdown-options">
+            <li onclick="selectOption(this)">Q7</li>
+            <li onclick="selectOption(this)">Q8</li>
+            <li onclick="selectOption(this)">X5</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- الحقل الثالث: فلتر -->
+      <div class="custom-field">
+        <label for="year">Transmission</label>
+        <div class="custom-dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Transmission</div>
+          <ul class="dropdown-options">
+            <li onclick="selectOption(this)">2021</li>
+            <li onclick="selectOption(this)">2022</li>
+            <li onclick="selectOption(this)">2023</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- الحقل الرابع: فلتر -->
+      <div class="custom-field">
+        <label for="price">Price</label>
+        <div class="custom-dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Price</div>
+          <ul class="dropdown-options">
+            <li onclick="selectOption(this)">$500 to $1,000</li>
+            <li onclick="selectOption(this)">$1,000 to $2,000</li>
+            <li onclick="selectOption(this)">$2,000 to $5,000</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- الحقل الخامس: إدخال نص -->
+      <div class="custom-field">
+        <label for="price">Color</label>
+        <div class="custom-dropdown">
+          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Color</div>
+          <ul class="dropdown-options">
+            <li onclick="selectOption(this)">$500 to $1,000</li>
+            <li onclick="selectOption(this)">$1,000 to $2,000</li>
+            <li onclick="selectOption(this)">$2,000 to $5,000</li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- زر البحث -->
+      <button class="search-btn">Search</button>
+    </div>
+    <!-- <div class="dropdown-container">
+        <button class="dropdown-btn">Search History <img src="icons/chevron-down.svg" alt="Arrow Icon" class="dropdown-icon">     </button>
+        <ul class="dropdown-list">
+          <li onclick="selectItem('Search 1')">Search 1</li>
+          <li onclick="selectItem('Search 2')">Search 2</li>
+          <li onclick="selectItem('Search 3')">Search 3</li>
+        </ul>
+      </div> -->
+      <div class="dropdown-container">
+        <button class="dropdown-btn">Search History <img src="icons/chevron-down.svg" alt="Arrow Icon" class="dropdown-icon">     </button>
+        <ul class="dropdown-list">
+          <li onclick="selectItem('Search 1')">Search 1</li>
+          <li onclick="selectItem('Search 2')">Search 2</li>
+          <li onclick="selectItem('Search 3')">Search 3</li>
+        </ul>
+      </div>
+  </section>
+  <div class="brand-section">
+    <h2>  Featured Brands</h2>
+    <div class="brand-cards">
+        <div class="brand-card">
+            <img src="images/totyta.png" alt="Brand 1">
+            <p>Toyota</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/porche.png" alt="Brand 2">
+            <p>Porsche</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/nissan.png" alt="Brand 3">
+            <p>Nissan</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/mit.png" alt="Brand 4">
+            <p>Mitsubishi</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/kia.png" alt="Brand 5">
+            <p>Kia</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/hynda.png" alt="Brand 6">
+            <p>Hyundai</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/bmw.png" alt="Brand 7">
+            <p>BMW</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/Lexus.png" alt="Brand 8">
+            <p>Lexus</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/ford.png" alt="Brand 9">
+            <p>Ford</p>
+        </div>
+        <div class="brand-card">
+            <img src="images/audi.png" alt="Brand 10">
+            <p>Audi</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="featured-cars-section">
+  <div class="section-header">
+      <h2>Featured Cars</h2>
+      <button class="view-all-btn">View All</button>
+  </div>
+  
+  <div class="car-cards">
+      <!-- كارد 1 -->
+      <div class="car-card">
+    
+          <div class="image-container">
+        
+            <div class="arrow-icon arrow-left">
+                <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+                <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                  <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                  <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+          </div>
+            <img src="images/car.png"  class="car-image active" alt="Car 1">
+            <img src="images/car2.png" class="car-image" alt="Car 2">
+            <img src="images/car3.png" class="car-image" alt="Car 3">
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+          </div>
+        </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                  <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                  <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+          </div>
+          <!-- القسم الأيمن -->
+          <div class="car-info-right">
+              2 days ago
+          </div>
+        </div>
+        <div class="car-meta">
+          
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+              </p>
+         
+       
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+              </p>
+        
+      </div>
+      <div class="car-actions">
+        <span>Manuual</span>
+        <span>Electric</span>
+        <span>GCC</span>
+    </div>
+      </div>
+      <!-- كارد 2 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+        </div>
+        <!-- القسم الأيمن -->
+        <div class="car-info-right">
+            2 days ago
+        </div>
+      </div>
+      <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+    </div>
+    <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+  </div>
+    </div>
+      <!-- كارد 3 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+        </div>
+        <!-- القسم الأيمن -->
+        <div class="car-info-right">
+            2 days ago
+        </div>
+      </div>
+      <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+    </div>
+    <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+  </div>
+    </div>
+      <!-- كارد 4 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+          </div>
+          <!-- القسم الأيمن -->
+          <div class="car-info-right">
+            2 days ago
+          </div>
+         </div>
+        <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+        </div>
+        <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+       </div>
+    </div>
+   
+</div>
+</div>
+<div class="featured-cars-section">
+  <div class="section-header">
+      <h2>Latest Cars</h2>
+      <button class="view-all-btn">View All</button>
+  </div>
+  
+  <div class="car-cards">
+      <!-- كارد 1 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                  <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                  <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+          </div>
+          <!-- القسم الأيمن -->
+          <div class="car-info-right">
+              2 days ago
+          </div>
+        </div>
+        <div class="car-meta">
+          
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+              </p>
+         
+       
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+              </p>
+        
+      </div>
+      <div class="car-actions">
+        <span>Manuual</span>
+        <span>Electric</span>
+        <span>GCC</span>
+    </div>
+      </div>
+      <!-- كارد 2 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+        </div>
+        <!-- القسم الأيمن -->
+        <div class="car-info-right">
+            2 days ago
+        </div>
+      </div>
+      <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+    </div>
+    <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+  </div>
+    </div>
+      <!-- كارد 3 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+        </div>
+        <!-- القسم الأيمن -->
+        <div class="car-info-right">
+            2 days ago
+        </div>
+      </div>
+      <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+    </div>
+    <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+  </div>
+    </div>
+      <!-- كارد 4 -->
+      <div class="car-card">
+        <div class="image-container">
+        
+          <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg"  alt="Left Arrow" />
+          </div>
+          <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg"  alt="Right Arrow" />
+          </div>
+
+          <div class="image-buttons">
+            <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+            </a>
+            <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+            </a>
+        </div>
+          <img src="images/car.png"  class="car-image active" alt="Car 1">
+          <img src="images/car2.png" class="car-image" alt="Car 2">
+          <img src="images/car3.png" class="car-image" alt="Car 3">
+
+          <div class="image-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+      </div>
+        <div class="car-name-price">
+          <p class="car-name">Car Model 2</p>
+          <p class="car-price">AED 200,150,00</p>
+        </div>
+        <div class="car-info">
+          <div class="car-info-left">
+            <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+            </p>
+            <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+            </p>
+          </div>
+          <!-- القسم الأيمن -->
+          <div class="car-info-right">
+            2 days ago
+          </div>
+         </div>
+        <div class="car-meta">
+        
+          <p>
+            <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+       
+     
+          <p>
+            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+      
+        </div>
+        <div class="car-actions">
+      <span>Manuual</span>
+      <span>Electric</span>
+      <span>GCC</span>
+       </div>
+    </div>
+   
+</div>
+
+
+</div>
+<section class="plans-section">
+  <div class="plans-header">
+      <h2>Plans</h2>
+      <div class="switch-container">
+        <div class="switch">
+          <span class="switch-option active" data-type="monthly">Monthly</span>
+          <span class="switch-option" data-type="yearly">Annual</span>
+        </div>
+      </div>
+  </div>
+
+
+
+<div class="plans-cards monthly-plans">
+  <!-- Basic Plan -->
+  <div class="plan-card">
+      <div class="plan-header">
+          <h3 class="plan-name">Basic</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/flash 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">99</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ month</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+            <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+            Max Ads: 10
+        </li>
+        <li>
+            <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+            Max Featured Ads: 1
+        </li>
+        <li>
+            <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+            Analytics Level: Basic
+        </li>
+        <li>
+            <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+            Max Refreshes: 2
+        </li>
+        <li>
+            <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+            Max Users: 1
+        </li>
+        <li>
+            <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+            Ad Duration: 30 Days
+        </li>
+    </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+
+  <!-- Enterprise Plan -->
+  <div class="plan-card highlight">
+      <div class="plan-header">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/business 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">1999</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ month</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+            <img src="icons/advertising_svgrepo.com_1.svg" alt="Max Ads Icon" class="feature-icon" />
+            Max Ads: 10
+        </li>
+        <li>
+            <img src="icons/analytics_svgrepo.com_1.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+            Max Featured Ads: 1
+        </li>
+        <li>
+            <img src="icons/star_svgrepo.com_1.png" alt="Analytics Icon" class="feature-icon" />
+            Analytics Level: Basic
+        </li>
+        <li>
+            <img src="icons/refresh-cw_svgrepo.com_1.svg" alt="Refresh Icon" class="feature-icon" />
+            Max Refreshes: 2
+        </li>
+        <li>
+            <img src="icons/users_svgrepo.com_1.svg" alt="Users Icon" class="feature-icon" />
+            Max Users: 1
+        </li>
+        <li>
+            <img src="icons/ri_time-fill_1.svg" alt="Duration Icon" class="feature-icon" />
+            Ad Duration: 30 Days
+        </li>
+    </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+  <!-- Pro Plan -->
+  <div class="plan-card">
+      <div class="plan-header">
+          <h3 class="plan-name">Pro</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/crown 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">199</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ month</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+          <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+          Max Ads: 10
+      </li>
+      <li>
+          <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+          Max Featured Ads: 1
+      </li>
+      <li>
+          <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+          Analytics Level: Basic
+      </li>
+      <li>
+          <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+          Max Refreshes: 2
+      </li>
+      <li>
+          <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+          Max Users: 1
+      </li>
+      <li>
+          <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+          Ad Duration: 30 Days
+      </li>
+      </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+</div>
+
+<!--Yearly Plans-->
+<div class="plans-cards yearly-plans hidden">
+  <!-- Basic Plan -->
+  <div class="plan-card">
+      <div class="plan-header">
+          <h3 class="plan-name">Basic</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/flash 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">99</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ year</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+            <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+            Max Ads: 10
+        </li>
+        <li>
+            <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+            Max Featured Ads: 1
+        </li>
+        <li>
+            <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+            Analytics Level: Basic
+        </li>
+        <li>
+            <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+            Max Refreshes: 2
+        </li>
+        <li>
+            <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+            Max Users: 1
+        </li>
+        <li>
+            <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+            Ad Duration: 30 Days
+        </li>
+    </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+
+  <!-- Enterprise Plan -->
+  <div class="plan-card highlight">
+      <div class="plan-header">
+          <h3 class="plan-name">Enterprise</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/business 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">1999</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ year</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+            <img src="icons/advertising_svgrepo.com_1.svg" alt="Max Ads Icon" class="feature-icon" />
+            Max Ads: 10
+        </li>
+        <li>
+            <img src="icons/analytics_svgrepo.com_1.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+            Max Featured Ads: 1
+        </li>
+        <li>
+            <img src="icons/star_svgrepo.com_1.png" alt="Analytics Icon" class="feature-icon" />
+            Analytics Level: Basic
+        </li>
+        <li>
+            <img src="icons/refresh-cw_svgrepo.com_1.svg" alt="Refresh Icon" class="feature-icon" />
+            Max Refreshes: 2
+        </li>
+        <li>
+            <img src="icons/users_svgrepo.com_1.svg" alt="Users Icon" class="feature-icon" />
+            Max Users: 1
+        </li>
+        <li>
+            <img src="icons/ri_time-fill_1.svg" alt="Duration Icon" class="feature-icon" />
+            Ad Duration: 30 Days
+        </li>
+    </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+  <!-- Pro Plan -->
+  <div class="plan-card">
+      <div class="plan-header">
+          <h3 class="plan-name">Pro</h3>
+          <div class="plan-icon-wrapper">
+            <div class="outer-circle">
+                <div class="inner-circle">
+                    <img src="icons/crown 1.svg" alt="Plan Icon" />
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="plan-price">
+          <span class="price">199</span>
+          <div class="price-details">
+              <span class="currency">AED</span>
+              <span class="per-month">/ year</span>
+          </div>
+      </div>
+      <ul class="plan-features">
+        <li>
+          <img src="icons/advertising_svgrepo.com.svg" alt="Max Ads Icon" class="feature-icon" />
+          Max Ads: 10
+      </li>
+      <li>
+          <img src="icons/star_svgrepo.com.svg" alt="Max Featured Ads Icon" class="feature-icon" />
+          Max Featured Ads: 1
+      </li>
+      <li>
+          <img src="icons/analytics_svgrepo.com.svg" alt="Analytics Icon" class="feature-icon" />
+          Analytics Level: Basic
+      </li>
+      <li>
+          <img src="icons/refresh-cw_svgrepo.com.svg" alt="Refresh Icon" class="feature-icon" />
+          Max Refreshes: 2
+      </li>
+      <li>
+          <img src="icons/users_svgrepo.com.svg" alt="Users Icon" class="feature-icon" />
+          Max Users: 1
+      </li>
+      <li>
+          <img src="icons/ri_time-fill.svg" alt="Duration Icon" class="feature-icon" />
+          Ad Duration: 30 Days
+      </li>
+      </ul>
+      <button class="get-plan-btn">Get This Plan</button>
+  </div>
+</div>
+
+  
+</section>
+
+<section class="why-choose-us">
+  <h2 class="section-title">Why Choose Us?</h2>
+  <div class="cards-container">
+    <div class="card">
+      <div class="icon">
+        <img src="icons/shield 1.svg" alt="Reliable Services">
+      </div>
+      <h3>Reliable Services</h3>
+      <p>Lorem ipsum dolor sit amet consectetur. Maecenas cum tellus aliquam rhoncus tortor volutpat in purus tortor. Habitasse fames rhoncus nunc nisl.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <img src="icons/competition 1.svg" alt="Competitive Pricing">
+      </div>
+      <h3>Competitive Pricing</h3>
+      <p>Lorem ipsum dolor sit amet consectetur. Maecenas cum tellus aliquam rhoncus tortor volutpat in purus tortor. Habitasse fames rhoncus nunc nisl.</p>
+    </div>
+    <div class="card">
+      <div class="icon">
+        <img src="icons/settings 1.svg" alt="Simplicity">
+      </div>
+      <h3>Simplicity</h3>
+      <p>Lorem ipsum dolor sit amet consectetur. Maecenas cum tellus aliquam rhoncus tortor volutpat in purus tortor. Habitasse fames rhoncus nunc nisl.</p>
+    </div>
+  </div>
+</section>
+<section class="background-section">
+  <div class="content">
+    <p>
+      Post an ad for your car and get the right customer
+    </p>
+    <button class="cta-button">Sell My Car</button>
+  </div>
+</section>
+
+<section class="download-section">
+  <div class="content">
+    <h2>Get the Vexor App</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos tenetur quae ducimus a reprehenderit cupiditate.</p>
+    <div class="store-buttons">
+      <button class="store-btn">
+        <img src="icons/app-store 1.svg" alt="Apple Icon" class="store-icon">
+        <div class="store-text">
+          <span class="small-text">Download on</span>
+          <span class="large-text">App Store</span>
+        </div>
+      </button>
+      
+      <button class="store-btn">
+        <img src="icons/google-play (1) 1.svg" alt="Google Play Icon" class="store-icon">
+        <div class="store-text">
+          <span class="small-text">Download on</span>
+          <span class="large-text">Google Play</span>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- القسم الأول: شعار + نص -->
+    <div class="footer-section logo-section">
+      <img src="icons/Logo-white.svg" alt="Logo" class="footer-logo">
+      <p class="footer-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      </p>
+    </div>
+
+    <!-- القسم الثاني: قائمة كلمات -->
+    <div class="footer-section links-section">
+      <h4>About Us</h4>
+      <ul class="footer-links">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Terms Of Use</a></li>
+      </ul>
+    </div>
+
+    <!-- القسم الثالث: قائمة كلمات -->
+    <div class="footer-section links-section">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#">Sell Your Car</a></li>
+        <li><a href="#">Buy a car</a></li>
+        <li><a href="#">Find a Dealer</a></li>
+      </ul>
+    </div>
+
+    <!-- القسم الرابع: عنوان + زرين -->
+    <div class="footer-section buttons-section">
+      <h4>Get Our Mopile App</h4>
+      <div class="store-buttons-footer">
+        <button class="store-btn-footer">
+          <img src="icons/app-store 2.svg" alt="Apple Icon" class="store-icon">
+          <div class="store-text-footer">
+            <span class="small-text">Download on</span>
+            <span class="large-text">App Store</span>
+          </div>
+        </button>
+        
+        <button class="store-btn-footer">
+          <img src="icons/google-play (1) 1.svg" alt="Google Play Icon" class="store-icon">
+          <div class="store-text-footer">
+            <span class="small-text">Download on</span>
+            <span class="large-text">Google Play</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-line"></div>
+    <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
+  </div>
+</footer>
+
+
+
+
+  <script src="js/script.js"></script>
+</body>
+       
+
+</html>
