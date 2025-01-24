@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forget Password</title>
+  <title>Vexor</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <body>
@@ -46,32 +48,46 @@
   </header>
 
   <div class="main-container">
-    <div class="login-box">
-      <h2 class="box-title">Verification OTP</h2>
-      <p style="font-size: 14px; margin-bottom: 24px;">We have sent a one-time password (OTP) to your email address.
-        <br> Please enter the code below to verify your email address.</p>
-      <form class="login-form">
-        <div class="otp-container">
-          <input type="text" maxlength="1" class="otp-box" />
-          <input type="text" maxlength="1" class="otp-box" />
-          <input type="text" maxlength="1" class="otp-box" />
-          <input type="text" maxlength="1" class="otp-box" />
-          <input type="text" maxlength="1" class="otp-box" />
-          <input type="text" maxlength="1" class="otp-box" />
+    <div class="container-payment">
+      <div class="message">
+        Please complete your payment.<br>
+        Once confirmed, feel free to close this page.
+      </div>
+
+      <div class="card-details">
+        <div class="card-header">Payment Details</div>
+        <div class="icon-payment">⏳</div>
+
+        <div class="details-item">
+          <div>Item</div>
+          <div>Ad</div>
         </div>
 
-        <button type="submit" class="SendOTP-btn-form">Verify OTP</button>
+        <div class="details-item">
+          <div>Date</div>
+          <div>Dec 16, 2024</div>
+        </div>
 
-        <a href="#" class="google-btn">
+        <div class="details-item">
+          <div>Account</div>
+          <div>Bakri Alkhateeb</div>
+        </div>
 
-          Resend OTP
-        </a>
+        <div class="line-payment"></div>
 
-      </form>
+        <div class="details-item" style="font-size: 16px; font-weight: 600;">
+          <div>Total</div>
+          <div style="color: #A80000;">AED 200,00</div>
+        </div>
+      </div>
+
+      <div class="buttons-payment">
+        <button class="button-payment retry-button">Retry Payment</button>
+        <button class="button-payment close-button">Close</button>
+      </div>
     </div>
+
   </div>
-
-
 
   <footer class="footer">
     <div class="footer-container">
@@ -130,8 +146,6 @@
       <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
     </div>
   </footer>
-
-
 
   <script src="js/script.js"></script>
 

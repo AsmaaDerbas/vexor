@@ -20,9 +20,9 @@
     <nav class="navbar">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#services">Cars</a></li>
-        <li><a href="#about">Dealers</a></li>
-        <li><a href="#contact">Compare</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="dealers.html">Dealers</a></li>
+        <li><a href="compare.html">Compare</a></li>
       </ul>
     </nav>
     <div class="header-buttons">
@@ -42,7 +42,7 @@
         <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
         Login
       </a>
-      <button class="sell-car">Sell My Car</button>
+      <a href="sell my car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
 
@@ -540,6 +540,11 @@
       <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
     </div>
   </footer>
+  <script>const input = document.querySelector("#country");
+window.intlTelInput(input, {
+  utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+});
+</script>
   <script src="js/script.js"></script>
 
 </body>

@@ -20,9 +20,9 @@
     <nav class="navbar">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="#services">Cars</a></li>
-        <li><a href="#about">Dealers</a></li>
-        <li><a href="#contact">Compare</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="dealers.html">Dealers</a></li>
+        <li><a href="compare.html">Compare</a></li>
       </ul>
     </nav>
     <div class="header-buttons">
@@ -42,61 +42,44 @@
         <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
         Login
       </a>
-      <button class="sell-car">Sell My Car</button>
+      <a href="sell my car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
+  <div class="main-container">
+   
 
-  <div class="main-container sell-my-car">
-    <div class="progress-bar">
-      <div class="step active" data-step="1">
-        <a href="#step-1" class="number">1</a>
-      </div>
-      <div class="connector"></div>
-      <div class="step active" data-step="2">
-        <a href="#step-2" class="number">2</a>
-      </div>
-      <div class="connector"></div>
-      <div class="step" data-step="3">
-        <a href="#step-3" class="number">3</a>
-      </div>
-      <div class="connector"></div>
-      <div class="step" data-step="4">
-        <a href="#step-4" class="number">4</a>
-      </div>
-      <div class="connector"></div>
-      <div class="step" data-step="5">
-        <a href="#step-5" class="number">5</a>
-      </div>
-    </div>
-
-
-    <!-- Step Content -->
-    <!-- <div class="steps">
-            <div class="step-content active" id="step-1">
-              <h2>Step 1: General Information</h2>
-              <p>Fill out your car's general information.</p>
-            </div>
-            <div class="step-content" id="step-2">
-              <h2>Step 2: Specifications</h2>
-              <p>Provide car specifications.</p>
-            </div>
-            <div class="step-content" id="step-3">
-              <h2>Step 3: Location</h2>
-              <p>Specify the car's location.</p>
-            </div>
-            <div class="step-content" id="step-4">
-              <h2>Step 4: Images</h2>
-              <p>Upload images of the car.</p>
-            </div>
-            <div class="step-content" id="step-5">
-              <h2>Step 5: Payment Details</h2>
-              <p>Enter payment details.</p>
-            </div> -->
+<div class="billing-history">
+  <h3>Billing History</h3>
+  <table class="billing-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Invoice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Nov 17, 2024</td>
+        <td><span class="status confirmed">Confirmed</span></td>
+        <td>AED 1999</td>
+        <td>Subscription purchase - Monthly</td>
+        <td><a href="#" class="download-link">Download</a></td>
+      </tr>
+      <tr>
+        <td>Nov 17, 2024</td>
+        <td><span class="status confirmed">Confirmed</span></td>
+        <td>AED 1999</td>
+        <td>Subscription purchase - Monthly</td>
+        <td><a href="#" class="download-link">Download</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
+</div>
   </div>
-
-
-  </div>
-
   <footer class="footer">
     <div class="footer-container">
       <!-- القسم الأول: شعار + نص -->
@@ -154,44 +137,6 @@
       <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
     </div>
   </footer>
-  <script>
-    const steps = document.querySelectorAll('.step');
-    const stepContents = document.querySelectorAll('.step-content');
-
-    // Add event listener to each step
-    steps.forEach((step) => {
-      step.addEventListener('click', () => {
-        const stepNumber = step.getAttribute('data-step');
-
-        // Remove 'active' class from all steps and contents
-        steps.forEach((s) => s.classList.remove('active'));
-        stepContents.forEach((content) => content.classList.remove('active'));
-
-        // Add 'active' class to the selected step and corresponding content
-        step.classList.add('active');
-        document.getElementById(`step-${stepNumber}`).classList.add('active');
-
-        // Update connectors
-        updateConnectors();
-      });
-    });
-
-    // Update connectors based on active step
-    function updateConnectors() {
-      const connectors = document.querySelectorAll('.connector');
-      connectors.forEach((connector) => {
-        connector.style.background = '#ccc'; // Default color
-      });
-
-      // Update active connectors
-      document.querySelectorAll('.step.active ~ .connector').forEach((connector) => {
-        connector.style.background = '#d32f2f'; // Active color
-      });
-    }
-
-    // Initialize connectors on page load
-    updateConnectors();
-  </script>
   <script src="js/script.js"></script>
 
 </body>

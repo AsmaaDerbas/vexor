@@ -187,13 +187,18 @@ ul {
 
 
 .sell-car {
+  display: inline-block;
+  /* يضمن أن الرابط يتصرف مثل زر */
   background-color: #A80000;
   color: #fff;
   border-radius: 8px;
   padding: 8px 18px;
   font-size: 18px;
   font-weight: 500;
+  text-decoration: none;
+  /* إزالة الخط السفلي الافتراضي للرابط */
   white-space: nowrap;
+  text-align: center;
 }
 
 .sell-car:hover {
@@ -1554,7 +1559,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  background-color: #F5F5F5;
+  background-color: #fff;
   position: relative;
 
 
@@ -1616,7 +1621,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
-  color: #666;
+  color: #101820;
   margin-bottom: 24px;
 }
 
@@ -1630,15 +1635,21 @@ ul {
 }
 
 .login-btn-form {
+  display: block;
+  /* يجعل الرابط يبدو كزر كامل العرض */
   width: 100%;
   padding: 12px 0;
   background-color: #a00;
   color: white;
+  text-align: center;
+  /* يجعل النص في منتصف الزر */
   border: none;
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
   margin-bottom: 16px;
+  text-decoration: none;
+  /* إزالة الخط السفلي الافتراضي للرابط */
 }
 
 .separator {
@@ -1842,9 +1853,9 @@ ul {
   /* ترتيب العناصر عموديًا */
   align-items: flex-start;
   /* محاذاة العناصر إلى جهة اليسار */
-  gap: 16px;
+  gap: 8px;
   padding: 16px;
-  background-color: #F5F5F5;
+  background-color: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -1856,6 +1867,7 @@ ul {
   text-align: left;
   color: #101820;
   font-size: 16px;
+  margin-bottom: 0;
 }
 
 .breadcrumb a {
@@ -2273,7 +2285,7 @@ ul {
   /* محاذاة العناصر إلى جهة اليسار */
   gap: 16px;
   padding: 16px;
-  background-color: #f5f5f5;
+  background-color: #fff;
   position: relative;
   overflow: hidden;
   padding-bottom: 88px;
@@ -2507,7 +2519,7 @@ textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 14px;
   resize: none;
   outline: none;
@@ -2599,8 +2611,8 @@ textarea {
 
 .main-container.sell-my-car {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: left;
   gap: 16px;
   padding: 16px;
   background-color: #ffffff;
@@ -2610,77 +2622,1062 @@ textarea {
 
 }
 
-.progress-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  position: relative;
+.Add-Listing {
+  min-width: 1312px;
   margin-bottom: 20px;
 }
 
-.step {
-  text-align: center;
-  position: relative;
-  flex: 0 0 auto;
-  /* لا يتمدد الخطوات لتغطية المساحة */
+.title-add-listing {
+  margin-bottom: 40px;
 }
 
-.step .number {
-  width: 40px;
-  height: 40px;
-  background: #ccc;
-  color: #fff;
-  border-radius: 50%;
+.title-add-listing .section-title {
+  margin-bottom: 2px;
+  /* Adjust this value to make it smaller */
+}
+
+.title-add-listing p {
+  margin-top: 0;
+  /* This removes any default top margin */
+}
+
+.form-box.sell-my-car {
+  width: 100%;
+  min-width: 1312px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* التبويبات */
+.tabs-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  justify-content: flex-start;
+  gap: 40px;
+  /* المحاذاة إلى اليسار */
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+
+  text-align: left;
+  display: inline-block;
+  padding: 10px 0;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
+  background: none;
+  border: none;
+  color: #101820;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  max-width: 200px;
+
 }
 
-.step.active .number {
-  background: #d32f2f;
-  /* اللون الخاص بالخطوات النشطة */
+.tab-btn.active {
+  color: #A80000;
+  border-bottom: 2px solid #A80000;
 }
 
-.connector {
-  position: absolute;
-  top: 18px;
-  /* توضع الوصلة بين الدوائر */
-  left: 100%;
-  right: 0;
-  height: 2px;
-  background: #8c8c8c;
-  z-index: 0;
-  /* تأكد أن الوصلة تظهر بين الخطوات */
-  width: 50%;
+.tab-btn:hover {
+  color: #A80000;
 }
 
-.step.active~.connector {
-  background: #d32f2f;
-  /* تغيير لون الوصلات بين الخطوات النشطة */
+/* المحتوى */
+.tabs-content {
+  margin-top: 20px;
 }
 
-.step .number:hover {
-  background: #b71c1c;
-  /* تأثير hover للخطوات */
+.tab-content {
+  display: none;
 }
 
-.step .label {
-  margin-top: 5px;
+.tab-content.active {
+  display: block;
+}
+
+.custom-field select,
+.custom-field input {
+  width: 90%;
+  height: 23px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 10px;
   font-size: 14px;
 }
 
 
+/* تصميم القائمة المنسدلة */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.custom-field span {
+  color: #A80000;
+  font-size: 16px;
+}
+
+.options-isinsured input[type="checkbox"] {
+  display: none;
+  /* إخفاء مربع الاختيار الافتراضي */
+}
+
+.options-isinsured label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.options-isinsured label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  /* زوايا مستديرة */
+  background-color: #fff;
+}
+
+.options-isinsured input[type="checkbox"]:checked+label::before {
+  background-color: #A80000;
+  border-color: #A80000;
+  content: "✔";
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.next-btn {
+  padding: 12px 24px;
+  border: none;
+  background-color: #A80000;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.back-btn {
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  color: #A80000;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form-row:last-of-type {
+  display: flex;
+  justify-content: flex-end;
+  /* يجعل الزر على الجهة اليمنى */
+}
+
+.google-iframe {
+  width: 100%;
+}
+
+.feature-ad {
+  background-color: #b00000;
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 8px;
+}
+
+.feature-ad h4 {
+  margin-bottom: 15px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feature-list img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.ad-cost {
+  margin: 20px 0;
+  font-size: 16px;
+  border: 2px solid #b00000;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ad-cost strong {
+  color: #b00000;
+  font-size: 18px;
+}
+
+.feature-selection {
+  margin-top: 20px;
+}
+
+.feature-selection select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+
+
+.section-title-images-tab {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-family: 14px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.upload-box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  margin-bottom: 40px;
+}
+
+.upload-content {
+  text-align: center;
+}
+
+.upload-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.upload-content p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.no-images-text {
+  font-size: 14px;
+  color: #101820;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Styling the label to look like a button */
+.upload-btn {
+  background-color: #b00000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background-color: #900000;
+}
+
+
+.uploaded-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.uploaded-images-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+/* لإظهار زر الحذف فوق الصور */
+.uploaded-images-container .image-wrapper {
+  position: relative;
+}
+
+.uploaded-images-container .delete-btn {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-more-box {
+  display: none;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  /* ترتيب العناصر عموديًا */
+  justify-content: center;
+  /* محاذاة العناصر عموديًا */
+  align-items: center;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.add-more-box img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+
+}
+
+.add-more-box p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* إخفاء input الخاص برفع الملفات */
+.file-input {
+  display: none;
+}
+
+.main-label {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #b00000;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 3px;
+  display: none;
+  /* إخفاء الزر افتراضيًا */
+}
+
+/* زر Main للصورة الأساسية */
+.image-wrapper.main .main-label {
+  display: block;
+  /* عرض الزر للصورة الأساسية فقط */
+}
+
+
+
+.form-row iframe {
+  width: 100%;
+  /* يجعل الخريطة تمتد على عرض الحاوية */
+  height: 400px;
+  /* اضبط الارتفاع ليكون كبيرًا */
+  border: none;
+  /* إزالة الحدود الافتراضية للخريطة */
+  border-radius: 8px;
+  /* إذا كنت تريد زوايا مستديرة للخريطة */
+  margin-top: 15px;
+  /* أضف مسافة بين الخريطة والأزرار */
+}
+
+/* الحاوية الرئيسية للخريطة */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+/* الحاوية الخاصة بحقل البحث */
+.search-container {
+  position: absolute;
+  /* فوق الخريطة */
+  top: 10px;
+  /* مسافة من أعلى الحاوية */
+  left: 50%;
+  /* في المنتصف أفقيًا */
+  transform: translateX(-50%);
+  /* لضبط المحاذاة بالكامل في المنتصف */
+  display: flex;
+  /* ترتيب الحقل والزر جنبًا إلى جنب */
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* ظل خفيف للحاوية */
+  z-index: 1000;
+  /* فوق الخريطة */
+  min-width: 300px;
+}
+
+/* تنسيق حقل البحث */
+#address-search {
+  border: none;
+  outline: none;
+  padding: 8px;
+  font-size: 14px;
+  flex: 1;
+  /* يشغل أكبر مساحة ممكنة */
+  border-radius: 8px;
+  /* زوايا مستديرة على اليسار */
+}
+
+/* تنسيق زر البحث */
+.search-btn {
+  background-color: #A80000;
+  /* لون خلفية الزر */
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  /* زوايا مستديرة على اليمين */
+}
+
+.search-btn img {
+  width: 16px;
+  /* حجم أيقونة الموقع */
+  height: 16px;
+}
+
+.container-payment {
+  text-align: center;
+  padding: 88px 0 40px 0;
+}
+
+.message {
+  font-size: 20px;
+  color: #333;
+  margin: 24px 0;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.card-details {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto;
+}
+
+.card-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.icon-payment {
+  font-size: 30px;
+  color: #A80000;
+  margin-bottom: 15px;
+}
+
+.details-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.line-payment {
+  border-top: 1px solid #ddd;
+  margin: 15px 0;
+}
+
+.buttons-payment {
+  margin-top: 20px;
+}
+
+.button-payment {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.retry-button {
+  background-color: #A80000;
+  color: white;
+}
+
+.retry-button:hover {
+  background-color: #910000;
+}
+
+.close-button {
+  background-color: transparent;
+  border: 1px solid #A80000;
+  color: #A80000;
+}
+
+.close-button:hover {
+  background-color: #A80000;
+  color: white;
+}
+
+
+.container-Ad-details {
+  width: calc(100% - 80px);
+  /* يجعل العرض يملأ المتصفح مع مراعاة الهوامش */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0 24px;
+  /* إضافة هوامش على اليمين واليسار */
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 0;
+  margin-top: 0;
+
+}
+
+.left-section,
+.right-section {
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.left-section {
+  flex: 3;
+  width: 70%;
+  padding: 20px;
+}
+
+.right-section {
+  flex: 1;
+  width: 30%;
+  padding: 16px;
+  margin-top: 90px;
+  position: sticky;
+  top: 10px;
+
+}
+
+.left-section h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  /* تقليل المسافة أسفل اسم السيارة */
+  line-height: 1.2;
+  /* تقليل ارتفاع السطر */
+}
+
+.left-section p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.main-image-box {
+  position: relative;
+  /* لضمان محاذاة الأسهم داخل الصندوق */
+  border: 2px solid #ccc;
+  /* إطار رمادي */
+  border-radius: 8px;
+  /* زوايا مستديرة */
+  padding: 0;
+  /* مسافة داخلية */
+  background: transparent;
+  /* خلفية شفافة */
+  margin-bottom: 2px;
+  /* مسافة أسفل الصندوق */
+  width: 100%;
+  /* عرض كامل */
+  display: flex;
+  justify-content: center;
+  /* محاذاة الصورة في المنتصف أفقيًا */
+  align-items: center;
+}
+
+.icon-container-Ad-Details {
+  position: absolute;
+  top: 10px;
+  /* المسافة من الأعلى */
+  right: 10px;
+  /* المسافة من اليمين */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+}
+
+/* تنسيق الأيقونات */
+.icon-Ad-Details {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(94, 94, 94, 0.7);
+  /* خلفية بيضاء شفافة */
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* التأثير عند التمرير فوق الأيقونة */
+.icon-Ad-Details:hover {
+  background-color: #A80000;
+  /* تغيير اللون عند التمرير */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  /* زيادة الظل */
+}
+
+/* تنسيق الأيقونات بداخل الدائرة */
+.icon-Ad-Details img {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  /* يجعل الأسهم ثابتة داخل الـ main-image-box */
+  top: 50%;
+  transform: translateY(-50%);
+  /* محاذاة عمودية في المنتصف */
+  width: 30px;
+  /* حجم الأيقونة */
+  height: 30px;
+  /* حجم الأيقونة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* الخلفية البيضاء */
+  border-radius: 50%;
+  /* شكل دائري */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* الظل */
+  cursor: pointer;
+  z-index: 10;
+  /* لضمان ظهور الأيقونات فوق الصورة */
+}
+
+.arrow-left {
+  left: 10px;
+  /* المسافة من الجهة اليسرى */
+}
+
+.arrow-right {
+  right: 10px;
+  /* المسافة من الجهة اليمنى */
+}
+
+.main-image-box img {
+  max-width: 100%;
+  /* جعل الصورة تستجيب */
+  max-height: 400px;
+  /* تحديد أقصى ارتفاع للصورة */
+  height: auto;
+  /* الحفاظ على نسبة العرض إلى الارتفاع */
+  border-radius: 0;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+
+.thumbnails img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.thumbnails img:hover {
+  border-color: #A80000;
+}
+
+.vehicle-overview,
+.additional-info {
+  margin-top: 20px;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.overview-item {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0 10px;
+  background-color: #fff;
+}
+
+.overview-item h4 {
+  margin-bottom: 5px;
+  font-size: 16PX;
+  color: #101820;
+}
+
+.overview-item img {
+  width: 40px;
+  margin-bottom: 0px;
+}
+
+.additional-info table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.additional-info th,
+.additional-info td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.additional-info th {
+  color: #555;
+}
+
+.additional-info iframe {
+  width: 100%;
+}
+
+.additional-info hr {
+  width: 100%;
+  color: #ccc;
+}
+
+.additional-info p {
+  font-size: 14px;
+  color: #101820;
+}
+
+.price-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.price-card h4 {
+  font-size: 16px;
+  color: #101820;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 24px;
+  color: #A80000;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.price-card hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 20px 0;
+}
+
+.button-call {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.button-call img {
+  width: 20px;
+  margin-right: 12px;
+}
+
+.call-btn {
+  background-color: #A80000;
+}
+
+.whatsapp-btn {
+  background-color: #015128;
+}
+
+.email-btn {
+  background-color: #00C4ED;
+}
+
+.call-btn {
+  background-color: #A80000;
+}
+
+.report-btn {
+  background-color: #A80000;
+  margin-top: 20px;
+}
+
+/* Styling for the popup */
+.popup-report {
+  display: none;
+  /* Hide by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content-report {
+  background: white;
+  border-radius: 8px;
+  padding: 8px 20px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+.popup-content-report h3 {
+  margin-bottom: 15px;
+  color: #101820;
+}
+
+.popup-content-report label {
+  display: block;
+  font-weight: 500;
+}
+
+.popup-content-report .description-report {
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+.popup-content-report textarea {
+  width: 95%;
+  height: 80px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.popup-actions-report {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.button-call-report {
+  background-color: #b00020;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.button-call:hover {
+  background-color: #a0001e;
+}
+
+.cancel-btn-report {
+  background: none;
+  color: #b00020;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.cancel-btn:hover {
+  text-decoration: underline;
+}
 
 
 
 
-@media (max-width: 768px) {
+.seller-info {
+  margin-top: 20px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.seller-info h3 {
+  text-align: left;
+}
+
+.seller-info hr {
+  border: 0;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+.seller-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+
+.seller-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.seller-info div {
+  margin-top: 10px;
+}
+
+.seller-info a {
+  text-decoration: none;
+  color: #A80000;
+  display: block;
+  margin-top: 5px;
+}
+
+.billing-history {
+  border: 1px solid #bebebe;
+  border-radius: 8px;
+  padding: 16px;
+  background-color:transparent;
+  margin: 90px 40px 90px 40px;
+  width: 100%;
+  
+}
+
+.billing-history h3 {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.billing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.billing-table th,
+.billing-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.billing-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+  color: #555;
+}
+
+.billing-table td {
+  color: #333;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status.confirmed {
+  background-color: #e0f8e9;
+  color: #28a745;
+}
+
+.download-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+
+/* @media (max-width: 768px) {
   .filter-container {
     flex-wrap: wrap;
     gap: 10px;
@@ -2707,12 +3704,12 @@ textarea {
   .form-row {
     flex-direction: column;
     gap: 0;
-    /* Remove gap between fields */
+    
   }
 
   .form-group {
     margin-bottom: 10px;
-    /* Add margin between inputs */
+  
   }
 }
 
@@ -2770,4 +3767,4 @@ textarea {
     flex-direction: column;
     align-items: center;
   }
-}
+} */
