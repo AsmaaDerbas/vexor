@@ -463,42 +463,56 @@
     </div>
   </footer>
   <script>
+
+
     document.addEventListener("DOMContentLoaded", function () {
       const mainImage = document.getElementById('main-image');
       const thumbnails = document.querySelectorAll('.thumbnails img');
       const arrowRight = document.querySelector('.arrow-right');
       const arrowLeft = document.querySelector('.arrow-left');
 
-      let currentIndex = 0; // تتبع الصورة الحالية
+      let currentIndex = -1; // نبدأ من الصورة الأصلية
 
-      // تحديث الصورة الرئيسية بناءً على الصورة المصغرة
+      function changeImage(newIndex, direction) {
+        if (newIndex >= thumbnails.length) {
+          newIndex = -1;
+        } else if (newIndex < -1) {
+          newIndex = thumbnails.length - 1;
+        }
+
+        let slideOutClass = "slide-out-left";
+        let slideInClass = "slide-in-right";
+
+        // إضافة تأثير الانزلاق على الصورة الحالية
+        mainImage.classList.add(slideOutClass);
+
+        setTimeout(() => {
+          mainImage.src = newIndex === -1 ? "images/inventory1-1.jpg" : thumbnails[newIndex].getAttribute('data-image');
+
+          // إعادة ضبط التحريك للحركة الجديدة
+          mainImage.classList.remove(slideOutClass);
+          mainImage.classList.add(slideInClass);
+
+          setTimeout(() => {
+            mainImage.classList.remove(slideInClass);
+          }, 500);
+        }, 500);
+
+        currentIndex = newIndex;
+      }
+
       thumbnails.forEach((thumbnail, index) => {
         thumbnail.addEventListener('click', function () {
-          mainImage.src = thumbnail.getAttribute('data-image');
-          currentIndex = index; // تحديث المؤشر للصورة المختارة
+          changeImage(index, "right");
         });
       });
 
-      // عندما يتم الضغط على السهم الأيمن
       arrowRight.addEventListener('click', function () {
-        currentIndex++;
-        if (currentIndex >= thumbnails.length) {
-          mainImage.src = "images/inventory1-1.jpg"; // العودة إلى الصورة الأصلية
-          currentIndex = -1; // إعادة تعيين المؤشر إلى ما قبل الصورة الأولى
-        } else {
-          mainImage.src = thumbnails[currentIndex].getAttribute('data-image');
-        }
+        changeImage(currentIndex + 1, "right");
       });
 
-      // عندما يتم الضغط على السهم الأيسر
       arrowLeft.addEventListener('click', function () {
-        currentIndex--;
-        if (currentIndex < 0) {
-          mainImage.src = "images/inventory1-1.jpg"; // العودة إلى الصورة الأصلية
-          currentIndex = -1; // إعادة تعيين المؤشر إلى ما قبل الصورة الأولى
-        } else {
-          mainImage.src = thumbnails[currentIndex].getAttribute('data-image');
-        }
+        changeImage(currentIndex - 1, "left");
       });
     });
 

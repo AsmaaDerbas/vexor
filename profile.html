@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="header restpages">
+    <div class="logo">
+      <img src="icons/Logo-black.svg" alt="Logo">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="dealers.html">Dealers</a></li>
+        <li><a href="compare.html">Compare</a></li>
+      </ul>
+    </nav>
+    <div class="header-buttons">
+      <div class="lang-switch">
+
+        <button class="lang-btn">
+          <img src="icons/iconoir_language 12.svg" alt="Dropdown Icon" class="dropdown-icon">
+          En
+
+        </button>
+        <ul class="lang-dropdown">
+          <li data-lang="en">English</li>
+          <li data-lang="ar">Arabic</li>
+        </ul>
+      </div>
+      <a href="login.html" class="login-btn">
+        <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
+        Login
+      </a>
+      <a href="sell my car.html" class="sell-car">Sell My Car</a>
+    </div>
+  </header>
+  <div class="main-container">
+
+    <div class="container-profile">
+        <div class="profile">
+            <div class="profile-image">
+                <img id="profile-pic" src="images/pp.png" alt="Profile Image">
+                <label for="file-input" class="edit-icon">
+                    <img src="" alt="Edit">
+                </label>
+                <input type="file" id="file-input" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <h2>Asmaa Dirbas</h2>
+        </div>
+        
+        <form>
+            <!-- Row 1: Shop Name and Shop Email -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="shop-name">First Name </label>
+                <div class="input-with-icon">
+                  <input type="text" id="shop-name" placeholder="Enter first name">
+                  <img src="icons/star_svgrepo.com.svg" alt="Shop Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="shop-email">Last Name </label>
+                <div class="input-with-icon">
+                  <input type="email" id="shop-email" placeholder="Enter last name">
+                  <img src="star_svgrepo.com.svg" alt="Email Icon" class="icon">
+                </div>
+              </div>
+            </div>
+    
+            <!-- Row 2: Country and City -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="country">Email</label>
+                <div class="input-with-icon">
+                  <input type="email" id="country" placeholder="example@come">
+                  <img src="icons/star_svgrepo.com.svg" alt="Country Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+                <label for="whatsapp-number">WhatsApp Number</label>
+                <div class="input-with-icon">
+                    <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                    <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                    <img src="icons/whatsapp.png" alt="WhatsApp Icon" class="icon">
+                </div>
+              </div>
+            </div>
+    
+    
+            <!-- Row 3: Phone Number and WhatsApp Phone Number -->
+            <div class="form-row shop-info">
+                <div class="form-group shop-info">
+                    <div class="custom-field">
+                        <label for="make">Gender</label>
+                        <div class="custom-dropdown">
+                          <div class="dropdown-header" onclick="toggleDropdown(this)">Gender</div>
+                          <ul class="dropdown-options">
+                            <li onclick="selectOption(this)">Male</li>
+                            <li onclick="selectOption(this)">Female</li>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+              <div class="form-group shop-info">
+                <label for="dob">Date of Birth</label>
+                <div class="input-with-icon">
+                    <img src="icons/plus.png" alt="Calendar Icon" class="icon-left" onclick="openDatePicker()"> <!-- أيقونة مخصصة -->
+                    <input type="date" id="dob" class="custom-date" placeholder="Select Date">
+                </div>
+              </div>
+            </div>
+    
+            <!-- Row 4: Address and Website -->
+            <div class="form-row shop-info">
+              <div class="form-group shop-info">
+                <label for="whatsapp-number">Country </label>
+                <div class="input-with-icon">
+                    <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                    <input type="text" id="whatsapp-number" placeholder="United Arab Emirates" style="padding:10px 40px 10px 40px; width: 83%;">
+                    <img src="icons/whatsapp.png" alt="WhatsApp Icon" class="icon">
+                </div>
+              </div>
+              <div class="form-group shop-info">
+               <div class="custom-field">
+                        <label for="make">City</label>
+                        <div class="custom-dropdown">
+                          <div class="dropdown-header" onclick="toggleDropdown(this)">Select City</div>
+                          <ul class="dropdown-options">
+                            <li onclick="selectOption(this)">Male</li>
+                            <li onclick="selectOption(this)">Female</li>
+                          </ul>
+                        </div>
+                      </div>
+              </div>
+            </div>
+    
+            <div class="buttons-profile">
+                <button class="deactivate">Deactivate Account</button>
+                <button class="save">Save</button>
+            </div>
+          
+    
+          </form>
+    </div>
+
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- القسم الأول: شعار + نص -->
+      <div class="footer-section logo-section">
+        <img src="icons/Logo-white.svg" alt="Logo" class="footer-logo">
+        <p class="footer-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+      </div>
+
+      <!-- القسم الثاني: قائمة كلمات -->
+      <div class="footer-section links-section">
+        <h4>About Us</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Terms Of Use</a></li>
+        </ul>
+      </div>
+
+      <!-- القسم الثالث: قائمة كلمات -->
+      <div class="footer-section links-section">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#">Sell Your Car</a></li>
+          <li><a href="#">Buy a car</a></li>
+          <li><a href="#">Find a Dealer</a></li>
+        </ul>
+      </div>
+
+      <!-- القسم الرابع: عنوان + زرين -->
+      <div class="footer-section buttons-section">
+        <h4>Get Our Mopile App</h4>
+        <div class="store-buttons-footer">
+          <button class="store-btn-footer">
+            <img src="icons/app-store 2.svg" alt="Apple Icon" class="store-icon">
+            <div class="store-text-footer">
+              <span class="small-text">Download on</span>
+              <span class="large-text">App Store</span>
+            </div>
+          </button>
+
+          <button class="store-btn-footer">
+            <img src="icons/google-play (1) 1.svg" alt="Google Play Icon" class="store-icon">
+            <div class="store-text-footer">
+              <span class="small-text">Download on</span>
+              <span class="large-text">Google Play</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-line"></div>
+      <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
+    </div>
+  </footer>
+
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>

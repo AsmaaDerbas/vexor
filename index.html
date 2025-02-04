@@ -66,54 +66,66 @@
       <div class="custom-field">
         <label for="model">Make</label>
         <div class="custom-dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Make</div>
-          <ul class="dropdown-options">
-            <li onclick="selectOption(this)">Q7</li>
-            <li onclick="selectOption(this)">Q8</li>
-            <li onclick="selectOption(this)">X5</li>
-          </ul>
+            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)" data-default-text="Select Make">Select Make</div>
+            <ul class="dropdown-options">
+                <li onclick="selectOption(this)">Q7</li>
+                <li onclick="selectOption(this)">Q8</li>
+                <li onclick="selectOption(this)">X5</li>
+                <li onclick="selectOption(this)">A4</li>
+                <li onclick="selectOption(this)">A6</li>
+                <li onclick="selectOption(this)">X3</li>
+            </ul>
         </div>
-      </div>
+    </div>
+    
 
       <!-- الحقل الثالث: فلتر -->
       <div class="custom-field">
-        <label for="year">Transmission</label>
+        <label for="model">Transmission</label>
         <div class="custom-dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Transmission</div>
-          <ul class="dropdown-options">
-            <li onclick="selectOption(this)">2021</li>
-            <li onclick="selectOption(this)">2022</li>
-            <li onclick="selectOption(this)">2023</li>
-          </ul>
+            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)"   data-default-text="Select Transmission">Select Transmission</div>
+            <ul class="dropdown-options">
+                <li onclick="selectOption(this)">Q7</li>
+                <li onclick="selectOption(this)">Q8</li>
+                <li onclick="selectOption(this)">X5</li>
+                <li onclick="selectOption(this)">A4</li>
+                <li onclick="selectOption(this)">A6</li>
+                <li onclick="selectOption(this)">X3</li>
+            </ul>
         </div>
-      </div>
+    </div>
+    
 
       <!-- الحقل الرابع: فلتر -->
       <div class="custom-field">
-        <label for="price">Price</label>
+        <label for="model">Price</label>
         <div class="custom-dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Price</div>
-          <ul class="dropdown-options">
-            <li onclick="selectOption(this)">$500 to $1,000</li>
-            <li onclick="selectOption(this)">$1,000 to $2,000</li>
-            <li onclick="selectOption(this)">$2,000 to $5,000</li>
-          </ul>
+            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)" data-default-text="Select Price">Select Price</div>
+            <ul class="dropdown-options">
+                <li onclick="selectOption(this)">Q7</li>
+                <li onclick="selectOption(this)">Q8</li>
+                <li onclick="selectOption(this)">X5</li>
+                <li onclick="selectOption(this)">A4</li>
+                <li onclick="selectOption(this)">A6</li>
+                <li onclick="selectOption(this)">X3</li>
+            </ul>
         </div>
-      </div>
-
+    </div>
       <!-- الحقل الخامس: إدخال نص -->
       <div class="custom-field">
-        <label for="price">Color</label>
+        <label for="model">Color</label>
         <div class="custom-dropdown">
-          <div class="dropdown-header" onclick="toggleDropdown(this)">Select Color</div>
-          <ul class="dropdown-options">
-            <li onclick="selectOption(this)">$500 to $1,000</li>
-            <li onclick="selectOption(this)">$1,000 to $2,000</li>
-            <li onclick="selectOption(this)">$2,000 to $5,000</li>
-          </ul>
+            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)" data-default-text="Select Color">Select Color</div>
+            <ul class="dropdown-options">
+                <li onclick="selectOption(this)">Q7</li>
+                <li onclick="selectOption(this)">Q8</li>
+                <li onclick="selectOption(this)">X5</li>
+                <li onclick="selectOption(this)">A4</li>
+                <li onclick="selectOption(this)">A6</li>
+                <li onclick="selectOption(this)">X3</li>
+            </ul>
         </div>
-      </div>
-
+    </div>
       <!-- زر البحث -->
       <button class="search-btn">Search</button>
     </div>
@@ -177,10 +189,10 @@
 
         <div class="image-container">
 
-          <div class="arrow-icon arrow-left">
+          <div class="arrow-icon arrow-left" >
             <img src="icons/chevron-left.svg" alt="Left Arrow" />
           </div>
-          <div class="arrow-icon arrow-right">
+          <div class="arrow-icon arrow-right" >
             <img src="icons/chevron-right.svg" alt="Right Arrow" />
           </div>
 
@@ -192,10 +204,19 @@
               <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
             </a>
           </div>
+          <div class="slider-wrapper">
+          <div class="slider">
+
+          
+
+
           <img src="images/car.png" class="car-image active" alt="Car 1">
           <img src="images/car2.png" class="car-image" alt="Car 2">
           <img src="images/car3.png" class="car-image" alt="Car 3">
 
+          
+          </div>
+          </div>
           <div class="image-dots">
             <span class="dot active"></span>
             <span class="dot"></span>
@@ -257,9 +278,19 @@
               <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
             </a>
           </div>
-          <img src="images/car.png" class="car-image active" alt="Car 1">
-          <img src="images/car2.png" class="car-image" alt="Car 2">
-          <img src="images/car3.png" class="car-image" alt="Car 3">
+          <div class="slider-wrapper">
+            <div class="slider">
+  
+            
+  
+  
+            <img src="images/car.png" class="car-image active" alt="Car 1">
+            <img src="images/car2.png" class="car-image" alt="Car 2">
+            <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+            
+            </div>
+            </div>
 
           <div class="image-dots">
             <span class="dot active"></span>
@@ -322,10 +353,19 @@
               <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
             </a>
           </div>
-          <img src="images/car.png" class="car-image active" alt="Car 1">
-          <img src="images/car2.png" class="car-image" alt="Car 2">
-          <img src="images/car3.png" class="car-image" alt="Car 3">
-
+          <div class="slider-wrapper">
+            <div class="slider">
+  
+            
+  
+  
+            <img src="images/car.png" class="car-image active" alt="Car 1">
+            <img src="images/car2.png" class="car-image" alt="Car 2">
+            <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+            
+            </div>
+            </div>
           <div class="image-dots">
             <span class="dot active"></span>
             <span class="dot"></span>
@@ -387,9 +427,19 @@
               <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
             </a>
           </div>
-          <img src="images/car.png" class="car-image active" alt="Car 1">
-          <img src="images/car2.png" class="car-image" alt="Car 2">
-          <img src="images/car3.png" class="car-image" alt="Car 3">
+          <div class="slider-wrapper">
+            <div class="slider">
+  
+            
+  
+  
+            <img src="images/car.png" class="car-image active" alt="Car 1">
+            <img src="images/car2.png" class="car-image" alt="Car 2">
+            <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+            
+            </div>
+            </div>
 
           <div class="image-dots">
             <span class="dot active"></span>

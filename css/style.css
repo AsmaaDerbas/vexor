@@ -68,9 +68,6 @@ ul {
   color: #fff;
 }
 
-.header.restpages .navbar ul li a:hover {
-  color: #fff;
-}
 
 .navbar a.active {
   background-color: #A80000;
@@ -81,14 +78,7 @@ ul {
   border-radius: 8px;
 }
 
-.navbar ul li a:hover {
-  background-color: #A80000;
-  /* لون الخلفية */
-  color: #fff;
-  /* لون النص */
-  padding: 8px 12px;
-  border-radius: 8px;
-}
+
 
 .header-buttons button {
   display: flex;
@@ -283,7 +273,7 @@ ul {
   display: flex;
   flex-direction: column;
   /* align-items: flex-start; */
-  gap: 5px;
+  gap: 0px;
   flex: 1;
 }
 
@@ -309,7 +299,7 @@ ul {
 }
 
 .dropdown-header {
-  padding: 10px;
+  padding: 6px 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
@@ -328,8 +318,22 @@ ul {
 }
 
 .dropdown-header:hover {
-  border-color: #101820;
+  border-color: #ddd;
 }
+
+.dropdown-header:focus {
+  outline: none;
+}
+
+.dropdown-header[contenteditable="true"]:empty:before {
+  content: "Search";
+  color: #7a7a7a;
+}
+
+/* .dropdown-header.empty::before {
+  content: "Select Make";
+  color: #7a7a7a;
+} */
 
 .dropdown-options {
   list-style: none;
@@ -344,6 +348,46 @@ ul {
   border-radius: 8px;
   background-color: #fff;
   z-index: 10;
+  max-height: 200px;
+  /* يمكنك تعديل هذا الرقم */
+  overflow-y: auto;
+
+  /* 🔹 تخصيص شريط التمرير */
+  scrollbar-width: thin;
+  /* لجعل الشريط رفيعًا */
+  scrollbar-color: #d9d9d9 transparent;
+  /* لون المقبض والخلفية */
+}
+
+/* 🔹 تخصيص شريط التمرير في متصفحات WebKit (Chrome, Edge, Safari) */
+.dropdown-options::-webkit-scrollbar {
+  width: 6px;
+  /* شريط رفيع */
+}
+
+/* 🔹 إخفاء الأسهم العلوية والسفلية */
+.dropdown-options::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* 🔹 تخصيص مسار التمرير */
+.dropdown-options::-webkit-scrollbar-track {
+  background: transparent;
+  /* خلفية شفافة */
+}
+
+/* 🔹 تخصيص مقبض التمرير */
+.dropdown-options::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  /* لون المقبض */
+  border-radius: 6px;
+  /* زوايا ناعمة */
+}
+
+/* 🔹 تحسين المقبض عند التفاعل */
+.dropdown-options::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+  /* يصبح أغمق عند التمرير */
 }
 
 .dropdown-options li {
@@ -425,25 +469,7 @@ ul {
   height: 16px;
 }
 
-/* .dropdown-list {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    border-top: 1px solid #ccc;
-    text-align: left;
-  }
-  
-  .dropdown-list li {
-    padding: 10px;
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer;
-  }
-  
-  .dropdown-list li:hover {
-    background-color: #f9f9f9;
-  } */
+
 .dropdown-btn.open {
   color: #b00;
   /* لون النص عند الفتح */
@@ -592,19 +618,6 @@ ul {
   position: relative;
 }
 
-/* .car-card.cars{
-  display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    border: 1.5px solid rgb(174, 174, 174);
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: white;
-    padding: 0;
-    height: auto; 
-    padding-bottom: 8px;
-    position: relative;
-} */
 
 
 .image-container {
@@ -613,16 +626,28 @@ ul {
   overflow: hidden;
 }
 
+
 .image-container .car-image {
   width: 100%;
   height: auto;
-  display: none;
+  /* display: none; */
+  flex-shrink: 0;
+  transition: transform 0.3s ease-in-out;
   /* إخفاء جميع الصور افتراضيًا */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   position: relative;
+  
+}
+.slider-wrapper {
+  overflow: hidden;
 }
 
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
 
 
 .image-container .car-image.active {
@@ -2483,11 +2508,40 @@ ul {
 .input-with-icon select {
   width: 90%;
   padding: 10px 40px 10px 10px;
-  /* Adjust for the icon */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 14px;
+  appearance: none;
+  /* إخفاء أيقونة التقويم الافتراضية */
+  -webkit-appearance: none;
+  /* دعم لمتصفحات WebKit */
+  -moz-appearance: none;
+  /* دعم لمتصفحات Firefox */
+  direction: ltr;
+  /* يضمن بقاء التنسيق من اليسار إلى اليمين */
+  text-align: left;
 }
+
+/* لإخفاء أيقونة التقويم الافتراضية داخل الحقل */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+.input-with-icon .icon-left {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.input-with-icon input:focus {
+  border: 0.7px #101820;
+}
+
 
 .input-with-icon .flag {
   position: absolute;
@@ -3326,6 +3380,37 @@ textarea {
   border-radius: 0;
 }
 
+#main-image {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* الصورة الحالية تتحرك لليسار */
+.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* الصورة الجديدة تأتي من اليمين */
+.slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 .thumbnails {
   display: flex;
   gap: 2px;
@@ -3618,10 +3703,10 @@ textarea {
   border: 1px solid #bebebe;
   border-radius: 8px;
   padding: 16px;
-  background-color:transparent;
+  background-color: transparent;
   margin: 90px 40px 90px 40px;
   width: 100%;
-  
+
 }
 
 .billing-history h3 {
@@ -3674,6 +3759,91 @@ textarea {
 
 .download-link:hover {
   text-decoration: underline;
+}
+
+.container-profile {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1000px;
+  padding: 20px;
+  margin-top: 120px;
+  margin-bottom: 40px;
+}
+
+.profile {
+  text-align: center;
+}
+
+.profile-image {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  /* حجم الصورة */
+  height: 120px;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* جعل الصورة دائرية */
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+/* أيقونة التعديل */
+.edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.edit-icon img {
+  width: 16px;
+  height: 16px;
+}
+
+/* إخفاء input الأصلي */
+#file-input {
+  display: none;
+}
+
+
+.buttons-profile {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.deactivate {
+  background: #A80000;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.save {
+  background: #A80000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 
