@@ -111,66 +111,55 @@ window.addEventListener('click', function (e) {
 //   });
 // });
 
-let currentSlide = 0;
-const slides = document.querySelectorAll(".car-image");
-const slider = document.querySelector(".slider");
-const dots = document.querySelectorAll(".dot");
-const totalSlides = slides.length;
+document.querySelectorAll(".image-container").forEach((card) => {
+  let currentSlide = 0;
+  const slides = card.querySelectorAll(".slider > img.car-image");
+  const totalSlides = slides.length;
+  const slider = card.querySelector(".slider");
+  const dots = card.querySelectorAll(".dot");
+  const arrowLeft = card.querySelector(".arrow-left");
+  const arrowRight = card.querySelector(".arrow-right");
 
-function updateSlide() {
-  slider.style.transition = "transform 0.5s ease-in-out";
-  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+  function updateSlide() {
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentSlide);
-  });
-}
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === currentSlide);
+    });
 
-function nextSlide() {
-  if (currentSlide === totalSlides - 1) {
-    slider.style.transition = "none";
-    slider.style.transform = `translateX(0%)`;
-    currentSlide = 0;
-    setTimeout(() => {
-      slider.style.transition = "transform 0.5s ease-in-out";
-      updateSlide();
-    }, 50);
-  } else {
-    currentSlide++;
-    updateSlide();
+    toggleArrows(); // تأكد من استدعاء toggleArrows بعد تحديث الشريحة
   }
-}
 
-function prevSlide() {
-  if (currentSlide === 0) {
-    slider.style.transition = "none";
-    slider.style.transform = `translateX(-${(totalSlides - 1) * 100}%)`;
-    currentSlide = totalSlides - 1;
-    setTimeout(() => {
-      slider.style.transition = "transform 0.5s ease-in-out";
-      updateSlide();
-    }, 50);
-  } else {
-    currentSlide--;
-    updateSlide();
+  function toggleArrows() {
+    // تعطيل الزر بدلاً من إخفائه تمامًا
+    arrowLeft.style.opacity = currentSlide === 0 ? "0.5" : "1";
+    arrowRight.style.opacity = currentSlide === totalSlides - 1 ? "0.5" : "1";
+
+    // تعطيل النقر على الأسهم عند الحاجة
+    arrowLeft.style.pointerEvents = currentSlide === 0 ? "none" : "auto";
+    arrowRight.style.pointerEvents = currentSlide === totalSlides - 1 ? "none" : "auto";
   }
-}
 
-function goToSlide(index) {
-  currentSlide = index;
-  updateSlide();
-}
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlide();
+    }
+  }
 
-// ربط الأزرار بالوظائف
-document.querySelector(".arrow-left").addEventListener("click", prevSlide);
-document.querySelector(".arrow-right").addEventListener("click", nextSlide);
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => goToSlide(index));
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlide();
+    }
+  }
+
+  arrowRight.addEventListener("click", nextSlide);
+  arrowLeft.addEventListener("click", prevSlide);
+
+  toggleArrows(); // تحديث الحالة الأولية للأزرار
 });
-
-// تشغيل أول صورة عند تحميل الصفحة
-updateSlide();
-
 
 document.querySelectorAll('.switch-option').forEach((option) => {
   option.addEventListener('click', function () {
@@ -294,6 +283,18 @@ function clearPlaceholder(header) {
     header.textContent = "";
     header.classList.remove("empty");
   }
+  if (header.textContent === "Select Emirate") {
+    header.textContent = "";
+    header.classList.remove("empty");
+  }
+  if (header.textContent === "Select Model") {
+    header.textContent = "";
+    header.classList.remove("empty");
+  }
+  if (header.textContent === "Select Year") {
+    header.textContent = "";
+    header.classList.remove("empty");
+  }
 }
 
 function restorePlaceholder(header) {
@@ -355,3 +356,7 @@ function previewImage(event) {
 
   reader.readAsDataURL(input.files[0]);
 }
+
+
+
+

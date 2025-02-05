@@ -430,7 +430,8 @@
                     <label for="make">Country</label>
                     <div class="custom-dropdown">
                       <div class="dropdown-header" onclick="toggleDropdown(this)"
-                        style="display: flex; align-items: center;"><img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag"
+                        style="display: flex; align-items: center;"><img
+                          src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag"
                           style="width: 20px; margin-right: 10px; ">United Arab Emirates</div>
                       <img src="icons/star_svgrepo.com.svg" alt="Country Icon" class="icon">
                       <ul class="dropdown-options">
@@ -718,9 +719,10 @@
             deleteBtn.textContent = "×";
             deleteBtn.onclick = function () {
               imageWrapper.remove();
-              if (!container.hasChildNodes()) {
+              if (container.children.length === 0) {
                 uploadBox.style.display = "flex";
                 addMoreBox.style.display = "none";
+
               }
             };
 
@@ -741,6 +743,59 @@
         });
       }
     });
+    // السماح بترتيب الصور عبر السحب والإفلات
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".uploaded-images-container");
+
+  let draggedItem = null;
+
+  container.addEventListener("dragstart", function (e) {
+    if (e.target.classList.contains("image-wrapper")) {
+      draggedItem = e.target;
+      setTimeout(() => (e.target.style.opacity = "0.5"), 0);
+    }
+  });
+
+  container.addEventListener("dragend", function (e) {
+    setTimeout(() => (e.target.style.opacity = "1"), 0);
+    draggedItem = null;
+
+    // إعادة تعيين Main بعد السحب
+    updateMainImage();
+  });
+
+  container.addEventListener("dragover", function (e) {
+    e.preventDefault();
+  });
+
+  container.addEventListener("drop", function (e) {
+    e.preventDefault();
+    if (e.target.classList.contains("image-wrapper") && draggedItem !== e.target) {
+      let children = [...container.children];
+      let draggedIndex = children.indexOf(draggedItem);
+      let targetIndex = children.indexOf(e.target);
+
+      if (draggedIndex < targetIndex) {
+        container.insertBefore(draggedItem, e.target.nextSibling);
+      } else {
+        container.insertBefore(draggedItem, e.target);
+      }
+
+      updateMainImage();
+    }
+  });
+
+  function updateMainImage() {
+    document.querySelectorAll(".image-wrapper").forEach((wrapper, index) => {
+      wrapper.classList.remove("main");
+      if (index === 0) {
+        wrapper.classList.add("main");
+      }
+    });
+  }
+});
+
+
 
 
   </script>

@@ -347,7 +347,7 @@ ul {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff;
-  z-index: 10;
+  z-index: 10000;
   max-height: 200px;
   /* يمكنك تعديل هذا الرقم */
   overflow-y: auto;
@@ -665,7 +665,7 @@ ul {
   width: 28px;
   /* حجم الدائرة */
   height: 28px;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   /* لجعلها دائرية */
   display: flex;
@@ -906,17 +906,16 @@ ul {
 .car-actions span {
   display: inline-block;
   /* لضمان ظهور العناصر كأزرار */
-  padding: 4px 12px;
+  padding: 4px 16px;
   /* مسافة داخلية */
   background-color: black;
   /* لون الخلفية أسود */
   color: white;
   /* لون النص أبيض */
-  border-radius: 24px;
+  border-radius: 18px;
   /* زوايا دائرية */
   font-size: 0.9em;
   /* حجم النص */
-  cursor: pointer;
   /* تغيير المؤشر عند التمرير */
   transition: background-color 0.3s ease;
   /* تأثير عند التفاعل */
@@ -2047,8 +2046,8 @@ ul {
 }
 
 .Latest-Ads-section {
-  margin-left: 64px;
-  margin-right: 64px;
+  margin-left: 40px;
+  margin-right: 40px;
   padding: 50px 0;
   box-sizing: border-box;
 }
@@ -3845,6 +3844,8 @@ textarea {
   border-radius: 8px;
   cursor: pointer;
 }
+
+
 
 
 /* @media (max-width: 768px) {

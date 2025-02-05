@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
+ 
 </head>
 
 <body>
@@ -64,16 +64,20 @@
 
       <!-- الحقل الثاني: فلتر -->
       <div class="custom-field">
-        <label for="model">Make</label>
+        <label for="Make">Make</label>
         <div class="custom-dropdown">
             <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)" data-default-text="Select Make">Select Make</div>
             <ul class="dropdown-options">
-                <li onclick="selectOption(this)">Q7</li>
-                <li onclick="selectOption(this)">Q8</li>
-                <li onclick="selectOption(this)">X5</li>
-                <li onclick="selectOption(this)">A4</li>
-                <li onclick="selectOption(this)">A6</li>
-                <li onclick="selectOption(this)">X3</li>
+              <li onclick="selectOption(this)">Toyota</li>
+              <li onclick="selectOption(this)">Honda</li>
+              <li onclick="selectOption(this)">Ford</li>
+              <li onclick="selectOption(this)">Chevrolet</li>
+              <li onclick="selectOption(this)">Nissan</li>
+              <li onclick="selectOption(this)">BMW</li>
+              <li onclick="selectOption(this)">Mercedes-Benz</li>
+              <li onclick="selectOption(this)">Audi</li>
+              <li onclick="selectOption(this)">Tesla</li>
+              <li onclick="selectOption(this)">Volkswagen</li>
             </ul>
         </div>
     </div>
@@ -81,16 +85,11 @@
 
       <!-- الحقل الثالث: فلتر -->
       <div class="custom-field">
-        <label for="model">Transmission</label>
+        <label for="model">Model</label>
         <div class="custom-dropdown">
-            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)"   data-default-text="Select Transmission">Select Transmission</div>
+            <div class="dropdown-header" contenteditable="true" onclick="showDropdown(this)" onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)"   data-default-text="Select Model">Select Model</div>
             <ul class="dropdown-options">
-                <li onclick="selectOption(this)">Q7</li>
-                <li onclick="selectOption(this)">Q8</li>
-                <li onclick="selectOption(this)">X5</li>
-                <li onclick="selectOption(this)">A4</li>
-                <li onclick="selectOption(this)">A6</li>
-                <li onclick="selectOption(this)">X3</li>
+
             </ul>
         </div>
     </div>
@@ -206,15 +205,9 @@
           </div>
           <div class="slider-wrapper">
           <div class="slider">
-
-          
-
-
           <img src="images/car.png" class="car-image active" alt="Car 1">
           <img src="images/car2.png" class="car-image" alt="Car 2">
           <img src="images/car3.png" class="car-image" alt="Car 3">
-
-          
           </div>
           </div>
           <div class="image-dots">
