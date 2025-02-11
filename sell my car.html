@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -18,6 +19,21 @@
   <header class="header restpages">
     <div class="logo">
       <img src="icons/Logo-black.svg" alt="Logo">
+      <div class="menu-icon-mobile">
+        <img src="icons/menu-icon.svg" alt="Menu Icon">
+      </div>
+
+      <div class="sidebar">
+        <button class="close-btn">&times;</button>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="sell my car.html" class="sell-car">Sell My Car</a></li>
+        </ul>
+      </div>
     </div>
     <nav class="navbar">
       <ul>
@@ -148,7 +164,7 @@
                 <input type="checkbox" id="is-insured" />
                 <label for="is-insured">Is insured?</label>
               </div>
-              <div class="form-row">
+              <div class="form-row btn">
                 <button type="button" class="next-btn" onclick="goToNextTab()">Next</button>
               </div>
             </form>
@@ -357,8 +373,7 @@
               <label for="extras">Extras</label>
               <div class="extras" style="margin-top: 5px;">
                 <button type="button" class="spec-btn" data-spec="Air Conditioning">Air Conditioning</button>
-                <button type="button" class="spec-btn" data-spec="Alarm Anti-Theft System">Alarm Anti-Theft
-                  System</button>
+                <button type="button" class="spec-btn" data-spec="Alarm Anti-Theft System">Alarm Anti-Theft System</button>
                 <button type="button" class="spec-btn" data-spec="AM/FM Radio">AM/FM Radio</button>
                 <button type="button" class="spec-btn" data-spec="AUX Audio In">AUX Audio In</button>
                 <button type="button" class="spec-btn" data-spec="Bluetooth System">Bluetooth System</button>
@@ -416,7 +431,7 @@
                 <button type="button" class="spec-btn" data-spec="Side Airbags">Side Airbags</button>
                 <button type="button" class="spec-btn" data-spec="Tiptronic Gears">Tiptronic Gears</button>
               </div>
-              <div class="form-row">
+              <div class="form-row btn">
                 <button type="button" class="back-btn" onclick="goToPreviousTab()">Back</button>
                 <button type="button" class="next-btn" onclick="goToNextTab()">Next</button>
               </div>
@@ -467,7 +482,7 @@
                   src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed">
                 </iframe>
               </div>
-              <div class="form-row">
+              <div class="form-row btn">
                 <button type="button" class="back-btn" onclick="goToPreviousTab()">Back</button>
                 <button type="button" class="next-btn" onclick="goToNextTab()">Next</button>
               </div>
@@ -506,7 +521,7 @@
             </div>
 
 
-            <div class="form-row">
+            <div class="form-row btn">
               <button type="button" class="back-btn" onclick="goToPreviousTab()">Back</button>
               <button type="button" class="next-btn" onclick="goToNextTab()">Next</button>
             </div>
@@ -516,25 +531,24 @@
             <div class="feature-ad">
               <h4>Why Feature Your Ad?</h4>
               <ul class="feature-list">
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Increase ad visibility"> Increase ad visibility</li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Highlight your ad"> Highlight your ad</li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Reach more buyers"> Reach more buyers</li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Increase chances of selling"> Increase your chances of
+                <li><img src="icons/eye-solid 1.svg" alt="Increase ad visibility"> Increase ad visibility</li>
+                <li><img src="icons/star-solid 1.png" alt="Highlight your ad"> Highlight your ad</li>
+                <li><img src="icons/arrow-trend-up-solid 1.png" alt="Reach more buyers"> Reach more buyers</li>
+                <li><img src="icons/$.svg" alt="Increase chances of selling"> Increase your chances of
                   selling your car faster</li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Featured on homepage"> Get featured on the homepage
+                <li><img src="icons/house-solid 1.svg" alt="Featured on homepage"> Get featured on the homepage
                 </li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Attract serious buyers"> Attract serious buyers</li>
-                <li><img src="icons/star_svgrepo.com_1.png" alt="Only 100 AED more"> It’s only AED 100 more</li>
+                <li><img src="icons/users-solid 1.png" alt="Attract serious buyers"> Attract serious buyers</li>
+                <li><img src="icons/sort-solid 1.png" alt="Only 100 AED more"> It’s only AED 100 more</li>
               </ul>
             </div>
 
             <!-- Cost Section -->
             <div class="ad-cost">
               <span>Your ad's cost to shine:</span>
-              <strong>AED 250</strong>
+              <strong id="ad-price">AED 250</strong>
             </div>
 
-            <!-- Feature Selection -->
             <div class="custom-field" style="margin-bottom: 40px;">
               <label for="make">Do you want to feature this ad?</label>
               <div class="custom-dropdown">
@@ -545,8 +559,7 @@
                 </ul>
               </div>
             </div>
-
-            <div class="form-row">
+            <div class="form-row btn">
               <button type="button" class="back-btn" onclick="goToPreviousTab()">Back</button>
               <form action="waiting for payment.html" method="get">
                 <button type="submit" class="next-btn">Post Ad</button>
@@ -744,56 +757,146 @@
       }
     });
     // السماح بترتيب الصور عبر السحب والإفلات
-document.addEventListener("DOMContentLoaded", function () {
-  const container = document.querySelector(".uploaded-images-container");
+    document.getElementById("file-upload").addEventListener("change", handleFileUpload);
 
-  let draggedItem = null;
+    function handleFileUpload(event) {
+      const files = event.target.files;
+      const container = document.querySelector(".uploaded-images-container");
+      const addMoreBox = document.querySelector(".add-more-box");
+      const uploadBox = document.querySelector(".upload-box");
 
-  container.addEventListener("dragstart", function (e) {
-    if (e.target.classList.contains("image-wrapper")) {
-      draggedItem = e.target;
-      setTimeout(() => (e.target.style.opacity = "0.5"), 0);
-    }
-  });
+      if (files.length > 0) {
+        uploadBox.style.display = "none";
+        addMoreBox.style.display = "flex";
 
-  container.addEventListener("dragend", function (e) {
-    setTimeout(() => (e.target.style.opacity = "1"), 0);
-    draggedItem = null;
+        Array.from(files).forEach((file, index) => {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const existingImage = document.querySelector(`img[src="${e.target.result}"]`);
+            if (!existingImage) { // تحقق من عدم وجود الصورة مسبقًا
+              const imageWrapper = document.createElement("div");
+              imageWrapper.classList.add("image-wrapper");
+              if (container.children.length === 0) imageWrapper.classList.add("main"); // تعيين الصورة الأولى كـ Main افتراضيًا
 
-    // إعادة تعيين Main بعد السحب
-    updateMainImage();
-  });
+              const img = document.createElement("img");
+              img.src = e.target.result;
 
-  container.addEventListener("dragover", function (e) {
-    e.preventDefault();
-  });
+              const mainLabel = document.createElement("div");
+              mainLabel.classList.add("main-label");
+              mainLabel.textContent = "Main";
 
-  container.addEventListener("drop", function (e) {
-    e.preventDefault();
-    if (e.target.classList.contains("image-wrapper") && draggedItem !== e.target) {
-      let children = [...container.children];
-      let draggedIndex = children.indexOf(draggedItem);
-      let targetIndex = children.indexOf(e.target);
+              const deleteBtn = document.createElement("button");
+              deleteBtn.classList.add("delete-btn");
+              deleteBtn.textContent = "×";
+              deleteBtn.onclick = function () {
+                imageWrapper.remove();
+                if (container.children.length === 0) {
+                  uploadBox.style.display = "flex";
+                  addMoreBox.style.display = "none";
+                }
+              };
 
-      if (draggedIndex < targetIndex) {
-        container.insertBefore(draggedItem, e.target.nextSibling);
-      } else {
-        container.insertBefore(draggedItem, e.target);
+              // إضافة حدث لتغيير الصورة الأساسية
+              img.onclick = function () {
+                document.querySelectorAll(".image-wrapper").forEach((wrapper) => {
+                  wrapper.classList.remove("main");
+                });
+                imageWrapper.classList.add("main");
+              };
+
+              imageWrapper.appendChild(img);
+              imageWrapper.appendChild(mainLabel);
+              imageWrapper.appendChild(deleteBtn);
+              container.appendChild(imageWrapper);
+            }
+          };
+          reader.readAsDataURL(file);
+        });
+
+        // تطبيق Sortable.js على الحاوية مرة واحدة فقط
+        if (!container.classList.contains("sortable-initialized")) {
+          new Sortable(container, {
+            animation: 150,
+            ghostClass: 'sortable-ghost',
+            onEnd: function (/**Event*/evt) {
+              // وضع علامة "Main" على الصورة الأولى بعد السحب والإفلات
+              document.querySelectorAll(".image-wrapper").forEach((wrapper, index) => {
+                wrapper.classList.remove("main");
+                if (index === 0) wrapper.classList.add("main");
+              });
+            },
+          });
+          container.classList.add("sortable-initialized");
+        }
       }
-
-      updateMainImage();
     }
-  });
 
-  function updateMainImage() {
-    document.querySelectorAll(".image-wrapper").forEach((wrapper, index) => {
-      wrapper.classList.remove("main");
-      if (index === 0) {
-        wrapper.classList.add("main");
-      }
+    // تغيير السعر بناءً على الاختيار
+    // وظيفة لتبديل ظهور/اختفاء الـ dropdown عند النقر
+    function toggleDropdown(header) {
+      const dropdownList = header.nextElementSibling;
+      dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+    }
+
+ document.addEventListener('DOMContentLoaded', function() {
+    const dropdownBtn = document.querySelector('.dropdown-header');
+    const dropdownList = document.querySelector('.dropdown-options');
+
+    // تحقق إذا كان العنصر موجودًا أولاً
+    if (dropdownBtn && dropdownList) {
+        dropdownBtn.addEventListener('click', () => {
+            dropdownList.style.display = dropdownList.style.display === 'block' ? 'none' : 'block';
+        });
+    }
+
+    // وظيفة لاختيار العنصر
+    function selectOption(option) {
+        const selectedValue = option.textContent;
+        const adPrice = document.querySelector("#ad-price");
+
+        if (selectedValue === "No") {
+            adPrice.textContent = "AED 150";  // تغيير السعر إلى 150 عند اختيار No
+        } else {
+            adPrice.textContent = "AED 250";  // استرجاع السعر إلى 250 عند اختيار Yes
+        }
+
+        // إغلاق الـ dropdown بعد الاختيار
+        const dropdownHeader = option.closest('.custom-dropdown').querySelector('.dropdown-header');
+        dropdownHeader.textContent = selectedValue; // تحديث النص الظاهر في الـ dropdown
+        const dropdownOptions = option.closest('.dropdown-options');
+        dropdownOptions.style.display = 'none';  // إغلاق القائمة بعد الاختيار
+    }
+
+    // إضافة event listener على عناصر القائمة (بعد تحميل الصفحة)
+    document.querySelectorAll('.dropdown-options li').forEach((li) => {
+        li.addEventListener('click', function() {
+            selectOption(this);
+        });
     });
-  }
 });
+function selectOption(option) {
+        const selectedValue = option.textContent;
+        const adPrice = document.querySelector("#ad-price");
+
+        if (selectedValue === "No") {
+            adPrice.textContent = "AED 150";  // تغيير السعر إلى 150 عند اختيار No
+        } else {
+            adPrice.textContent = "AED 250";  // استرجاع السعر إلى 250 عند اختيار Yes
+        }
+
+        // إغلاق الـ dropdown بعد الاختيار
+        const dropdownHeader = option.closest('.custom-dropdown').querySelector('.dropdown-header');
+        dropdownHeader.textContent = selectedValue; // تحديث النص الظاهر في الـ dropdown
+        const dropdownOptions = option.closest('.dropdown-options');
+        dropdownOptions.style.display = 'none';  // إغلاق القائمة بعد الاختيار
+    }
+
+    // إضافة event listener على عناصر القائمة (بعد تحميل الصفحة)
+    document.querySelectorAll('.dropdown-options li').forEach((li) => {
+        li.addEventListener('click', function() {
+            selectOption(this);
+        });
+    });
 
 
 

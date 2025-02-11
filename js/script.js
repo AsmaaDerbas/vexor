@@ -212,22 +212,22 @@ switchOptions.forEach(option => {
 const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownList = document.querySelector('.dropdown-list');
 
-dropdownBtn.addEventListener('click', () => {
-  dropdownList.style.display =
-    dropdownList.style.display === 'block' ? 'none' : 'block';
-});
+// dropdownBtn.addEventListener('click', () => {
+//   dropdownList.style.display =
+//     dropdownList.style.display === 'block' ? 'none' : 'block';
+// });
 
-function selectItem(value) {
-  alert(`You selected: ${value}`);
-  dropdownList.style.display = 'none';
-}
-document.querySelectorAll('.dropdown-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const dropdown = btn.nextElementSibling; // القائمة المنسدلة
-    dropdown.classList.toggle('open');
-    btn.classList.toggle('open'); // إضافة/إزالة class للزر
-  });
-});
+// function selectItem(value) {
+//   alert(`You selected: ${value}`);
+//   dropdownList.style.display = 'none';
+// // }
+// document.querySelectorAll('.dropdown-btn').forEach((btn) => {
+//   btn.addEventListener('click', () => {
+//     const dropdown = btn.nextElementSibling; // القائمة المنسدلة
+//     dropdown.classList.toggle('open');
+//     btn.classList.toggle('open'); // إضافة/إزالة class للزر
+//   });
+// });
 
 
 function openPopup() {
@@ -243,22 +243,22 @@ function openDatePicker() {
   document.getElementById("dob").showPicker(); // فتح التقويم عند الضغط على الأيقونة
 }
 
-document.getElementById("dob").addEventListener("change", function () {
-  let dateInput = this;
-  let dateValue = dateInput.value;
+// document.getElementById("dob").addEventListener("change", function () {
+//   let dateInput = this;
+//   let dateValue = dateInput.value;
 
-  if (dateValue) {
-    let formattedDate = new Date(dateValue).toLocaleDateString("en-GB", {
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit"
-    });
+//   if (dateValue) {
+//     let formattedDate = new Date(dateValue).toLocaleDateString("en-GB", {
+//       year: "numeric",
+//       month: "2-digit",
+//       day: "2-digit"
+//     });
 
-    // تحويل الصيغة إلى yyyy-MM-dd
-    let parts = formattedDate.split("/");
-    dateInput.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
-  }
-});
+//     // تحويل الصيغة إلى yyyy-MM-dd
+//     let parts = formattedDate.split("/");
+//     dateInput.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
+//   }
+// });
 
 function showDropdown(header) {
   let dropdown = header.closest('.custom-dropdown');
@@ -292,6 +292,10 @@ function clearPlaceholder(header) {
     header.classList.remove("empty");
   }
   if (header.textContent === "Select Year") {
+    header.textContent = "";
+    header.classList.remove("empty");
+  }
+  if (header.textContent === "Search History") {
     header.textContent = "";
     header.classList.remove("empty");
   }
@@ -358,5 +362,67 @@ function previewImage(event) {
 }
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header");
+
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+          header.classList.add("scrolled"); // إضافة كلاس عند التمرير
+      } else {
+          header.classList.remove("scrolled"); // إزالة الكلاس عند الرجوع للأعلى
+      }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon-mobile");
+  const sidebar = document.querySelector(".sidebar");
+  const closeBtn = document.querySelector(".close-btn");
+
+  // فتح القائمة عند الضغط على زر القائمة
+  menuIcon.addEventListener("click", function () {
+    sidebar.classList.add("open");
+  });
+
+  // إغلاق القائمة عند الضغط على زر الإغلاق
+  closeBtn.addEventListener("click", function () {
+    sidebar.classList.remove("open");
+  });
+
+  // إغلاق القائمة عند الضغط خارجها
+  document.addEventListener("click", function (event) {
+    if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
+      sidebar.classList.remove("open");
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // عرض الـ Popup
+  const filterIcon = document.querySelector('.filter-icon');
+  const popup = document.querySelector('.popup-mobile');
+  const overlay = document.querySelector(".popup-overlay-mobile");
+  const closeButton = document.querySelector('.popup-mobile .close-btn-mobile');
+
+  if (filterIcon) {
+    filterIcon.addEventListener('click', function() {
+      popup.classList.add('active');
+      overlay.classList.add("active");
+    });
+  }
+
+  if (closeButton) {
+    closeButton.addEventListener('click', function() {
+      popup.classList.remove('active');
+      overlay.classList.remove("active");
+    });
+  }
+});
+
+document.querySelectorAll(".spec-btn").forEach(button => {
+  button.addEventListener("click", function() {
+    this.classList.toggle("selected"); // تبديل الكلاس عند النقر
+  });
+});
 
 

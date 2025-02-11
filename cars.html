@@ -11,11 +11,26 @@
 
 </head>
 
-<body>
+<body style="height: 100%; display: flex; flex-direction: column; min-height: 100vh;">
   <!-- Header -->
   <header class="header restpages">
     <div class="logo">
       <img src="icons/Logo-black.svg" alt="Logo">
+      <div class="menu-icon-mobile">
+        <img src="icons/menu-icon.svg" alt="Menu Icon">
+      </div>
+
+      <div class="sidebar">
+        <button class="close-btn">&times;</button>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="sell my car.html" class="sell-car">Sell My Car</a></li>
+        </ul>
+      </div>
     </div>
     <nav class="navbar">
       <ul>
@@ -45,7 +60,7 @@
       <a href="sell my car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
-  <div class="main-container cars">
+  <div class="main-container cars" style="flex:1">
     <div class="breadcrumb">
       <a class="active" href="#">Home</a> &gt; <a href="#">Ads</a>
     </div>
@@ -429,10 +444,10 @@
         </div>
       </div>
     </div>
+    
 
 
-
-    <div class="Latest-Ads-section">
+    <div class="featured-cars-section">
       <div class="section-header">
         <h2>Latest Ads . <span style="font-size: 16px; font-weight: 500;"> 24 Ads</span></h2>
         <div class="button-container">
@@ -441,15 +456,12 @@
             <div class="dropdown-header" onclick="toggleDropdown(this)"
               style="min-width: 120px; border: solid 1px #a1a1a1; ">Sort By</div>
             <ul class="dropdown-options" style="z-index: 1000;">
-              <li onclick="selectOption(this)">$500 to $1,000</li>
-              <li onclick="selectOption(this)">$1,000 to $2,000</li>
-              <li onclick="selectOption(this)">$2,000 to $5,000</li>
+              <li onclick="selectOption(this)">Low</li>
             </ul>
           </div>
-        </div>
+         </div>
       </div>
       <div class="Ad-cards">
-        <!-- كارد 1 -->
         <div class="Ad-card">
 
           <div class="image-container">
@@ -496,7 +508,7 @@
                 <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
               </p>
             </div>
-            <!-- القسم الأيمن -->
+            
             <div class="car-info-right">
               2 days ago
             </div>
@@ -519,7 +531,7 @@
             <span>GCC</span>
           </div>
         </div>
-        <!-- كارد 2 -->
+    
         <div class="Ad-card">
           <div class="image-container">
 
@@ -565,7 +577,7 @@
                 <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
               </p>
             </div>
-            <!-- القسم الأيمن -->
+         
             <div class="car-info-right">
               2 days ago
             </div>
@@ -588,8 +600,75 @@
             <span>GCC</span>
           </div>
         </div>
-        <!-- كارد 3 -->
-      
+        
+        <div class="Ad-card">
+
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+              <img src="images/car.png" class="car-image active" alt="Car 1">
+              <img src="images/car2.png" class="car-image" alt="Car 2">
+              <img src="images/car3.png" class="car-image" alt="Car 3">
+              </div>
+              </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -16,6 +16,21 @@
   <header class="header restpages">
     <div class="logo">
       <img src="icons/Logo-black.svg" alt="Logo">
+      <div class="menu-icon-mobile">
+        <img src="icons/menu-icon.svg" alt="Menu Icon">
+      </div>
+
+      <div class="sidebar">
+        <button class="close-btn">&times;</button>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="cars.html">Cars</a></li>
+          <li><a href="dealers.html">Dealers</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="sell my car.html" class="sell-car">Sell My Car</a></li>
+        </ul>
+      </div>
     </div>
     <nav class="navbar">
       <ul>
@@ -46,7 +61,7 @@
     </div>
   </header>
 
-  <div class="main-container dealers">
+ 
 
 
 
@@ -365,14 +380,14 @@
             <label for="shop-name">Shop Name <span>*</span></label>
             <div class="input-with-icon">
               <input type="text" id="shop-name" placeholder="Enter Shop Name">
-              <img src="icons/star_svgrepo.com.svg" alt="Shop Icon" class="icon">
+              <img src="icons/house-solid 1.svg" alt="Shop Icon" class="icon">
             </div>
           </div>
           <div class="form-group shop-info">
             <label for="shop-email">Shop Email <span>*</span></label>
             <div class="input-with-icon">
               <input type="email" id="shop-email" placeholder="Enter Shop Email">
-              <img src="star_svgrepo.com.svg" alt="Email Icon" class="icon">
+              <img src="icons/house-solid 1.svg" alt="Email Icon" class="icon">
             </div>
           </div>
         </div>
@@ -380,11 +395,11 @@
         <!-- Row 2: Country and City -->
         <div class="form-row shop-info">
           <div class="form-group shop-info">
-            <label for="country">Country</label>
+            <label for="whatsapp-number">Country </label>
             <div class="input-with-icon">
-              <img src="flags/uae.png" alt="UAE Flag" class="flag">
-              <input type="text" id="country" placeholder="United Arab Emirates">
-              <img src="icons/star_svgrepo.com.svg" alt="Country Icon" class="icon">
+                <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                <input type="text" id="whatsapp-number" placeholder="United Arab Emirates" >
+                <img src="icons/globe-solid 1.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
           <div class="form-group shop-info">
@@ -406,19 +421,19 @@
         <!-- Row 3: Phone Number and WhatsApp Phone Number -->
         <div class="form-row shop-info">
           <div class="form-group shop-info">
-            <label for="phone-number">Phone Number <span>*</span></label>
+            <label for="whatsapp-number">Phone Number<span>*</span></label>
             <div class="input-with-icon">
-              <img src="flags/uae.png" alt="UAE Flag" class="flag">
-              <input type="text" id="phone-number" placeholder="+971">
-              <img src="icons/star_svgrepo.com.svg" alt="Phone Icon" class="icon">
+                <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                <img src="icons/call.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
           <div class="form-group shop-info">
-            <label for="whatsapp-number">WhatsApp Phone Number <span>*</span></label>
+            <label for="whatsapp-number">WhatsApp Phone Number<span>*</span></label>
             <div class="input-with-icon">
-              <img src="flags/uae.png" alt="UAE Flag" class="flag">
-              <input type="text" id="whatsapp-number" placeholder="+971">
-              <img src="icons/whatsapp.png" alt="WhatsApp Icon" class="icon">
+                <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                <img src="icons/square-whatsapp-brands-solid 1.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
         </div>
@@ -429,14 +444,14 @@
             <label for="address">Address <span>*</span></label>
             <div class="input-with-icon">
               <input type="text" id="address" placeholder="Enter Address">
-              <img src="icons/star_svgrepo.com.svg" alt="Address Icon" class="icon">
+              <img src="icons/address-book-solid 1.svg" alt="Address Icon" class="icon">
             </div>
           </div>
           <div class="form-group shop-info">
             <label for="website">Website</label>
             <div class="input-with-icon">
               <input type="url" id="website" placeholder="Enter Website URL">
-              <img src="icons/star_svgrepo.com.svg" alt="Website Icon" class="icon">
+              <img src="icons/address-book-solid 1.svg" alt="Website Icon" class="icon">
             </div>
           </div>
         </div>
@@ -456,7 +471,7 @@
             <div class="logo-upload">
               <label for="logo-upload">
                 <div class="upload-area">
-                  <img src="icons/star_svgrepo.com.svg" alt="Upload Icon" class="upload-icon">
+                  <img src="images/bi_image-fill.png" alt="Upload Icon" class="upload-icon">
                   <span>Select Logo</span>
                   <p>Recommended size: 512 x 512 pixels</p>
                 </div>
@@ -481,7 +496,7 @@
 
 
 
-  </div>
+ 
 
   <footer class="footer">
     <div class="footer-container">

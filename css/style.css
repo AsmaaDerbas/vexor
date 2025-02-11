@@ -1,9 +1,29 @@
+
 body,
 ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Cairo';
+}
+/* إخفاء الـ scrollbar في Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* إخفاء الـ scrollbar في Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* إخفاء الـ scrollbar في IE و Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; 
 }
 
 .header {
@@ -13,7 +33,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0px;
   z-index: 1000;
@@ -25,6 +45,13 @@ ul {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.header.scrolled {
+  margin-top: 0;
+  background-color: white; /* تغيير الخلفية عند التمرير */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 
 
@@ -41,7 +68,9 @@ ul {
   height: 32px;
   max-width: 100%;
 }
-
+.header.scrolled .logo img {
+  content: url("../icons/Logo-black.svg"); /* استبدال الأيقونة */
+}
 .navbar ul {
   display: flex;
   gap: 20px;
@@ -59,12 +88,18 @@ ul {
   font-weight: 500;
   transition: color 0.3s ease;
 }
+.header.scrolled .navbar ul li a {
+  color: #101820; /* اللون الجديد للنص */
+}
 
 .header.restpages .navbar ul li a {
   color: #101820;
 }
 
 .header.restpages .navbar ul li a.active {
+  color: #fff;
+}
+.header.scrolled .navbar ul li a.active {
   color: #fff;
 }
 
@@ -105,9 +140,16 @@ ul {
   color: #101820;
 }
 
+.header.scrolled .header-buttons .lang-switch .lang-btn {
+  color: #101820;
+}
+
 .lang-btn img {
   width: 16px;
   height: 16px;
+}
+.header.scrolled .lang-btn img{
+  content: url("../icons/iconoir_language 12.svg");
 }
 
 
@@ -170,11 +212,15 @@ ul {
 .login-icon {
   margin-right: 8px;
 }
-
+.header.scrolled .header-buttons .login-btn {
+  color: #101820;
+}
 .header.restpages .header-buttons .login-btn {
   color: #101820;
 }
-
+.header.scrolled .header-buttons .login-btn img{
+  content: url("../icons/mynaui_login 12.svg");
+}
 
 .sell-car {
   display: inline-block;
@@ -239,10 +285,7 @@ ul {
   transition: background-color 0.3s ease;
 }
 
-.hero-btn:hover {
-  background-color: #A80000;
-  border: none;
-}
+
 
 /* Search Bar */
 
@@ -266,6 +309,8 @@ ul {
   transform: translateX(-50%);
   width: 90%;
   z-index: 10;
+
+ 
 }
 
 /* تصميم الحقول */
@@ -445,8 +490,8 @@ ul {
   margin-top: 40px;
 }
 
-.dropdown-btn {
-  width: 100%;
+.dropdown-header.dropdown-btn {
+  width: 97.5%;
   border: solid 0.5px #b7b7b7;
   background-color: #ffffff;
   color: #333;
@@ -470,25 +515,26 @@ ul {
 }
 
 
-.dropdown-btn.open {
+.dropdown-header.dropdown-btn.open {
   color: #b00;
   /* لون النص عند الفتح */
   font-weight: bold;
-  border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  border-bottom: none;
 }
 
 /* القائمة */
-.dropdown-list {
-  display: none;
-  list-style: none;
+.dropdown-options.dropdown-list {
+
   padding: 8px 16px;
   background-color: #fff;
   border: 0.5px solid #b7b7b7;
   border-top: none;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   text-align: left;
 }
 
@@ -528,7 +574,7 @@ ul {
 }
 
 .brand-card {
-  width: 260px;
+  width: 100%;
   /* العرض أكبر من الطول */
   height: 180px;
   /* جعل الطول مساوٍ للعرض لضمان تساوي المسافة بين الكاردات */
@@ -577,6 +623,7 @@ ul {
   font-size: 2em;
   font-weight: bold;
   margin: 0;
+  flex-grow: 1;
 }
 
 .featured-cars-section .section-header .view-all-btn {
@@ -1345,11 +1392,7 @@ ul {
   transition: background-color 0.3s;
 }
 
-.cta-button:hover {
-  background-color: #A80000;
-  /* لون عند تمرير الماوس */
-  border: none;
-}
+
 
 /* Section Styling */
 .download-section {
@@ -1439,6 +1482,9 @@ ul {
   background-color: #101820;
   color: #fff;
   padding: 24px 64px;
+  width: 100%;
+  max-width: 100%; /* منع التمدد الزائد */
+  box-sizing: border-box;
 
 }
 
@@ -1449,6 +1495,10 @@ ul {
   /* لمحاذاة الأقسام من الأعلى */
   flex-wrap: wrap;
   gap: 32px;
+  width: 100%;
+  max-width: 100%; /* منع التمدد الزائد */
+  box-sizing: border-box;
+
 }
 
 /* القسم الأول: الشعار والنص */
@@ -1874,9 +1924,7 @@ ul {
 .main-container.cars {
   display: flex;
   flex-direction: column;
-  /* ترتيب العناصر عموديًا */
-  align-items: flex-start;
-  /* محاذاة العناصر إلى جهة اليسار */
+  align-items: stretch; /* جعل العناصر تأخذ العرض بالكامل */
   gap: 8px;
   padding: 16px;
   background-color: #ffffff;
@@ -1893,6 +1941,7 @@ ul {
   font-size: 16px;
   margin-bottom: 0;
 }
+
 
 .breadcrumb a {
   text-decoration: none;
@@ -1928,6 +1977,7 @@ ul {
   /* لون الخلفية */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* ظل خفيف للحاوية */
+  scroll-behavior: smooth; /* تمرير سلس */
 }
 
 .filter-item {
@@ -1961,6 +2011,7 @@ ul {
   display: inline-block;
 }
 
+
 .profile-btn {
   display: flex;
   align-items: center;
@@ -1971,6 +2022,9 @@ ul {
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+.header.scrolled .profile-btn{
+  background-color: #ebebeb;
 }
 
 /* .profile-btn:hover {
@@ -1999,6 +2053,11 @@ ul {
   color: #fcfcfc;
 }
 
+.header.scrolled .profile-name {
+  color: #101820;
+}
+
+
 /* القائمة المنسدلة */
 .dropdown-menu {
   display: none;
@@ -2016,24 +2075,20 @@ ul {
 
 .dropdown-menu a {
   display: flex;
-  /* لجعل النص والأيقونة بجانب بعضهما */
-  align-items: center;
-  display: block;
-  padding: 10px 20px;
+  align-items: center;  /* لضبط المحاذاة العمودية */
+  padding: 10px 15px;
   color: #333;
   text-decoration: none;
   font-size: 16px;
+  white-space: nowrap;  /* يمنع نزول النص إلى سطر جديد */
 }
 
 .menu-icon {
-  width: 20px;
-  /* عرض الأيقونة */
+  width: 20px; 
   height: 20px;
-  /* ارتفاع الأيقونة */
-  margin-right: 10px;
-  /* مسافة بين الأيقونة والنص */
-  object-fit: cover;
-  /* لضمان ملاءمة الصورة */
+  margin-right: 12px;  /* زيادة المسافة بين الأيقونة والنص */
+  object-fit: contain;  /* التأكد من تناسب الصورة */
+  flex-shrink: 0;  /* يمنع تصغير الأيقونة إذا كان النص طويل */
 }
 
 .dropdown-menu a:hover {
@@ -2046,32 +2101,34 @@ ul {
 }
 
 .Latest-Ads-section {
-  margin-left: 40px;
-  margin-right: 40px;
-  padding: 50px 0;
-  box-sizing: border-box;
+  max-width: 1440px;  /* تحديد عرض القسم حتى لا يمتد بشكل زائد */
+  margin: 0 auto; /* توسيط القسم */
+  padding: 20px 40px;
+  overflow: hidden; /* منع أي تمدد غير مرغوب فيه */
+
 }
 
 .My-Ads-section {
-  margin: 0 40px;
-
-  box-sizing: border-box;
+  max-width: 1200px;
+    margin: 0 auto; /* يجعل العنصر في المنتصف */
+    padding: 20px 40px;
 }
 
 
 /* تنسيق العنوان وزر "View All" */
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
+/* .Latest-Ads-section .section-header {
+  width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .section-header h2 {
   font-size: 2em;
   font-weight: bold;
   margin: 0;
-}
+} */
 
 .My-Ads-section .section-header h2 {
   font-size: 24px;
@@ -2083,14 +2140,10 @@ ul {
 /* إعدادات grid للكاردات */
 .Ad-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 كاردات في السطر الواحد */
-  gap: 20px;
-  /* مسافة بين الكاردات */
-  margin: 0 1px;
-  /* إضافة الهامش على اليمين واليسار */
-  justify-content: center;
-  /* جعل البطاقات في المنتصف */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px; 
+  /* max-width: 1000px; 
+  margin: 0 auto;  */
 }
 
 .button-container {
@@ -2114,10 +2167,10 @@ ul {
   min-width: 100px;
 }
 
-.My-Ads-section .Ad-card {
+/* .My-Ads-section .Ad-card {
   min-width: 454px;
 
-}
+} */
 
 
 
@@ -2133,7 +2186,6 @@ ul {
   height: auto;
   padding-bottom: 8px;
   position: relative;
-  min-width: 430px;
 }
 
 .Add-new-Ad {
@@ -2243,10 +2295,13 @@ ul {
   font-size: 12px;
   transition: all 0.3s ease;
 }
-
-.spec-btn:hover {
-  background-color: #f7f7f7;
+.spec-btn.selected{
+  background-color: #A80000;
+  color: #fff;
+  border: none;
 }
+
+
 
 .spec-btn.active {
   background-color: #A80000;
@@ -2388,6 +2443,11 @@ ul {
   vertical-align: top;
   font-weight: 600;
 }
+.price-cell {
+  text-align: left; /* محاذاة لليسار في الـ Desktop */
+  padding-left: 20px; /* إضافة مسافة ليكون بمحاذاة الصورة */
+}
+
 
 .compare-table th {
   font-weight: bold;
@@ -2403,20 +2463,19 @@ ul {
   /* إزالة الخط من آخر صف */
 }
 
-.car-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
+.car-header { 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط الصورة والنص معًا */
+    justify-content: center;
+    gap: 5px; /* مسافة بين الصورة والنص */
+  
 }
 
 .car-header img {
-  width: 100%;
-  /* جعل الصورة بعرض الخانة */
-  height: auto;
-  /* الحفاظ على النسبة الأصلية للصورة */
-  max-height: 150px;
-  /* تحديد ارتفاع مناسب لتجنب الصور الكبيرة جدًا */
-  object-fit: contain;
+  width: 150px; /* ضبط حجم الصورة بشكل ثابت */
+  height: auto; /* الحفاظ على نسبة الأبعاد */
+  object-fit: cover; /* منع التشوه */
   /* لضمان أن الصورة تبقى متناسقة داخل الخلية */
   margin-bottom: 10px;
   border-radius: 8px;
@@ -2442,10 +2501,9 @@ ul {
 
 .plans-section.dealer-account {
   background: white;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  margin-top: 120px;
-  border-radius: 8px;
+  margin-top: 88px;
 }
 
 .delete-btn {
@@ -2478,12 +2536,12 @@ ul {
 
 .form-row.shop-info {
   display: flex;
-  gap: 20px;
-  margin-bottom: 0;
+  flex-wrap: wrap;
+  gap: 10px;
 }
-
 .form-group.shop-info {
-  flex: 1;
+  flex: 1; /* يسمح للحقول بأن تأخذ نفس العرض تلقائيًا */
+  min-width: 250px; /* يضمن عدم تصغير الحقول أكثر من اللازم */
 
 }
 
@@ -2676,16 +2734,22 @@ textarea {
 }
 
 .Add-Listing {
-  min-width: 1312px;
-  margin-bottom: 20px;
+  width: 90%;
+  max-width: 1200px; /* تحديد الحد الأقصى للعرض ليبدو متناسقًا */
+  margin: 0 auto 40px; /* توسيط العنصر وإضافة مسافة من الأسفل */
+  padding: 20px;
 }
 
 .title-add-listing {
-  margin-bottom: 40px;
+  text-align: left; /* توسيط العنوان والوصف */
+  margin-bottom: 30px; /* تقليل المسافة */
 }
 
 .title-add-listing .section-title {
-  margin-bottom: 2px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px; /* جعل المسافة بين العنوان والوصف أصغر */
+  color: #101820;
   /* Adjust this value to make it smaller */
 }
 
@@ -2696,11 +2760,12 @@ textarea {
 
 .form-box.sell-my-car {
   width: 100%;
-  min-width: 1312px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
   background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* التبويبات */
@@ -3819,6 +3884,10 @@ textarea {
   display: none;
 }
 
+.search-bar-mobile{
+  display: none;
+}
+
 
 .buttons-profile {
   grid-column: span 2;
@@ -3845,97 +3914,666 @@ textarea {
   cursor: pointer;
 }
 
+/* ✅ إخفاء القائمة الأساسية على الشاشات الصغيرة */
+/* ✅ إخفاء زر القائمة في الشاشات الكبيرة */
+.menu-icon-mobile {
+  display: none; 
+}
 
-
-
-/* @media (max-width: 768px) {
-  .filter-container {
-    flex-wrap: wrap;
-    gap: 10px;
+/* ✅ عند تصغير الشاشة، يظهر زر القائمة بجانب الشعار */
+@media (max-width: 768px) {
+  .menu-icon-mobile {
+   display: flex;
+   justify-content: center; 
+   align-items: center;
+    position: absolute;
+    right: 25px; 
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 
-  .filter-item {
-    flex: 1 1 45%;
+  .menu-icon-mobile .profile-dropdown{
+    margin-right: 10px;
+  }
+
+  .menu-icon-mobile img {
+    width: 24px;
+    height: 24px;
+  }
+ 
+  /* ✅ إخفاء الروابط العادية */
+  .navbar,
+  .header-buttons {
+    display: none;
+  }
+  .logo img {
+    height: 28px; /* تصغير الشعار */
+    max-width: 100%;
+  }
+  .header.scrolled .menu-icon-mobile img{
+    content: url("../icons/menu-icon.svg");
+  }
+  .dropdown-menu {
+    width: 180px; /* تصغير عرض القائمة */
+  }
+
+  .dropdown-menu a {
+    padding: 8px 12px; /* تقليل التباعد الداخلي */
+    font-size: 14px; /* تصغير حجم الخط */
+  }
+
+  .menu-icon {
+    width: 16px; /* تصغير الأيقونة */
+    height: 16px;
+    margin-right: 8px; /* تقليل المسافة بين الأيقونة والنص */
+  }
+  .dropdown-container {
+    position: absolute;
+    top: 98%; /* اجعلها ملاصقة للعنصر العلوي */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* تصغير العرض قليلاً */
+    left: auto; /* إزالة التأثير السابق */
+    transform: none; /* تعطيل تأثير التحويل */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dropdown-header.dropdown-btn {
+    font-size: 14px; /* تصغير الخط */
+    padding: 8px 12px; /* تقليل التباعد */
+  }
+
+  .dropdown-options.dropdown-list {
+    font-size: 14px; /* تصغير النص داخل القائمة */
+    padding: 6px 12px;
+  }
+  
+}
+
+
+/* ✅ تصميم القائمة الجانبية (Sidebar) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  z-index: 1100;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  display: block;
+  padding: 10px;
+}
+
+.sidebar ul li a.active {
+  background: #A80000;
+  color: white;
+  border-radius: 5px;
+}
+
+.sidebar .sell-car {
+  display: block;
+  text-align: center;
+  background: #A80000;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
+
+
+/* Pop-up Styles */
+.popup-mobile {
+  display: none; /* مخفي افتراضيًا */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px; /* تحديد عرض أقصى */
+  background: #fff;
+  padding: 30px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 10001;
+}
+
+.popup-mobile.active {
+  display: block;
+}
+.popup-mobile .custom-field{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.popup-overlay-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* شفافية فوق الخلفية */
+  z-index: 10000;
+}
+
+.popup-overlay-mobile.active {
+  display: block;
+}
+.button-container-mobile {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* مسافة صغيرة بين الأزرار */
+  margin-top: 15px;
+}
+
+/* تنسيق زر التطبيق */
+.apply-btn-mobile, .close-btn-mobile {
+  flex: 1; /* كل زر يأخذ نصف العرض */
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+/* تنسيق زر Apply */
+.apply-btn-mobile {
+  background:#A80000; /* لون أحمر */
+  color: white;
+}
+
+
+
+/* تنسيق زر Close */
+.close-btn-mobile {
+  background: #ccc; /* لون رمادي */
+  color:#101820;
+}
+
+
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .search-bar{
+    display: none;
+  }
+  .search-bar-mobile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 16px 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: auto;
+  
+  }
+  .search-icon, .filter-icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+  
+  #mobile-search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    background: transparent;
+  }
+
+  .search-bar .custom-field {
+    display: none;
+  }
+  .search-bar-mobile input[type="text"] {
+    width: calc(100% - 40px); /* Adjust for padding and icon */
+    padding-right: 40px; /* Adjust for icon space */
+  }
+  .search-bar-mobile .filter-icon {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 1024px) {
+  .brand-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .brand-card {
+    height: 140px; /* تقليل الارتفاع */
+  }
+
+  .brand-card img {
+    max-width: 60%; /* تقليل حجم اللوغو */
+    max-height: 60%;
+  }
+
+  .brand-card p {
+    font-size: 0.85em;
   }
 }
 
+/* ✅ عندما تكون الشاشة أصغر من 768px، يصبح التخطيط 2 كاردات لكل صف */
+@media (max-width: 768px) {
+  .brand-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-card {
+    height: 120px; /* تصغير الكارد أكثر */
+  }
+
+  .brand-card img {
+    max-width: 55%;
+    max-height: 55%;
+  }
+
+  .brand-card p {
+    font-size: 0.8em;
+  }
+}
+
+.car-cards::-webkit-scrollbar {
+  display: none;
+}
+.Ad-cards::-webkit-scrollbar{
+  display: none;
+}
+
+/* ✅ عندما تكون الشاشة أصغر من 480px، يصبح التخطيط 1 كارد لكل صف */
+@media (max-width: 480px) {
+  .brand-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .featured-cars-section {
+    margin-right: 10px; /* إزالة المارجن من اليمين */
+    margin-left: 16px; /* ترك مسافة صغيرة من اليسار للحفاظ على التوازن */
+  }
+  .section-header{
+    white-space: nowrap;
+  }
+
+  .section-header h2 {
+    font-size: 1.5em; /* تصغير حجم الخط */
+  }
+
+  .featured-cars-section .section-header .view-all-btn {
+    font-size: 14px; /* تصغير الزر */
+    padding: 6px 16px;
+  }
+  .section-header h2 span {
+    font-size: 8px;
+  }
+
+ 
+  .clear-filters-btn {
+    width: 100%;
+    text-align: right;
+    font-size: 12px;
+    padding: 0;
+  }
+
+
+  .car-cards,
+  .Ad-cards {
+    display: flex; /* استخدام Flexbox بدلاً من Grid عند الشاشات الصغيرة */
+    overflow-x: auto; /* تمكين التمرير الأفقي */
+    gap: 15px;
+    padding-bottom: 10px;
+  }
+
+  .car-card,
+  .Ad-card {
+    flex: 0 0 auto; /* السماح للـ cards بالبقاء في سطر واحد مع التمرير */
+    width: 260px; /* ضبط حجم مناسب للتمرير */
+  }
+  .car-name-price .car-name {
+    font-size: 0.9rem;
+  }
+
+  .car-name-price .car-price {
+    font-size: 0.8rem;
+  }
+
+  .car-info, .car-meta {
+    font-size: 0.75rem;
+  }
+
+  .car-actions span {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .plans-header {
+    flex-direction: row;
+    justify-content: space-between; /* تأكيد بقاء العنوان يسار والسويتش يمين */
+    margin: 0 16px; /* تصغير المسافة الجانبية */
+  }
+
+  .plans-header h2 {
+    font-size: 22px; /* تصغير حجم الخط */
+  }
+
+  .switch-option {
+    font-size: 12px; /* تصغير حجم النص داخل السويتش */
+    padding: 6px 12px; /* تصغير المسافات داخل الزر */
+  }
+
+  .plans-cards {
+    flex-direction: column; /* جعل الكروت عمودية */
+    align-items: center; /* توسيط الكروت */
+    gap: 12px; /* تقليل المسافة بين الكروت */
+  }
+
+  .plan-card {
+    width: 90%; /* جعل الكارد يغطي معظم العرض */
+    max-width: 350px; /* تحديد أقصى عرض له */
+  }
+}
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 20px; /* تصغير حجم الخط */
+  }
+
+  .cards-container {
+    flex-direction: column; /* جعل الكروت عمودية */
+    align-items: center; /* توسيط الكروت */
+    gap: 16px; /* تقليل المسافة بين الكروت */
+  }
+
+  .card {
+    width: 90%; /* جعل الكارد يغطي معظم العرض */
+    max-width: 350px; /* تحديد أقصى عرض له */
+  }
+}
 
 @media (max-width: 768px) {
-  .filter-container {
-    flex-wrap: wrap;
-    gap: 10px;
+  .background-section {
+    height: 250px; /* تقليل ارتفاع الصورة */
   }
 
-  .filter-item {
-    flex: 1 1 45%;
+  .content {
+    margin: 0 20px; /* تقليل الهامش ليصبح متناسقًا مع الشاشات الصغيرة */
+    max-width: 100%; /* جعل المحتوى يأخذ المساحة المتاحة */
+    text-align: left; /* توسيط النص */
+  }
+
+  .content p {
+    font-size: 16px; /* تصغير حجم الخط */
+    line-height: 1.4; /* تحسين التباعد */
+  }
+
+  .cta-button {
+    font-size: 14px; /* تصغير حجم الزر */
+    padding: 10px 20px; /* تقليل حجم الزر */
+  }
+
+  
+}
+@media (max-width: 768px) {
+  .download-section {
+    margin: 40px 20px; /* تقليل الهوامش لتناسب الشاشات الصغيرة */
+    padding: 30px;
+    text-align: center; /* توسيط النص */
+  }
+
+  .store-buttons {
+    flex-direction: row; /* جعل الأزرار فوق بعضها */
+    align-items: center; /* توسيط الأزرار */
+    gap: 12px; /* تقليل المسافة بين الأزرار */
+  }
+
+  .store-btn {
+    justify-content: center; /* توسيط الأيقونة والنص داخل الزر */
+    width: 100%; /* جعل الأزرار تمتد بعرض المحتوى */
+    max-width: 280px; /* تحديد الحد الأقصى للعرض */
+  }
+
+  .store-icon {
+    margin-right: 8px; /* تقليل المسافة بين الأيقونة والنص */
   }
 }
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* ترتيب الأقسام عموديًا */
+    align-items: center; /* توسيط المحتوى */
+    text-align: left; /* توسيط النصوص */
+    gap: 12px; /* تقليل المسافات بين الأقسام */
+  }
+
+  .logo-section,
+  .links-section,
+  .buttons-section {
+    width: 100%; /* تمديد الأقسام على كامل العرض */
+  }
+  .logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* توسيط المحتوى أفقيًا */
+    text-align: left; /* توسيط النص */
+  }
+
+  .store-buttons-footer {
+    flex-direction: row; /* جعل الأزرار فوق بعضها */
+    align-items: left; /* توسيطها */
+    gap: 12px; /* تقليل المسافة بين الأزرار */
+  }
+  
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-line {
+    width: 100%; /* يمتد السطر بكامل العرض */
+    margin-bottom: 12px;
+  }
+
+  .footer-credits {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .breadcrumb {
+    margin-left: 16px; /* تقليل المسافة من اليسار */
+  }
+  .filter-container {
+    width: calc(100% - 16px);
+    margin: 0 auto;
+    white-space: nowrap; /* إبقاء الفلاتر في خط واحد */
+    display: flex;
+    gap: 8px; /* تقليل المسافة بين العناصر */
+    padding: 16px; /* إزالة أي فراغات غير ضرورية */
+    scroll-behavior: smooth;
+
+  }
+
+  .custom-field {
+    min-width: 150px; /* تصغير العناصر لتناسب الشاشات الصغيرة */
+  }
+
+  .dropdown-header {
+    font-size: 12px; /* تصغير حجم النص */
+    padding: 5px 8px;
+  }
+}
+@media (max-width: 768px) {
+  .dealer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* توسيط الكروت في المنتصف */
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .dealer-card {
+    width: 90%; /* جعل عرض الكارت يأخذ معظم الشاشة */
+    min-width: auto; /* إزالة الحد الأدنى للعرض */
+    max-width: 400px; /* منع التمدد الزائد */
+    flex-direction: column; /* جعل العناصر عمودية بدلًا من أفقية */
+    text-align: center; /* توسيط النص */
+  }
+
+  .dealer-logo {
+    margin: 0 auto 10px auto; /* جعل الشعار في المنتصف */
+  }
+
+  .dealer-info {
+    align-items: center; /* توسيط النصوص */
+  }
+}
+@media (max-width: 768px) {
+  .compare-section {
+    padding: 10px;
+    margin: 0 auto;
+    overflow-x: auto; /* السماح بالتمرير الأفقي عند الحاجة */
+  }
+
+  .compare-table {
+    width: 100%;
+    min-width: 600px; /* منع الجدول من أن يصبح أصغر من اللازم */
+    text-align: center; /* توسيط النصوص */
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 10px;
+    text-align: center; /* توسيط المحتوى داخل الجدول */
+    font-size: 12px; /* تصغير الخط */
+    white-space: nowrap; /* منع السعر من النزول لسطرين */
+  }
+
+  .compare-table th .car-header span {
+    font-size: 12px; /* تصغير حجم اسم السيارة بدلًا من إخفائه */
+    display: block; /* ضمان ظهوره */
+  }
+
+  .car-header img {
+    width: 120px; /* الحفاظ على حجم الصورة */
+    height: auto; /* الحفاظ على تناسب الأبعاد */
+    object-fit: cover; 
+  }
+  .price-cell {
+    text-align: center; /* توسيط السعر في الشاشات الصغيرة */
+    padding-left: 0; /* إزالة المسافة الجانبية */
+  }
+}
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
     gap: 0;
+    align-items: flex-start; /* منع تمدد العناصر */
     
+  }
+  .form-row.btn {
+    width: 100%;
+    flex-direction: row;
+    gap:0;
+    align-items: center;
+  }
+  .back-btn, .next-btn {
+    font-size: 14px; /* تصغير الخط */
+    padding: 8px 8px; /* تصغير الأزرار قليلاً */
+    min-width: 100px; /* تقليل عرض الزر */
+  }
+  .form-group {
+    margin-bottom: 5px;
+  
+  }
+  
+  .form-group.shop-info label{
+    display: none;
+  }
+  
+}
+@media (max-width: 768px) {
+  .form-box.sell-my-car {
+    width: 95%; /* تقليل العرض للموبايل */
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column; /* جعل الحقول تظهر في أسطر منفصلة */
   }
 
   .form-group {
-    margin-bottom: 10px;
-  
+    width: 100%; /* كل حقل يأخذ عرض الشاشة كاملاً */
+  }
+
+  .tabs-container {
+    overflow-x: auto; /* إضافة تمرير أفقي إذا لزم الأمر */
+    white-space: nowrap; /* منع التبويبات من النزول لسطر جديد */
+  }
+
+  .tab-btn {
+    font-size: 14px; /* تصغير حجم التبويبات */
+    padding: 8px 0;
   }
 }
 
-@media (max-width: 1024px) {
-  .header {
-    flex-direction: column;
-    gap: 16px;
-  }
 
-  .header .navbar ul {
-    justify-content: center;
-    gap: 8px;
-  }
 
-  .hero-content {
-    padding: 0 16px;
-  }
 
-  .search-bar {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 16px 8px;
-  }
 
-  .custom-field {
-    max-width: 100%;
-  }
-}
 
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 16px;
-  }
-
-  .search-btn {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    text-align: center;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    align-items: center;
-  }
-} */
