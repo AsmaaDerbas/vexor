@@ -6,6 +6,9 @@ ul {
   box-sizing: border-box;
   font-family: 'Cairo';
 }
+body{
+  min-height: 100vh;
+}
 /* إخفاء الـ scrollbar في Chrome, Edge, Safari */
 ::-webkit-scrollbar {
   display: none;
@@ -2443,7 +2446,7 @@ background: none;
   background-color: #fff;
   position: relative;
   overflow: hidden;
-  padding-bottom: 88px;
+  
 
 }
 
@@ -4463,19 +4466,19 @@ textarea {
     flex: 0 0 auto; /* السماح للـ cards بالبقاء في سطر واحد مع التمرير */
     width: 260px; /* ضبط حجم مناسب للتمرير */
   }
-  .car-name-price .car-name {
+  .car-card .car-name-price .car-name {
     font-size: 0.9rem;
   }
 
-  .car-name-price .car-price {
+  .car-card .car-name-price .car-price {
     font-size: 0.8rem;
   }
 
-  .car-info, .car-meta {
+  .car-card .car-info, .car-meta {
     font-size: 0.75rem;
   }
 
-  .car-actions span {
+  .car-card .car-actions span {
     font-size: 0.7rem;
     padding: 4px 8px;
     margin: 8px 0px 8px 8px;
