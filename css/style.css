@@ -673,9 +673,9 @@ background: none;
   align-items: center;
   cursor: pointer;
   position: absolute;
-  z-index: 1000; /* تأكد من أن السهم يظهر فوق كل شيء */
+/* تأكد من أن السهم يظهر فوق كل شيء */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10000 !important;
+  z-index: 10 !important;
   cursor: pointer;
   user-select: none;
 }
@@ -798,7 +798,6 @@ background: none;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  z-index: 10;
   /* جعل الأيقونات في مستوى أعلى */
 }
 
