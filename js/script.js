@@ -50,66 +50,7 @@ window.addEventListener('click', function (e) {
 });
 
 
-// document.querySelectorAll('.image-container').forEach((container) => {
-//   const images = container.querySelectorAll('.car-image');
-//   const leftArrow = container.querySelector('.arrow-left');
-//   const rightArrow = container.querySelector('.arrow-right');
 
-//   let currentIndex = 0;
-
-//   const updateActiveImage = () => {
-//     images.forEach((img, index) => {
-//       img.classList.toggle('active', index === currentIndex);
-//     });
-//   };
-
-//   leftArrow.addEventListener('click', () => {
-//     currentIndex = (currentIndex - 1 + images.length) % images.length; // دائري للخلف
-//     updateActiveImage();
-//   });
-
-//   rightArrow.addEventListener('click', () => {
-//     currentIndex = (currentIndex + 1) % images.length; // دائري للأمام
-//     updateActiveImage();
-//   });
-// });
-
-// document.querySelectorAll('.image-container').forEach((container) => {
-//   const images = container.querySelectorAll('.car-image');
-//   const dots = container.querySelectorAll('.dot');
-//   const leftArrow = container.querySelector('.arrow-left');
-//   const rightArrow = container.querySelector('.arrow-right');
-
-//   let currentIndex = 0;
-
-//   const updateActiveImage = () => {
-//     images.forEach((img, index) => {
-//       img.classList.toggle('active', index === currentIndex);
-//     });
-
-//     dots.forEach((dot, index) => {
-//       dot.classList.toggle('active', index === currentIndex);
-//     });
-//   };
-
-//   leftArrow.addEventListener('click', () => {
-//     currentIndex = (currentIndex - 1 + images.length) % images.length;
-//     updateActiveImage();
-//   });
-
-//   rightArrow.addEventListener('click', () => {
-//     currentIndex = (currentIndex + 1) % images.length;
-//     updateActiveImage();
-//   });
-
- 
-//   dots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//       currentIndex = index;
-//       updateActiveImage();
-//     });
-//   });
-// });
 
 document.querySelectorAll(".image-container").forEach((card) => {
   let currentSlide = 0;
@@ -212,22 +153,7 @@ switchOptions.forEach(option => {
 const dropdownBtn = document.querySelector('.dropdown-btn');
 const dropdownList = document.querySelector('.dropdown-list');
 
-// dropdownBtn.addEventListener('click', () => {
-//   dropdownList.style.display =
-//     dropdownList.style.display === 'block' ? 'none' : 'block';
-// });
 
-// function selectItem(value) {
-//   alert(`You selected: ${value}`);
-//   dropdownList.style.display = 'none';
-// // }
-// document.querySelectorAll('.dropdown-btn').forEach((btn) => {
-//   btn.addEventListener('click', () => {
-//     const dropdown = btn.nextElementSibling; // القائمة المنسدلة
-//     dropdown.classList.toggle('open');
-//     btn.classList.toggle('open'); // إضافة/إزالة class للزر
-//   });
-// });
 
 
 function openPopup() {
@@ -242,23 +168,6 @@ function closePopup() {
 function openDatePicker() {
   document.getElementById("dob").showPicker(); // فتح التقويم عند الضغط على الأيقونة
 }
-
-// document.getElementById("dob").addEventListener("change", function () {
-//   let dateInput = this;
-//   let dateValue = dateInput.value;
-
-//   if (dateValue) {
-//     let formattedDate = new Date(dateValue).toLocaleDateString("en-GB", {
-//       year: "numeric",
-//       month: "2-digit",
-//       day: "2-digit"
-//     });
-
-//     // تحويل الصيغة إلى yyyy-MM-dd
-//     let parts = formattedDate.split("/");
-//     dateInput.value = `${parts[2]}-${parts[1]}-${parts[0]}`;
-//   }
-// });
 
 function showDropdown(header) {
   let dropdown = header.closest('.custom-dropdown');
@@ -296,6 +205,10 @@ function clearPlaceholder(header) {
     header.classList.remove("empty");
   }
   if (header.textContent === "Search History") {
+    header.textContent = "";
+    header.classList.remove("empty");
+  }
+  if (header.textContent === "Select City") {
     header.textContent = "";
     header.classList.remove("empty");
   }
@@ -425,4 +338,116 @@ document.querySelectorAll(".spec-btn").forEach(button => {
   });
 });
 
+ document.addEventListener("DOMContentLoaded", function () {
+    const otpInputs = document.querySelectorAll(".otp-box");
 
+    otpInputs.forEach((input, index) => {
+      input.addEventListener("input", (e) => {
+        const nextInput = otpInputs[index + 1];
+        if (e.target.value && nextInput) {
+          nextInput.focus();
+        }
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace" && !e.target.value) {
+          const prevInput = otpInputs[index - 1];
+          if (prevInput) {
+            prevInput.focus();
+          }
+        }
+      });
+    });
+  });
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".image-slider");
+    const images = document.querySelectorAll(".image-slider img");
+    const arrowRight = document.querySelector(".arrow-right");
+    const arrowLeft = document.querySelector(".arrow-left");
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+  
+    let currentSlide = 0;
+    const totalSlides = images.length;
+    const slideWidth = 100; // ✅ كل صورة تأخذ 100% من حجم الصندوق الرئيسي
+  
+    function updateSlide() {
+      slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    }
+  
+    arrowRight.addEventListener("click", function () {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    });
+  
+    arrowLeft.addEventListener("click", function () {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    });
+  
+    // ✅ تغيير الصورة عند الضغط على الصورة المصغرة
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener("click", function () {
+        currentSlide = index;
+        updateSlide();
+      });
+    });
+  
+    updateSlide(); // تحديث أولي للسلايدر
+  });
+  
+  
+  const images = document.querySelectorAll('.car-image.gallery');
+const modal = document.querySelector('.gallery-modal');
+const modalImg = document.querySelector('#gallery-image');
+const closeModal = document.querySelector('.close-btn-gallery');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const imageCounter = document.querySelector('#image-counter'); // تحديد العداد
+
+let currentIndex = 0;
+
+function updateCounter() {
+    imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+}
+
+function openModal(index) {
+    currentIndex = index;
+    modalImg.src = images[currentIndex].src;
+    modal.style.display = 'flex';
+    updateCounter(); // تحديث العداد عند فتح المودال
+}
+
+function closeModalFunc() {
+    modal.style.display = 'none';
+}
+
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+    updateCounter(); // تحديث العداد عند تغيير الصورة
+}
+
+function showPrevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+    updateCounter(); // تحديث العداد عند تغيير الصورة
+}
+
+images.forEach((img, index) => {
+    img.addEventListener('click', () => openModal(index));
+});
+
+closeModal.addEventListener('click', closeModalFunc);
+nextBtn.addEventListener('click', showNextImage);
+prevBtn.addEventListener('click', showPrevImage);
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModalFunc();
+});

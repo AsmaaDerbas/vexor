@@ -8,6 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- مكتبة slick.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <!-- ملف CSS الخاص بـ slick -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* يجعل الحدود والحشوات محسوبة داخل الأبعاد */
+}
+  </style>
 
 </head>
 
@@ -57,7 +71,7 @@
         <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
         Login
       </a>
-      <a href="sell my car.html" class="sell-car">Sell My Car</a>
+      <a href="sell_my_car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
 
@@ -74,30 +88,55 @@
           <div class="main-image-box">
             <div class="icon-container-Ad-Details">
               <div class="icon-Ad-Details">
-                <img src="icons/mdi_heart 12.svg" alt="Heart Icon">
+                <img src="icons/mdi_heart 12.svg" alt="Heart Icon" class="rest-icons">
               </div>
               <div class="icon-Ad-Details">
-                <img src="icons/ic_baseline-compare-arrows.svg" alt="Compare Icon">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Compare Icon" class="rest-icons">
               </div>
               <div class="icon-Ad-Details">
-                <img src="icons/fluent_share-16-regular.svg" alt="Share Icon">
+                <img src="icons/fluent_share-16-regular.svg" alt="Share Icon" class="rest-icons">
               </div>
             </div>
 
             <div class="arrow-left">
-              <img src="icons/chevron-left.svg" alt="Left Arrow">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" class="rest-icons">
             </div>
 
-            <img id="main-image" src="images/inventory1-1.jpg" alt="Main Image" style="border-radius:0;">
-            <div class="arrow-right">
-              <img src="icons/chevron-right.svg" alt="Right Arrow">
+            <div class="image-slider">
+              <img class="car-image gallery" src="images/75c4519a247840f58ccc2575431d4a80-.avif" alt="Main Image">
+              <img class="car-image gallery" src="images/6e76735e9c2a4480b296d7c078c7c372-.avif" alt="Image 2">
+              <img class="car-image gallery" src="images/454d7fd762a443da8635cabcca993d15-.avif" alt="Image 3">
+              <img class="car-image gallery" src="images/939856256b044b7684bbc681a672cd0c-.avif" alt="Image 4">
+              <img class="car-image gallery" src="images/a09a8bd654724033831442938612ee6b-.avif" alt="Image 5">
+            </div>
+            <div class="gallery-modal">
+                <div class="gallery-header">
+                  <div class="close-btn-gallery">
+                    <img src="icons/Group 160.png" alt="Close" class="rest-icons">
+                    Close
+                  </div>
+                  <span id="image-counter">1 / 5</span>
+              </div>
+              <div class="gallery-content">
+                  <img id="gallery-image" src="" alt="Gallery Image">
+                  <span class="nav-btn prev">
+                      <img src="icons/chevron-left 1.svg" alt="Previous" class="rest-icons">
+                  </span>
+                  <span class="nav-btn next">
+                      <img src="icons/chevron-right 1.svg" alt="Next" class="rest-icons">
+                  </span>
+              </div>
+          </div>
+           <div class="arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" class="rest-icons">
             </div>
           </div>
           <div class="thumbnails">
-            <img src="images/inventory1-2.jpg" alt="Thumbnail 2" data-image="images/inventory1-2.jpg">
-            <img src="images/inventory1-3.png" alt="Thumbnail 3" data-image="images/inventory1-3.png">
-            <img src="images/inventory1-4.jpg" alt="Thumbnail 4" data-image="images/inventory1-4.jpg">
-            <img src="images/inventory1-5.png" alt="Thumbnail 5" data-image="images/inventory1-5.png">
+            <img src="images/75c4519a247840f58ccc2575431d4a80-.avif" alt="Thumbnail 2" class="active">
+            <img src="images/6e76735e9c2a4480b296d7c078c7c372-.avif" alt="Thumbnail 3" >
+            <img src="images/454d7fd762a443da8635cabcca993d15-.avif" alt="Thumbnail 4" >
+            <img src="images/939856256b044b7684bbc681a672cd0c-.avif" alt="Thumbnail 5" >
+            <img src="images/a09a8bd654724033831442938612ee6b-.avif" alt="Thumbnail 5">
           </div>
         </div>
         <div class="vehicle-overview">
@@ -235,9 +274,9 @@
           <h4>Price</h4>
           <div class="price">AED 51,235,544</div>
           <hr>
-          <button class="button-call call-btn"><img src="icons/ic_baseline-call.svg"> Call</button>
-          <button class="button-call whatsapp-btn"><img src="icons/email-14_svgrepo.com.svg"> WhatsApp</button>
-          <button class="button-call email-btn"><img src="icons/sent-mail_svgrepo.com.svg"> Email</button>
+          <button class="button-call call-btn"><img src="icons/ic_baseline-call.svg"> <span>Call</span></button>
+          <button class="button-call whatsapp-btn"><img src="icons/email-14_svgrepo.com.svg"> <span>WhatsApp</span></button>
+          <button class="button-call email-btn"><img src="icons/sent-mail_svgrepo.com.svg"><span> Email </span></button>
         </div>
         <div class="seller-info">
           <h3>Seller Information</h3>
@@ -275,27 +314,29 @@
           </div>
         </div>
       </div>
+    </div>
 
 
-      <div class="featured-cars-section" style="margin: 0 40px;">
-        <div class="section-header">
-          <h2 style="font-size: 20px;">Similar Ads</h2>
-
-        </div>
-
-        <div class="car-cards">
+    <div class="featured-cars-section homepage">
+      <div class="section-header">
+        <h2 style="font-size: 20px;">Similar Ads</h2>
+       
+      </div>
+      <div class="slider-container">
+        <div class="slider-arrow left-arrow"></div>
+        <div class="car-cards homepage">
           <!-- كارد 1 -->
-          <div class="car-card">
-
+          <div class="car-card homepage">
+  
             <div class="image-container">
-
+  
               <div class="arrow-icon arrow-left">
                 <img src="icons/chevron-left.svg" alt="Left Arrow" />
               </div>
               <div class="arrow-icon arrow-right">
                 <img src="icons/chevron-right.svg" alt="Right Arrow" />
               </div>
-
+  
               <div class="image-buttons">
                 <a href="page1.html" class="circle-button Compare">
                   <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
@@ -306,12 +347,12 @@
               </div>
               <div class="slider-wrapper">
                 <div class="slider">
-                <img src="images/car.png" class="car-image active" alt="Car 1">
-                <img src="images/car2.png" class="car-image" alt="Car 2">
-                <img src="images/car3.png" class="car-image" alt="Car 3">
+                  <img src="images/car.png" class="car-image active" alt="Car 1">
+                  <img src="images/car2.png" class="car-image" alt="Car 2">
+                  <img src="images/car3.png" class="car-image" alt="Car 3">
+                  <img src="images/car2.png" class="car-image" alt="Car 2">
                 </div>
-                </div>
-
+              </div>
               <div class="image-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -337,16 +378,16 @@
               </div>
             </div>
             <div class="car-meta">
-
+  
               <p>
                 <img src="icons/mynaui_location.svg" alt="Location">Beirut
               </p>
-
-
+  
+  
               <p>
                 <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
               </p>
-
+  
             </div>
             <div class="car-actions">
               <span>Manuual</span>
@@ -355,16 +396,16 @@
             </div>
           </div>
           <!-- كارد 2 -->
-          <div class="car-card">
+          <div class="car-card homepage">
             <div class="image-container">
-
+  
               <div class="arrow-icon arrow-left">
                 <img src="icons/chevron-left.svg" alt="Left Arrow" />
               </div>
               <div class="arrow-icon arrow-right">
                 <img src="icons/chevron-right.svg" alt="Right Arrow" />
               </div>
-
+  
               <div class="image-buttons">
                 <a href="page1.html" class="circle-button Compare">
                   <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
@@ -375,12 +416,18 @@
               </div>
               <div class="slider-wrapper">
                 <div class="slider">
-                <img src="images/car.png" class="car-image active" alt="Car 1">
-                <img src="images/car2.png" class="car-image" alt="Car 2">
-                <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+  
+  
+  
+                  <img src="images/car.png" class="car-image active" alt="Car 1">
+                  <img src="images/car2.png" class="car-image" alt="Car 2">
+                  <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+  
                 </div>
-                </div>
-
+              </div>
+  
               <div class="image-dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
@@ -406,16 +453,16 @@
               </div>
             </div>
             <div class="car-meta">
-
+  
               <p>
                 <img src="icons/mynaui_location.svg" alt="Location">Beirut
               </p>
-
-
+  
+  
               <p>
                 <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
               </p>
-
+  
             </div>
             <div class="car-actions">
               <span>Manuual</span>
@@ -423,11 +470,165 @@
               <span>GCC</span>
             </div>
           </div>
+          <!-- كارد 3 -->
+          <div class="car-card homepage">
+            <div class="image-container">
+  
+              <div class="arrow-icon arrow-left">
+                <img src="icons/chevron-left.svg" alt="Left Arrow" />
+              </div>
+              <div class="arrow-icon arrow-right">
+                <img src="icons/chevron-right.svg" alt="Right Arrow" />
+              </div>
+  
+              <div class="image-buttons">
+                <a href="page1.html" class="circle-button Compare">
+                  <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+                </a>
+                <a href="page2.html" class="circle-button Share">
+                  <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+                </a>
+              </div>
+              <div class="slider-wrapper">
+                <div class="slider">
+  
+  
+  
+  
+                  <img src="images/car.png" class="car-image active" alt="Car 1">
+                  <img src="images/car2.png" class="car-image" alt="Car 2">
+                  <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+  
+                </div>
+              </div>
+              <div class="image-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+            <div class="car-name-price">
+              <p class="car-name">Car Model 2</p>
+              <p class="car-price">AED 200,150,00</p>
+            </div>
+            <div class="car-info">
+              <div class="car-info-left">
+                <p>
+                  <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+                </p>
+                <p>
+                  <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+                </p>
+              </div>
+              <!-- القسم الأيمن -->
+              <div class="car-info-right">
+                2 days ago
+              </div>
+            </div>
+            <div class="car-meta">
+  
+              <p>
+                <img src="icons/mynaui_location.svg" alt="Location">Beirut
+              </p>
+  
+  
+              <p>
+                <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+              </p>
+  
+            </div>
+            <div class="car-actions">
+              <span>Manuual</span>
+              <span>Electric</span>
+              <span>GCC</span>
+            </div>
+          </div>
+          <!-- كارد 4 -->
+          <div class="car-card homepage">
+            <div class="image-container">
+  
+              <div class="arrow-icon arrow-left">
+                <img src="icons/chevron-left.svg" alt="Left Arrow" />
+              </div>
+              <div class="arrow-icon arrow-right">
+                <img src="icons/chevron-right.svg" alt="Right Arrow" />
+              </div>
+  
+              <div class="image-buttons">
+                <a href="page1.html" class="circle-button Compare">
+                  <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+                </a>
+                <a href="page2.html" class="circle-button Share">
+                  <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+                </a>
+              </div>
+              <div class="slider-wrapper">
+                <div class="slider">
+  
+  
+  
+  
+                  <img src="images/car.png" class="car-image active" alt="Car 1">
+                  <img src="images/car2.png" class="car-image" alt="Car 2">
+                  <img src="images/car3.png" class="car-image" alt="Car 3">
+  
+  
+                </div>
+              </div>
+  
+              <div class="image-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+            </div>
+            <div class="car-name-price">
+              <p class="car-name">Car Model 2</p>
+              <p class="car-price">AED 200,150,00</p>
+            </div>
+            <div class="car-info">
+              <div class="car-info-left">
+                <p>
+                  <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+                </p>
+                <p>
+                  <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+                </p>
+              </div>
+  
+              <div class="car-info-right">
+                2 days ago
+              </div>
+            </div>
+            <div class="car-meta">
+  
+              <p>
+                <img src="icons/mynaui_location.svg" alt="Location">Beirut
+              </p>
+  
+  
+              <p>
+                <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+              </p>
+  
+            </div>
+            <div class="car-actions">
+              <span>Manuual</span>
+              <span>Electric</span>
+              <span>GCC</span>
+            </div>
+          </div>
+          
+       
+  
         </div>
+        <div class="slider-arrow right-arrow"></div>
       </div>
     </div>
-
   </div>
+
+ 
   <footer class="footer">
     <div class="footer-container">
       <!-- القسم الأول: شعار + نص -->
@@ -488,58 +689,56 @@
   <script>
 
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const mainImage = document.getElementById('main-image');
-      const thumbnails = document.querySelectorAll('.thumbnails img');
-      const arrowRight = document.querySelector('.arrow-right');
-      const arrowLeft = document.querySelector('.arrow-left');
+$(document).ready(function () {
+      $('.car-cards').slick({
+        slidesToShow: 4, // عدد الكروت في الشاشات الكبيرة
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true, // إظهار الأسهم افتراضياً
+        prevArrow: '<button class="slider-arrow left-arrow">←</button>',
+        nextArrow: '<button class="slider-arrow right-arrow">→</button>',
+        responsive: [
+          {
+            breakpoint: 1200, // شاشات أصغر من 1200px
+            settings: {
+              slidesToShow: 3, // يعرض 3 كروت
+            }
+          },
+          {
+            breakpoint: 992, // شاشات التابلت
+            settings: {
+              slidesToShow: 2, // يعرض كاردين فقط
+            }
+          },
+          {
+            breakpoint: 768, // شاشات الموبايل
+            settings: {
+              slidesToShow: 1.5, // يعرض كارد ونصف
+              arrows: false // يخفي الأسهم على الموبايل
+            }
+          },
+          {
+            breakpoint: 480, // شاشات صغيرة جداً
+            settings: {
+              slidesToShow: 1, // يعرض كارد واحد فقط
+              arrows: false // يخفي الأسهم على الشاشات الصغيرة
+            }
+          }
+        ]
+      });
+      // إزالة المارجين الجانبي على الموبايل
+    
 
-      let currentIndex = -1; // نبدأ من الصورة الأصلية
-
-      function changeImage(newIndex, direction) {
-        if (newIndex >= thumbnails.length) {
-          newIndex = -1;
-        } else if (newIndex < -1) {
-          newIndex = thumbnails.length - 1;
-        }
-
-        let slideOutClass = "slide-out-left";
-        let slideInClass = "slide-in-right";
-
-        // إضافة تأثير الانزلاق على الصورة الحالية
-        mainImage.classList.add(slideOutClass);
-
-        setTimeout(() => {
-          mainImage.src = newIndex === -1 ? "images/inventory1-1.jpg" : thumbnails[newIndex].getAttribute('data-image');
-
-          // إعادة ضبط التحريك للحركة الجديدة
-          mainImage.classList.remove(slideOutClass);
-          mainImage.classList.add(slideInClass);
-
-          setTimeout(() => {
-            mainImage.classList.remove(slideInClass);
-          }, 500);
-        }, 500);
-
-        currentIndex = newIndex;
-      }
-
-      thumbnails.forEach((thumbnail, index) => {
-        thumbnail.addEventListener('click', function () {
-          changeImage(index, "right");
-        });
+      // تأكد أن الأزرار تعمل بعد تحميل السلايدر
+      $('.left-arrow').click(function () {
+        $('.car-cards').slick('slickPrev');
       });
 
-      arrowRight.addEventListener('click', function () {
-        changeImage(currentIndex + 1, "right");
-      });
-
-      arrowLeft.addEventListener('click', function () {
-        changeImage(currentIndex - 1, "left");
+      $('.right-arrow').click(function () {
+        $('.car-cards').slick('slickNext');
       });
     });
-
-
+     
 
     function showPopup() {
       const popup = document.getElementById('reportPopup');

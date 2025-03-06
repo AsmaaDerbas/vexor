@@ -8,6 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- مكتبة slick.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <!-- ملف CSS الخاص بـ slick -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+
 
 </head>
 
@@ -23,10 +31,10 @@
             <span class="profile-name">Text </span>
           </button>
           <div class="dropdown-menu">
-            <a href="create dealer account.html">
+            <a href="creat_dealer_account.html">
               <img src="icons/mdi_heart.svg" alt="Profile Icon" class="menu-icon"> Become a Dealer
             </a>
-            <a href="my ads.html">
+            <a href="my_ads.html">
               <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> My Ads
             </a>
             <a href="logout.html">
@@ -38,10 +46,10 @@
             <a href="OTP.html">
               <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Get Verified
             </a>
-            <a href="Billing history.html">
+            <a href="billing_history.html">
               <img src="icons/mdi_heart.svg" alt="Logout Icon" class="menu-icon"> Billing History
             </a>
-            <a href="forget password.html">
+            <a href="forget_password.html">
               <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Change Password
             </a>
             <a href="index.html">
@@ -61,7 +69,7 @@
           <li><a href="dealers.html">Dealers</a></li>
           <li><a href="compare.html">Compare</a></li>
           <li><a href="login.html">Login</a></li>
-          <li><a href="sell my car.html" class="sell-car">Sell My Car</a></li>
+          <li><a href="sell_my_car.html" class="sell-car">Sell My Car</a></li>
         </ul>
       </div>
     </div>
@@ -92,10 +100,10 @@
           <span class="profile-name">Text </span>
         </button>
         <div class="dropdown-menu">
-          <a href="create dealer account.html">
+          <a href="creat_dealer_account.html">
             <img src="icons/mdi_heart.svg" alt="Profile Icon" class="menu-icon"> Become a Dealer
           </a>
-          <a href="my ads.html">
+          <a href="my_ads.html">
             <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> My Ads
           </a>
           <a href="logout.html">
@@ -107,10 +115,10 @@
           <a href="OTP.html">
             <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Get Verified
           </a>
-          <a href="Billing history.html">
+          <a href="billing_history.html">
             <img src="icons/mdi_heart.svg" alt="Logout Icon" class="menu-icon"> Billing History
           </a>
-          <a href="forget password.html">
+          <a href="forget_password.html">
             <img src="icons/mdi_heart.svg" alt="Settings Icon" class="menu-icon"> Change Password
           </a>
           <a href="index.html">
@@ -119,7 +127,7 @@
 
         </div>
       </div>
-      <a href="sell my car.html" class="sell-car">Sell My Car</a>
+      <a href="sell_my_car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
 
@@ -342,581 +350,703 @@
   </div>
 
 
-  <div class="featured-cars-section">
+  <div class="featured-cars-section homepage">
     <div class="section-header">
       <h2>Featured Cars</h2>
       <button class="view-all-btn">View All</button>
     </div>
+    <div class="slider-container">
+      <div class="slider-arrow left-arrow"></div>
+      <div class="car-cards homepage">
+        <!-- كارد 1 -->
+        <div class="car-card homepage">
 
-    <div class="car-cards">
-      <!-- كارد 1 -->
-      <div class="car-card">
+          <div class="image-container">
 
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
             </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
             </div>
 
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+              </div>
+            </div>
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
             <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
             </p>
+
+
             <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
             </p>
+
           </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
           </div>
         </div>
-        <div class="car-meta">
+        <!-- كارد 2 -->
+        <div class="car-card homepage">
+          <div class="image-container">
 
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
 
 
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
 
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
         </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
+        <!-- كارد 3 -->
+        <div class="car-card homepage">
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
         </div>
+        <!-- كارد 4 -->
+        <div class="car-card homepage">
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
+        </div>
+        <div class="car-card homepage">
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
+        </div>
+
       </div>
-      <!-- كارد 2 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-      <!-- كارد 3 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-      <!-- كارد 4 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-
+      <div class="slider-arrow right-arrow"></div>
     </div>
   </div>
-  <div class="featured-cars-section">
+  <div class="featured-cars-section homepage">
     <div class="section-header">
       <h2>Latest Cars</h2>
       <button class="view-all-btn">View All</button>
     </div>
+    <div class="slider-container">
+      <div class="slider-arrow left-arrow"></div>
+      <div class="car-cards homepage">
+        <!-- كارد 1 -->
+        <div class="car-card homepage">
+          <div class="image-container">
 
-    <div class="car-cards">
-      <!-- كارد 1 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
             </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
             </div>
 
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
           </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
             <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
             </p>
+
+
             <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
             </p>
+
           </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
           </div>
         </div>
-        <div class="car-meta">
+        <!-- كارد 2 -->
+        <div class="car-card homepage">
+          <div class="image-container">
 
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
 
 
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
 
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
         </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
+        <!-- كارد 3 -->
+        <div class="car-card homepage">
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
         </div>
+        <!-- كارد 4 -->
+        <div class="car-card homepage">
+          <div class="image-container">
+
+            <div class="arrow-icon arrow-left">
+              <img src="icons/chevron-left.svg" alt="Left Arrow" />
+            </div>
+            <div class="arrow-icon arrow-right">
+              <img src="icons/chevron-right.svg" alt="Right Arrow" />
+            </div>
+
+            <div class="image-buttons">
+              <a href="page1.html" class="circle-button Compare">
+                <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
+              </a>
+              <a href="page2.html" class="circle-button Share">
+                <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
+              </a>
+            </div>
+            <div class="slider-wrapper">
+              <div class="slider">
+
+
+
+
+                <img src="images/car.png" class="car-image active" alt="Car 1">
+                <img src="images/car2.png" class="car-image" alt="Car 2">
+                <img src="images/car3.png" class="car-image" alt="Car 3">
+
+
+              </div>
+            </div>
+
+            <div class="image-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+          <div class="car-name-price">
+            <p class="car-name">Car Model 2</p>
+            <p class="car-price">AED 200,150,00</p>
+          </div>
+          <div class="car-info">
+            <div class="car-info-left">
+              <p>
+                <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
+              </p>
+              <p>
+                <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
+              </p>
+            </div>
+            <!-- القسم الأيمن -->
+            <div class="car-info-right">
+              2 days ago
+            </div>
+          </div>
+          <div class="car-meta">
+
+            <p>
+              <img src="icons/mynaui_location.svg" alt="Location">Beirut
+            </p>
+
+
+            <p>
+              <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
+            </p>
+
+          </div>
+          <div class="car-actions">
+            <span>Manuual</span>
+            <span>Electric</span>
+            <span>GCC</span>
+          </div>
+        </div>
+
       </div>
-      <!-- كارد 2 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-      <!-- كارد 3 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-      <!-- كارد 4 -->
-      <div class="car-card">
-        <div class="image-container">
-
-          <div class="arrow-icon arrow-left">
-            <img src="icons/chevron-left.svg" alt="Left Arrow" />
-          </div>
-          <div class="arrow-icon arrow-right">
-            <img src="icons/chevron-right.svg" alt="Right Arrow" />
-          </div>
-
-          <div class="image-buttons">
-            <a href="page1.html" class="circle-button Compare">
-              <img src="icons/ic_baseline-compare-arrows.svg" alt="Go to Page 1" />
-            </a>
-            <a href="page2.html" class="circle-button Share">
-              <img src="icons/fluent_share-16-regular.svg" alt="Go to Page 2" />
-            </a>
-          </div>
-          <div class="slider-wrapper">
-            <div class="slider">
-            <img src="images/car.png" class="car-image active" alt="Car 1">
-            <img src="images/car2.png" class="car-image" alt="Car 2">
-            <img src="images/car3.png" class="car-image" alt="Car 3">
-            </div>
-            </div>
-
-          <div class="image-dots">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-        </div>
-        <div class="car-name-price">
-          <p class="car-name">Car Model 2</p>
-          <p class="car-price">AED 200,150,00</p>
-        </div>
-        <div class="car-info">
-          <div class="car-info-left">
-            <p>
-              <img src="icons/lets-icons_date-today-light.svg" alt="Release Date"> 2022
-            </p>
-            <p>
-              <img src="icons/fluent_top-speed-24-regular.svg" alt="Speed"> 200 km/h
-            </p>
-          </div>
-          <!-- القسم الأيمن -->
-          <div class="car-info-right">
-            2 days ago
-          </div>
-        </div>
-        <div class="car-meta">
-
-          <p>
-            <img src="icons/mynaui_location.svg" alt="Location">Beirut
-          </p>
-
-
-          <p>
-            <img src="icons/lets-icons_view-alt-fill.svg" alt="Views">1,234 views
-          </p>
-
-        </div>
-        <div class="car-actions">
-          <span>Manuual</span>
-          <span>Electric</span>
-          <span>GCC</span>
-        </div>
-      </div>
-
+      <div class="slider-arrow right-arrow"></div>
     </div>
 
 
   </div>
+ 
   <section class="plans-section">
     <div class="plans-header">
       <h2>Plans</h2>
@@ -1344,7 +1474,63 @@
       <p class="footer-credits">Vixor.com @ 2024. All rights reserved</p>
     </div>
   </footer>
+  <script>
 
+    $(document).ready(function () {
+      $('.car-cards').slick({
+        slidesToShow: 4, // عدد الكروت في الشاشات الكبيرة
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true, // إظهار الأسهم افتراضياً
+        prevArrow: '<button class="slider-arrow left-arrow">←</button>',
+        nextArrow: '<button class="slider-arrow right-arrow">→</button>',
+        responsive: [
+          {
+            breakpoint: 1200, // شاشات أصغر من 1200px
+            settings: {
+              slidesToShow: 3, // يعرض 3 كروت
+            }
+          },
+          {
+            breakpoint: 992, // شاشات التابلت
+            settings: {
+              slidesToShow: 2, // يعرض كاردين فقط
+            }
+          },
+          {
+            breakpoint: 768, // شاشات الموبايل
+            settings: {
+              slidesToShow: 1.5, // يعرض كارد ونصف
+              arrows: false // يخفي الأسهم على الموبايل
+            }
+          },
+          {
+            breakpoint: 480, // شاشات صغيرة جداً
+            settings: {
+              slidesToShow: 1, // يعرض كارد واحد فقط
+              arrows: false // يخفي الأسهم على الشاشات الصغيرة
+            }
+          }
+        ]
+      });
+      // إزالة المارجين الجانبي على الموبايل
+    
+
+      // تأكد أن الأزرار تعمل بعد تحميل السلايدر
+      $('.left-arrow').click(function () {
+        $('.car-cards').slick('slickPrev');
+      });
+
+      $('.right-arrow').click(function () {
+        $('.car-cards').slick('slickNext');
+      });
+    });
+     
+
+
+
+
+  </script>
 
 
 

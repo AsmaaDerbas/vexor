@@ -318,7 +318,6 @@ html, body {
   display: flex;
   flex-direction: column;
   /* align-items: flex-start; */
-  gap: 0px;
   flex: 1;
 }
 
@@ -355,8 +354,11 @@ html, body {
   appearance: none;
   background: url('../icons/chevron-down.svg') no-repeat right 10px center;
   background-size: 16px;
+  
 
 }
+
+
 
 .dropdown-header.cars {
   padding: 8px;
@@ -449,14 +451,16 @@ html, body {
 
 /* حقل الإدخال */
 .search-input {
-  width: 100%;
+  width: 100%;;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 14px;
   outline: none;
   transition: border-color 0.3s ease;
+  
 }
+
 
 .search-input:focus {
   border-color: #101820;
@@ -475,10 +479,14 @@ html, body {
   height: 40px;
   /* يتماشى مع الحقول */
 }
-
-.search-btn:hover {
-  background-color: #A80000;
+.search-btn.location{
+background: none;
 }
+.search-btn.location img{
+  width: 24px;
+  height: 24px;
+}
+
 
 .dropdown-container {
   position: absolute;
@@ -609,6 +617,15 @@ html, body {
   margin-right: 64px;
   padding: 50px 0;
   box-sizing: border-box;
+  
+}
+.featured-cars-section.homepage{
+    margin-left: 64px;
+    margin-right: 64px;
+    padding: 50px 0;
+    box-sizing: border-box;
+    position: relative;
+  
 }
 
 /* تنسيق العنوان وزر "View All" */
@@ -641,6 +658,41 @@ html, body {
   background-color: #A80000;
   color: #fff;
 }
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.slider-arrow {
+  width: 28px;
+  height: 28px;
+  background-color:#fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000; /* تأكد من أن السهم يظهر فوق كل شيء */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10000 !important;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  left: -40px; /* وضع السهم الأيسر خارج التصميم دون التأثير على المساحة */
+  background-image: url('../icons/chevron-left.svg'); /* ضع مسار الأيقونة */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.right-arrow {
+  right: -40px; /* وضع السهم الأيمن خارج التصميم */
+  background-image: url('../icons/chevron-right.svg'); /* ضع مسار الأيقونة */
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 /* إعدادات grid للكاردات */
 .car-cards {
@@ -648,7 +700,12 @@ html, body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
+ .car-cards.homepage{
+  display: flex;
+  gap: 20px;
+  overflow: hidden; /* منع ظهور الكاردات الزائدة */
+  width: 100%;
+ }
 
 
 .car-card {
@@ -664,8 +721,29 @@ html, body {
   padding-bottom: 8px;
   position: relative;
 }
+.car-card.homepage{
+  flex: 0 0 25%; /* 4 كاردات بالعرض */
+  border: 1.5px solid rgb(174, 174, 174);
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  padding-bottom: 8px;
+  position: relative;
+}
 
 
+
+.car-cards.homepage .slick-slide {
+  margin-right: 20px; /* إضافة مسافة بين الكاردات */
+}
+
+/* منع وجود مسافة إضافية عند آخر كارد */
+.car-cards.homepage .slick-slide:last-child {
+  margin-right: 0;
+}
+.slick-prev, .slick-next {
+  display: block !important; /* إجبار الأسهم على الظهور */
+}
 
 .image-container {
   position: relative;
@@ -1813,13 +1891,14 @@ html, body {
   justify-content: space-between;
   gap: 10px;
   /* Adjust gap between fields */
+  margin-bottom: 12px; /* المسافة بين الأسطر */
 
 }
 
 /* Form Fields */
 .form-group {
   position: relative;
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
   width: 100%;
 }
 
@@ -1917,8 +1996,8 @@ html, body {
 }
 
 .otp-box:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border-color: #A80000;
+  box-shadow: 0 0 8px rgba(168, 0, 0, 0.2); /* ظل مناسب */
 }
 
 .main-container.cars {
@@ -1926,7 +2005,7 @@ html, body {
   flex-direction: column;
   align-items: stretch; /* جعل العناصر تأخذ العرض بالكامل */
   gap: 8px;
-  padding: 16px;
+  padding:16px 0 0 0;
   background-color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -2142,8 +2221,6 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   gap: 20px; 
-  /* max-width: 1000px; 
-  margin: 0 auto;  */
 }
 
 .button-container {
@@ -2377,8 +2454,11 @@ html, body {
   /* 3 كروت لكل صف */
   gap: 20px;
   /* مسافة بين الكروت */
-  margin: 0 40px;
+  /* margin: 0 40px; */
   /* هوامش يسار ويمين */
+  padding: 0 3vw;
+  width: 100%;
+  box-sizing: border-box; /* ✅ يمنع تأثير الـ padding على الحجم الكلي */
 }
 
 .dealer-card {
@@ -2393,7 +2473,9 @@ html, body {
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   /* ظل خفيف */
-  min-width: 424px;
+  min-width: 100%;
+  min-width: unset; 
+  
 }
 
 .dealer-logo {
@@ -2547,25 +2629,33 @@ html, body {
 
 .form-group.shop-info label {
   display: block;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
   color: #101820;
   font-size: 14px;
 }
 
-.form-group.shop-info label span {
+.form-group span {
   color: #A80000;
 }
 
 .input-with-icon {
+  display: flex;
+  align-items: center;
   position: relative;
+  width: 100%; /* يجعل العرض ثابتًا لكل الحقول */
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  height: 43px;
 }
 
 .input-with-icon input,
-.input-with-icon select {
-  width: 90%;
-  padding: 10px 40px 10px 10px;
-  border: 1px solid #ddd;
+.input-with-icon select,
+.input-with-icon textarea {
+  flex: 1; /* يأخذ المساحة المتاحة */
+  padding: 10px;
   border-radius: 8px;
   font-size: 14px;
   appearance: none;
@@ -2577,6 +2667,7 @@ html, body {
   direction: ltr;
   /* يضمن بقاء التنسيق من اليسار إلى اليمين */
   text-align: left;
+  border: none;
 }
 
 /* لإخفاء أيقونة التقويم الافتراضية داخل الحقل */
@@ -2587,7 +2678,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .input-with-icon .icon-left {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -2596,7 +2687,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .input-with-icon input:focus {
-  border: 0.7px #101820;
+  border: none;
+  outline: none;
 }
 
 
@@ -2607,6 +2699,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
+}
+
+.input-with-icon .flag + input {
+  text-indent: 30px; /* يبعد النص داخل الـ input فقط عند وجود علم */
 }
 
 .input-with-icon .icon {
@@ -2628,12 +2724,13 @@ select {
 
 textarea {
   width: 100%;
-  padding: 10px;
+  padding:  10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
   resize: none;
   outline: none;
+  box-sizing: border-box; /* يضمن أن padding لا يزيد حجم العنصر */
 }
 
 .logo-upload {
@@ -3279,12 +3376,12 @@ textarea {
 
 
 .container-Ad-details {
-  width: calc(100% - 80px);
+  width: calc(100% - 40px);
   /* يجعل العرض يملأ المتصفح مع مراعاة الهوامش */
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
-  margin: 0 24px;
+  margin: 0 auto;
   /* إضافة هوامش على اليمين واليسار */
   background-color: transparent;
   border-radius: 10px;
@@ -3298,21 +3395,22 @@ textarea {
   background: transparent;
   border-radius: 10px;
   overflow: hidden;
+  margin: 0;
 }
 
 .left-section {
-  flex: 3;
-  width: 70%;
+  flex: 2;
+  width: 60%;
   padding: 20px;
 }
 
 .right-section {
   flex: 1;
-  width: 30%;
-  padding: 16px;
+  width: 40%;
   margin-top: 90px;
-  position: sticky;
-  top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
@@ -3352,12 +3450,109 @@ textarea {
   margin-bottom: 2px;
   /* مسافة أسفل الصندوق */
   width: 100%;
+  height: 500px;
   /* عرض كامل */
   display: flex;
   justify-content: center;
   /* محاذاة الصورة في المنتصف أفقيًا */
   align-items: center;
+  overflow: hidden; /* لمنع الصور من الخروج خارج الإطار */
 }
+.image-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  
+}
+
+.image-slider img {
+  max-width: 100%; /* ✅ الصورة لا تتجاوز حجم البوكس */
+  height: 400px; /* ✅ ارتفاع ثابت للصورة */
+  object-fit: cover; /* ✅ تملأ الصورة البوكس بدون تشوه */
+  flex: 0 0 100%; /* ✅ كل صورة تأخذ 100% من عرض السلايدر */
+  display: block;
+}
+.gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+.gallery-header {
+  position: absolute;
+  top: 10px; /* تعديل المسافة العلوية */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close-btn-gallery {
+  position: absolute;
+    left: 20px; /* زر الإغلاق على اليسار */
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* مسافة بين الأيقونة والنص */
+    font-weight: 400;
+}
+.close-btn-gallery img{
+  width: 24px;
+}
+
+#image-counter {
+  text-align: center;
+  flex-grow: 1; /* يضمن أن العداد يبقى في المنتصف */
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.gallery-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.gallery-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent;
+  border: solid 1.5px #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.nav-btn img {
+  width: 16px;
+  height: 16px;
+}
+.prev { left: 20px; } /* الأيقونة على يسار الشاشة */
+.next { right: 20px; } /* الأيقونة على يمين الشاشة */
+
+
 
 .icon-container-Ad-Details {
   position: absolute;
@@ -3383,6 +3578,7 @@ textarea {
   /* خلفية بيضاء شفافة */
   cursor: pointer;
   transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 10;
 }
 
 /* التأثير عند التمرير فوق الأيقونة */
@@ -3434,12 +3630,12 @@ textarea {
   /* المسافة من الجهة اليمنى */
 }
 
-.main-image-box img {
+.main-image-box img:not(.rest-icons) {
   max-width: 100%;
   /* جعل الصورة تستجيب */
-  max-height: 400px;
+  height: 500px;
   /* تحديد أقصى ارتفاع للصورة */
-  height: auto;
+  object-fit: cover;
   /* الحفاظ على نسبة العرض إلى الارتفاع */
   border-radius: 0;
 }
@@ -3448,30 +3644,9 @@ textarea {
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-/* الصورة الحالية تتحرك لليسار */
-.slide-out-left {
-  transform: translateX(-100%);
-  opacity: 0;
-}
 
-/* الصورة الجديدة تأتي من اليمين */
-.slide-in-right {
-  transform: translateX(100%);
-  opacity: 0;
-  animation: slideIn 0.5s forwards;
-}
 
-@keyframes slideIn {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
 
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 
 
 
@@ -3494,6 +3669,7 @@ textarea {
   border-color: #A80000;
 }
 
+
 .vehicle-overview,
 .additional-info {
   margin-top: 20px;
@@ -3501,8 +3677,9 @@ textarea {
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 15px;
+  margin-top: 10px;
 }
 
 .overview-item {
@@ -3515,7 +3692,7 @@ textarea {
 
 .overview-item h4 {
   margin-bottom: 5px;
-  font-size: 16PX;
+  font-size: 14PX;
   color: #101820;
 }
 
@@ -3543,6 +3720,8 @@ textarea {
 
 .additional-info iframe {
   width: 100%;
+  height: 400px;
+  margin-top: 8px;
 }
 
 .additional-info hr {
@@ -3560,10 +3739,9 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 0 20px;
+  padding: 8px 20px;
   text-align: center;
   width: 100%;
-  max-width: 300px;
   margin-bottom: 20px;
   padding-bottom: 10px;
 }
@@ -3627,6 +3805,8 @@ textarea {
 .report-btn {
   background-color: #A80000;
   margin-top: 20px;
+
+  
 }
 
 /* Styling for the popup */
@@ -3696,9 +3876,7 @@ textarea {
   font-weight: 500;
 }
 
-.button-call:hover {
-  background-color: #a0001e;
-}
+
 
 .cancel-btn-report {
   background: none;
@@ -3723,7 +3901,7 @@ textarea {
   border-radius: 8px;
   padding: 10px 20px;
   width: 100%;
-  max-width: 300px;
+
 }
 
 .seller-info h3 {
@@ -3918,6 +4096,15 @@ textarea {
 /* ✅ إخفاء زر القائمة في الشاشات الكبيرة */
 .menu-icon-mobile {
   display: none; 
+}
+
+.custom-field input,
+.custom-field select,
+.custom-dropdown {
+  width: 100%; /* يجعل الحقول تملأ الحاوية */
+}
+.custom-field .search-input{
+  width:92%;
 }
 
 /* ✅ عند تصغير الشاشة، يظهر زر القائمة بجانب الشعار */
@@ -4236,9 +4423,10 @@ textarea {
   }
 }
 @media (max-width: 768px) {
-  .featured-cars-section {
+  .featured-cars-section,
+  .featured-cars-section.homepage {
     margin-right: 10px; /* إزالة المارجن من اليمين */
-    margin-left: 16px; /* ترك مسافة صغيرة من اليسار للحفاظ على التوازن */
+    margin-left: 24px; /* ترك مسافة صغيرة من اليسار للحفاظ على التوازن */
   }
   .section-header{
     white-space: nowrap;
@@ -4265,16 +4453,14 @@ textarea {
   }
 
 
-  .car-cards,
-  .Ad-cards {
+  .car-cards {
     display: flex; /* استخدام Flexbox بدلاً من Grid عند الشاشات الصغيرة */
     overflow-x: auto; /* تمكين التمرير الأفقي */
     gap: 15px;
     padding-bottom: 10px;
   }
 
-  .car-card,
-  .Ad-card {
+  .car-card {
     flex: 0 0 auto; /* السماح للـ cards بالبقاء في سطر واحد مع التمرير */
     width: 260px; /* ضبط حجم مناسب للتمرير */
   }
@@ -4292,6 +4478,51 @@ textarea {
 
   .car-actions span {
     font-size: 0.7rem;
+    padding: 4px 8px;
+    margin: 8px 0px 8px 8px;
+  }
+}
+
+@media (max-width: 992px) {
+  .slider-arrow {
+    display: none !important; /* إخفاء الأسهم بالكامل */
+  }
+}
+
+/* 📌 Media Queries لضبط عدد الكاردات حسب الشاشة */
+@media (max-width: 1024px) {
+  .Ad-cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 كاردات بالسطر */
+  }
+}
+
+@media (max-width: 768px) {
+  .Ad-cards {
+    grid-template-columns: repeat(1, 1fr); /* كارد واحد بالسطر */
+    justify-content: center;
+  }
+  .featured-cars-section {
+    margin-left: 20px;
+    margin-right: 20px; /* تقليل الهامش عشان ما يكون واسع على الموبايل */
+  }
+}
+
+/* 📌 للشاشات الصغيرة جداً (أقل من 480px) */
+@media (max-width: 480px) {
+  .Ad-cards {
+    grid-template-columns: repeat(1, 1fr); /* كارد واحد */
+    gap: 10px; /* تقليل المسافات بين الكاردات */
+  }
+
+  .Ad-card {
+    width: 90%; /* تقليل العرض ليظهر جزء من الكارد الثاني عند التمرير */
+    margin: 0 auto; /* توسيط الكاردات */
+    padding: 10px; /* تقليل الـ padding حتى ما تكون الكاردات كبيرة جداً */
+  }
+
+  .featured-cars-section {
+    margin-left: 10px;
+    margin-right: 10px; /* تقليل الهوامش أكثر */
   }
 }
 @media (max-width: 768px) {
@@ -4448,7 +4679,12 @@ textarea {
     padding: 5px 8px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .dealer-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
   .dealer-section {
     display: flex;
     flex-direction: column;
@@ -4522,7 +4758,7 @@ textarea {
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;
-    gap: 0;
+    gap: 10px; 
     align-items: flex-start; /* منع تمدد العناصر */
     
   }
@@ -4542,15 +4778,19 @@ textarea {
   
   }
   
-  .form-group.shop-info label{
-    display: none;
-  }
+  
   
 }
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .form-box.sell-my-car {
-    width: 95%; /* تقليل العرض للموبايل */
+    width: calc(100% - 32px); /* تقليل العرض لمنع القطع */
     padding: 15px;
+    margin: 0 auto; /* تأكد أنه في المنتصف */
+  }
+
+  .main-container.sell-my-car {
+    padding: 16px; /* إضافة مسافة داخلية لمنع القطع */
+    overflow: hidden; /* تأكد أن المحتوى لا يخرج */
   }
 
   .form-row {
@@ -4571,9 +4811,151 @@ textarea {
     padding: 8px 0;
   }
 }
+@media (max-width: 480px) {
+  .form-box.sell-my-car {
+    width: calc(100% - 20px); /* تقليل العرض قليلاً لمنع القطع */
+    padding: 12px;
+    margin: 0 auto; /* تأكد من توسيطه */
+  }
+
+  .main-container.sell-my-car {
+    padding: 12px; /* تصغير الهوامش الداخلية */
+    overflow-x: hidden; /* منع التمرير الأفقي */
+  }
+
+  .form-row {
+    flex-direction: column; /* جعل الحقول تظهر في أسطر منفصلة */
+  }
+
+  .form-group {
+    width: 100%; /* عرض كامل للحقل */
+  }
+
+  .tabs-container {
+    overflow-x: auto; /* السماح بالتمرير الأفقي إذا لزم */
+    white-space: nowrap;
+  }
+
+  .tab-btn {
+    font-size: 13px; /* تصغير حجم التبويبات */
+    padding: 6px 0;
+  }
+}
 
 
 
 
 
+@media (max-width: 768px) {
+ 
+  .container-Ad-details {
+    width: 100%; 
+    flex-direction: column;
+    padding: 0 16px; 
+  }
 
+  .left-section,
+  .right-section {
+    width: 100%; 
+    margin: 0; 
+    position: static;
+    padding: 16px 0 0 0 ; 
+  }
+  .right-section {
+    align-items: flex-start; 
+    position: relative;
+  }
+}
+@media (max-width: 500px) {
+  .card-details {
+    width: 100%; /* يجعل عرض البطاقة يتناسب مع الشاشة */
+    padding: 15px; 
+    box-sizing: border-box; /* يضمن أن الـ padding لا يزيد الحجم الكلي */
+  }
+
+  .button-payment {
+    width: 100%; /* يجعل الأزرار بعرض البطاقة */
+    font-size: 13px; 
+    box-sizing: border-box; /* يتأكد أن الأزرار لا تتعدى العرض */
+  }
+
+  .buttons-payment {
+    width: 100%;
+  }
+  .details-item {
+    font-size: 13px; /* تقليل حجم النص */
+  }
+
+ 
+@media (max-width: 768px) {
+ 
+  /* جعل price-card يلتصق بأسفل الشاشة */
+  .price-card {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  /* إزالة أي هوامش قد تسبب مسافة تحت الكارد */
+  body {
+    margin: 0;
+    padding-bottom: 0; /* تأكد أن البودي ليس لديه بادينغ */
+  }
+
+  /* إخفاء كلمة "Price" */
+  .price-card h4 {
+    display: none;
+  }
+
+  /* تصغير السعر وجعله بدون "Price" */
+  .price {
+    font-size: 20px;
+    color: #A80000;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  /* جعل الأزرار صغيرة ودائرية */
+  .price-card .button-call {
+    width: 100px; /* تصغير الأزرار */
+    height: 40px;
+    padding:0;
+    border-radius: 8px; /* جعل الأزرار دائرية */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* منع الأزرار من التمدد */
+  }
+
+  /* تصغير الأيقونات */
+  .price-card .button-call img {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+
+  /* إزالة نصوص الأزرار نهائيًا */
+  .price-card .button-call::after {
+    content: none !important;
+  }
+
+  /* ترتيب الأزرار أفقيًا */
+  .price-card .button-call {
+    display: inline-flex;
+    margin-left: 6px;
+  }
+  .button-call span {
+    display: none !important;
+  }
+  /* تأكد أن الأزرار لا تحتوي على أي نصوص */
+ 
+}

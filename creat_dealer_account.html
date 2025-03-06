@@ -57,7 +57,7 @@
         <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
         Login
       </a>
-      <a href="sell my car.html" class="sell-car">Sell My Car</a>
+      <a href="sell_my_car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
 
@@ -375,97 +375,99 @@
       </div>
       <form>
         <!-- Row 1: Shop Name and Shop Email -->
-        <div class="form-row shop-info">
-          <div class="form-group shop-info">
+        <div class="form-row">
+          <div class="form-group">
             <label for="shop-name">Shop Name <span>*</span></label>
             <div class="input-with-icon">
-              <input type="text" id="shop-name" placeholder="Enter Shop Name">
+              <input type="text" id="shop-name">
               <img src="icons/house-solid 1.svg" alt="Shop Icon" class="icon">
             </div>
           </div>
-          <div class="form-group shop-info">
+          <div class="form-group">
             <label for="shop-email">Shop Email <span>*</span></label>
             <div class="input-with-icon">
-              <input type="email" id="shop-email" placeholder="Enter Shop Email">
+              <input type="email" id="shop-email">
               <img src="icons/house-solid 1.svg" alt="Email Icon" class="icon">
             </div>
           </div>
         </div>
 
         <!-- Row 2: Country and City -->
-        <div class="form-row shop-info">
-          <div class="form-group shop-info">
+        <div class="form-row">
+          <div class="form-group">
             <label for="whatsapp-number">Country </label>
             <div class="input-with-icon">
-                <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
-                <input type="text" id="whatsapp-number" placeholder="United Arab Emirates" >
-                <img src="icons/globe-solid 1.svg" alt="WhatsApp Icon" class="icon">
+              <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+              <input type="text" id="whatsapp-number" placeholder="United Arab Emirates">
+              <img src="icons/globe-solid 1.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
-          <div class="form-group shop-info">
-            <label for="city">City <span>*</span></label>
-            <div class="custom-select-wrapper">
-              <select id="city" class="custom-select">
-                <option value="" disabled selected>Select City</option>
-                <option value="dubai">Dubai</option>
-                <option value="abu-dhabi">Abu Dhabi</option>
-                <option value="sharjah">Sharjah</option>
-              </select>
+          <div class="form-group">
+            <div class="custom-field">
+              <label for="make">City <span>*</span></label>
+              <div class="custom-dropdown">
+                <div class="dropdown-header cars" contenteditable="true" onclick="showDropdown(this)"
+                onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)"
+                data-default-text="Select City">Select City</div>
+                <ul class="dropdown-options">
+                  <li onclick="selectOption(this)">Dubai</li>
+                  <li onclick="selectOption(this)">Dubai</li>
+                  <li onclick="selectOption(this)">Dubai</li>
+                </ul>
+              </div>
             </div>
-
-            <!-- <img src="icons/star_svgrepo.com.svg" alt="City Icon" class="icon"> -->
           </div>
         </div>
 
 
         <!-- Row 3: Phone Number and WhatsApp Phone Number -->
-        <div class="form-row shop-info">
-          <div class="form-group shop-info">
-            <label for="whatsapp-number">Phone Number<span>*</span></label>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="whatsapp-number">Phone Number <span>*</span></label>
             <div class="input-with-icon">
                 <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
-                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" >
                 <img src="icons/call.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
-          <div class="form-group shop-info">
-            <label for="whatsapp-number">WhatsApp Phone Number<span>*</span></label>
+          <div class="form-group">
+            <label for="whatsapp-number">WhatsApp Phone Number <span>*</span></label>
             <div class="input-with-icon">
                 <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
-                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" >
                 <img src="icons/square-whatsapp-brands-solid 1.svg" alt="WhatsApp Icon" class="icon">
             </div>
           </div>
         </div>
 
         <!-- Row 4: Address and Website -->
-        <div class="form-row shop-info">
-          <div class="form-group shop-info">
+        <div class="form-row">
+          <div class="form-group">
             <label for="address">Address <span>*</span></label>
             <div class="input-with-icon">
-              <input type="text" id="address" placeholder="Enter Address">
+              <input type="text" id="address">
               <img src="icons/address-book-solid 1.svg" alt="Address Icon" class="icon">
             </div>
           </div>
-          <div class="form-group shop-info">
+          <div class="form-group">
             <label for="website">Website</label>
             <div class="input-with-icon">
-              <input type="url" id="website" placeholder="Enter Website URL">
+              <input type="url" id="website">
               <img src="icons/address-book-solid 1.svg" alt="Website Icon" class="icon">
             </div>
           </div>
         </div>
 
         <!-- Row 5: Bio -->
-        <div class="form-row shop-info">
+        <div class="form-row">
           <div class="form-group shop-info" style="flex: 1;">
             <label for="bio">Bio</label>
-            <textarea id="bio" rows="4" placeholder="Enter Shop Bio" style="width: 98%;"></textarea>
+            <textarea id="bio" rows="4"></textarea>
           </div>
         </div>
 
         <!-- Row 6: Logo -->
-        <div class="form-row shop-info">
+        <div class="form-row">
           <div class="form-group shop-info" style="flex: 1;">
             <label for="logo">Logo <span>*</span></label>
             <div class="logo-upload">
@@ -482,7 +484,7 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-row shop-info">
+        <div class="form-row">
           <button type="submit" class="submit-btn">Create Account</button>
         </div>
       </form>

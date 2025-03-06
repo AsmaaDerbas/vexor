@@ -55,7 +55,7 @@
         <img src="icons/mynaui_login 12.svg" alt="Login Icon" class="login-icon">
         Login
       </a>
-      <a href="sell my car.html" class="sell-car">Sell My Car</a>
+      <a href="sell_my_car.html" class="sell-car">Sell My Car</a>
     </div>
   </header>
   <div class="main-container">
@@ -74,37 +74,37 @@
         
         <form>
             <!-- Row 1: Shop Name and Shop Email -->
-            <div class="form-row shop-info">
-              <div class="form-group shop-info">
+            <div class="form-row">
+              <div class="form-group">
                 <label for="shop-name">First Name </label>
                 <div class="input-with-icon">
-                  <input type="text" id="shop-name" placeholder="Enter first name">
+                  <input type="text" id="shop-name">
                   <img src="icons/user-solid 1.svg" alt="Shop Icon" class="icon">
                 </div>
               </div>
-              <div class="form-group shop-info">
+              <div class="form-group">
                 <label for="shop-email">Last Name </label>
                 <div class="input-with-icon">
-                  <input type="email" id="shop-email" placeholder="Enter last name">
+                  <input type="email" id="shop-email">
                   <img src="icons/user-solid 1.svg" alt="Email Icon" class="icon">
                 </div>
               </div>
             </div>
     
             <!-- Row 2: Country and City -->
-            <div class="form-row shop-info">
-              <div class="form-group shop-info">
+            <div class="form-row">
+              <div class="form-group">
                 <label for="country">Email</label>
                 <div class="input-with-icon">
-                  <input type="email" id="country" placeholder="example@come">
+                  <input type="email" id="country">
                   <img src="icons/envelope-solid 1.svg" alt="Country Icon" class="icon">
                 </div>
               </div>
-              <div class="form-group shop-info">
+              <div class="form-group">
                 <label for="whatsapp-number">WhatsApp Number</label>
                 <div class="input-with-icon">
                     <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
-                    <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" style="padding:10px 40px 10px 40px; width: 84%;">
+                    <input type="text" id="whatsapp-number" value="+971 " oninput="validateUAEPhone(this)" maxlength="13" >
                     <img src="icons/square-whatsapp-brands-solid 1.svg" alt="WhatsApp Icon" class="icon">
                 </div>
               </div>
@@ -112,8 +112,8 @@
     
     
             <!-- Row 3: Phone Number and WhatsApp Phone Number -->
-            <div class="form-row shop-info">
-                <div class="form-group shop-info">
+            <div class="form-row">
+                <div class="form-group">
                     <div class="custom-field">
                         <label for="make">Gender</label>
                         <div class="custom-dropdown">
@@ -125,7 +125,7 @@
                         </div>
                       </div>
                   </div>
-              <div class="form-group shop-info">
+              <div class="form-group">
                 <label for="dob">Date of Birth</label>
                 <div class="input-with-icon">
                     <img src="icons/calendar-regular 1.svg" alt="Calendar Icon" class="icon-left" onclick="openDatePicker()"> <!-- أيقونة مخصصة -->
@@ -135,26 +135,29 @@
             </div>
     
             <!-- Row 4: Address and Website -->
-            <div class="form-row shop-info">
-              <div class="form-group shop-info">
+            <div class="form-row">
+              <div class="form-group">
                 <label for="whatsapp-number">Country </label>
                 <div class="input-with-icon">
-                    <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
-                    <input type="text" id="whatsapp-number" placeholder="United Arab Emirates" style="padding:10px 40px 10px 40px; width: 83%;">
-                    <img src="icons/globe-solid 1.svg" alt="WhatsApp Icon" class="icon">
+                  <img src="icons/emojione-v1_flag-for-united-arab-emirates.png" alt="UAE Flag" class="flag">
+                  <input type="text" id="whatsapp-number" placeholder="United Arab Emirates">
+                  <img src="icons/globe-solid 1.svg" alt="WhatsApp Icon" class="icon">
                 </div>
               </div>
-              <div class="form-group shop-info">
-               <div class="custom-field">
-                        <label for="make">City</label>
-                        <div class="custom-dropdown">
-                          <div class="dropdown-header" onclick="toggleDropdown(this)">Select City</div>
-                          <ul class="dropdown-options">
-                            <li onclick="selectOption(this)">Dubai</li>
-                            <li onclick="selectOption(this)">Dubai</li>
-                          </ul>
-                        </div>
-                      </div>
+              <div class="form-group">
+                <div class="custom-field">
+                  <label for="make">City</label>
+                  <div class="custom-dropdown">
+                    <div class="dropdown-header cars" contenteditable="true" onclick="showDropdown(this)"
+                    onfocus="clearPlaceholder(this)" oninput="filterOptions(this)" onblur="restorePlaceholder(this)"
+                    data-default-text="Select City">Select City</div>
+                    <ul class="dropdown-options">
+                      <li onclick="selectOption(this)">Dubai</li>
+                      <li onclick="selectOption(this)">Dubai</li>
+                      <li onclick="selectOption(this)">Dubai</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
     
